@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input[type=submit] {
+        
+        background-color: #fff;
+        width: 140px;
+        height: 40px;
+        border-radius: 8px;
+        border: 1px solid #000;
+        font-size: large;
+        font-weight: bold;
+      
+      }
+      input[type=submit]:hover {
+        background-color: #e6e6e6;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      table{
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+      }
+      td, th {
+        border: 1px solid #000;
+      }
+      th,tr:nth-child(odd){
+        background-color: #e6e6e6 ;
+      }
+      header {
+      }
+      .info {
+        margin: 0 0 5px 0;
+        font-weight: normal;
+        font-size: 160%;
+      }
+      .description {
+        margin: 5px 0 0 0;
+        font-size: 14px;
+        color: #555;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      .select select {
+        width: 100%;
+        max-width: 500px;
+        margin-top: 5px;
+      }
+      .label {
+        display: block;
+        margin: 10px 0 0 0;
+        font-weight: bold;
+      }
+      fieldset {
+        border: none;
+        padding: 0;
+        margin: 10px 0 0 0;
+      }
+      .text {
+        margin-top: 5px;
+        padding: 0 0 0 20px;
+      }
+      .radio {
+        margin: 5px 0 0 0;
+        padding: 0;
+      }
+      input[type="radio"] {
+        margin-right: 10px;
+      }
+      input[type="checkbox"] {
+        margin-right: 10px;
+      }
+      .text span {
+        margin-right: 5px;
+        margin-left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <header>
+        <h2 class="info">Market Research Survey</h2>
+        <p class="description">
+          Please take a few moments to complete this satisfaction survey.
+        </p>
+      </header>
+      <main>
+        <ul>
+          <li>
+            <label class="label" for="age">What is your age range?</label>
+            <div class="select">
+              <select name="age">
+                <option value="1">18-24</option>
+                <option value="2">25-34</option>
+                <option value="3">35-50</option>
+                <option value="4">50+</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <label class="label" for="age"
+              >What is your yearly income range?</label
+            >
+            <div class="select">
+              <select name="income">
+                <option value="1">$0 - $25,000</option>
+                <option value="2">$25,000 - $50,000</option>
+                <option value="3">$50,001 - $100,000</option>
+                <option value="5">$100,000+</option>
+              </select>
+            </div>
+          </li>
+          <li>
+            <fieldset>
+              <legend class="label">Gender Identity</legend>
+            </fieldset>
+            <div class="radio"><input type="radio" />Male</div>
+            <div class="radio"><input type="radio" />Female</div>
+            <div class="radio"><input type="radio" />Nonebinary</div>
+            <div class="radio"><input type="radio" />Other</div>
+            <div class="text"><input type="text" /></div>
+          </li>
+          <li>
+            <fieldset>
+              <legend class="label">
+                Which of the following products have your purchased in the last
+                2 months. Please check all that apply.
+              </legend>
+              <div class="radio">
+                <input type="checkbox" name="product" />Product 1
+              </div>
+              <div class="radio">
+                <input type="checkbox" name="product" />Product 2
+              </div>
+              <div class="radio">
+                <input type="checkbox" name="product" />Product 3
+              </div>
+            </fieldset>
+          </li>
+          <li>
+            <fieldset>
+              <legend class="label">
+                How often would you use our new product?
+              </legend>
+              <div class="radio"><input type="radio" name="often" />Daily</div>
+              <div class="radio"><input type="radio" name="often" />Weekly</div>
+              <div class="radio">
+                <input type="radio" name="often" />Monthly
+              </div>
+            </fieldset>
+          </li>
+          <li>
+            <label for="text" class="label"
+              >What would you pay for the new product?</label
+            >
+            <div class="text">
+              <span>$</span>
+              <input type="text" size="7" name="dollars" />
+              <span style="padding-right: 5px">.</span
+              ><input type="text" size="2" name="cents" />
+            </div>
+            <div class="description" style="padding-left: 40px">
+              <label for="dollars">Dollars</label>
+              <label style="padding-left: 30px" for="cents">Cents</label>
+            </div>
+          </li>
+          <li>
+            <fieldset>
+              <legend class="label">
+                What features would you like to see in the new product.
+              </legend>
+              <textarea name="textarea" cols="175px" rows="10"></textarea>
+            </fieldset>
+          </li>
+          <li>
+            <fieldset>
+              <legend class="label">
+                Please rate your level of agreement with the following
+                statements
+              </legend>
+              <table>
+                <th>
+                  <td><p class="description">Strongly Disagree</p></td>
+                  <td><p class="description">Disagree</p></td>
+                  <td><p class="description">Agree</p></td>
+                  <td><p class="description">Strongly Agree</p></td>
+                  
+                </th>
+                <tr>
+                  <td>Our product are price fairly</td>
+                  <td><input type="radio" name="stronglydisagree" ><br>1</td>
+                  <td><input type="radio" name="disagree" ><br>2</td>
+                  <td><input type="radio" name="agree" ><br>3</td>
+                  <td><input type="radio" name="stronglyagree" ><br>4</td>
+                </tr>
+                <tr>
+                  <td>Our product are high quality</td>
+                  <td><input type="radio" name="stronglydisagree" ><br>1</td>
+                  <td><input type="radio" name="disagree" ><br>2</td>
+                  <td><input type="radio" name="agree" ><br>3</td>
+                  <td><input type="radio" name="stronglyagree" ><br>4</td>
+                </tr>
+                <tr>
+                  <td>You would recommend our product to a friend or coworker</td>
+                  <td><input type="radio" name="stronglydisagree" ><br>1</td>
+                  <td><input type="radio" name="disagree" ><br>2</td>
+                  <td><input type="radio" name="agree" ><br>3</td>
+                  <td><input type="radio" name="stronglyagree" ><br>4</td>
+                </tr>
+              </table>
+            </fieldset>
+          </li>
+        </ul>
+      </main>
+      <footer>
+        <fieldset>
+          <legend>
+            <input type="submit" value="Submit" />
+          </legend>
+        </fieldset>
+      </footer>
+    </form>
+  </body>
+</html>

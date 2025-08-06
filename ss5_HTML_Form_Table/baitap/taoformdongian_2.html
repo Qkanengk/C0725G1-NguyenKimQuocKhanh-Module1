@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 10px;
+      }
+      th {
+        text-align: left;
+        background-color: #d4fdd6;
+        color: #0634ff;
+      }
+      td {
+        background-color: #fffda8;
+        color: #0724aa;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <form action="">
+        <th colspan="2">ĐĂNG KÍ HỌC VIÊN</th>
+        <tr>
+          <td><label for="fullname">Họ và tên</label></td>
+          <td><input type="text" name="fullname" size="30" /></td>
+        </tr>
+        <tr>
+          <td><label for="dateofbirth">Ngày sinh</label></td>
+          <td><input type="text" name="dateofbirth" /></td>
+        </tr>
+        <tr>
+          <td>Giới tính</td>
+          <td>
+            <input type="radio" name="male" /> <label for="male">Nam</label>
+            <input type="radio" name="female" /> <label for="female">Nữ</label>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="address">Địa chỉ</label></td>
+          <td><textarea name="address" rows="4" cols="20"></textarea></td>
+        </tr>
+        <tr>
+          <td>
+            <label for="class">Lớp</label>
+          </td>
+          <td>
+            <select name="class">
+              <option value="" selected hidden>--Chọn Lớp--</option>
+              <option value="a">A</option>
+              <option value="b">B</option>
+              <option value="c">C</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="email">Email</label></td>
+          <td><input type="text" name="email" /></td>
+        </tr>
+        <tr>
+          <td><label for="phone">Điện thoại</label></td>
+          <td><input type="text" name="phone" /></td>
+        </tr>
+        <tr>
+          <td colspan="2" style="padding-left: 100px">
+            <input type="submit" name="signup" value="Đăng ký" />
+            <input type="reset" name="reset" value="Nhập lại" />
+          </td>
+        </tr>
+      </form>
+    </table>
+  </body>
+</html>
