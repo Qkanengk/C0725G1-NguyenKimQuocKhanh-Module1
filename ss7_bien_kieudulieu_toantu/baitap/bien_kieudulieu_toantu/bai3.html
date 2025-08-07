@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form
+      style="display: flex; align-items: center; justify-content: center"
+      action="./bai3.html">
+      <fieldset>
+        <legend style="text-align: center">Tính diện tích hình tròn</legend>
+        <input type="number" name="" id="radius" placeholder="Input radius" />
+        <input onclick="result()" type="button" value="Enter" />
+        <p id="result"></p>
+      </fieldset>
+      <script>
+        function result() {
+          const pi = 3.14;
+          let r = Number(document.getElementById("radius").value);
+
+          let area = pi * Math.pow(r, 2);
+
+          document.getElementById("result").innerHTML =
+            " Diện tích hình tròn này là: " + area;
+        }
+      </script>
+    </form>
+  </body>
+</html>

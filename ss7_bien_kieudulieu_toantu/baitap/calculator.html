@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        margin-top: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <form
+      style="display: flex; align-items: center; justify-content: center"
+      action="">
+      <fieldset>
+        <legend style="text-align: center">Calculator</legend>
+        <div>
+          <input
+            type="number"
+            rename=""
+            id="firstNumber"
+            placeholder="Enter first number" />
+          <input
+            type="number"
+            name=""
+            id="lastNumber"
+            placeholder="Enter last number" />
+        </div>
+        <div>
+          <input onclick="Addition()" type="button" value="Addition(+)" />
+          <input onclick="Subtraction()" type="button" value="Subtraction(-)" />
+          <input
+            onclick="Mutiplication()"
+            type="button"
+            value="Mutiplication(X)" />
+          <input onclick="Division()" type="button" value="Division(/)" />
+          <input onclick="resetResult()" type="reset" name="" value="Reset" />
+        </div>
+
+        <div>
+          <p id="result"></p>
+        </div>
+      </fieldset>
+      <script>
+        function Addition() {
+          let a = Number(document.getElementById("firstNumber").value);
+          let b = Number(document.getElementById("lastNumber").value);
+
+          let result = a + b;
+
+          document.getElementById("result").innerHTML = "Result = " + result;
+        }
+        function Subtraction() {
+          let a = Number(document.getElementById("firstNumber").value);
+          let b = Number(document.getElementById("lastNumber").value);
+
+          let result = a - b;
+
+          document.getElementById("result").innerHTML = "Result = " + result;
+        }
+        function Mutiplication() {
+          let a = Number(document.getElementById("firstNumber").value);
+          let b = Number(document.getElementById("lastNumber").value);
+
+          let result = a * b;
+
+          document.getElementById("result").innerHTML = "Result = " + result;
+        }
+        function Division() {
+          let a = Number(document.getElementById("firstNumber").value);
+          let b = Number(document.getElementById("lastNumber").value);
+
+          let result = a / b;
+
+          document.getElementById("result").innerHTML = "Result = " + result;
+        }
+
+        function resetResult() {
+          document.getElementById("result").innerText = " ";
+        }
+      </script>
+    </form>
+  </body>
+</html>

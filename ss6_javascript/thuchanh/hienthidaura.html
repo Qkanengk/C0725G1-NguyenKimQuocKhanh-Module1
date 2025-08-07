@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function showMessage() {
+        alert("Hello, this is a message from JavaScript!");
+        document.getElementById("messageDiv").innerHTML =
+          "Hello, this is a message from JavaScript!";
+        document.write(
+          "Hello, this is a message from JavaScript! (using document.write)"
+        );
+        console.log(
+          "Hello, this is a message from JavaScript! (using console.log)"
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <div id="messageDiv"></div>
+    <button onclick="showMessage()">click me</button>
+  </body>
+</html>

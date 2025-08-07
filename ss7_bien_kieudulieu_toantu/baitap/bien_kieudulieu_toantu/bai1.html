@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form
+      action="./bai1.html"
+      method="get"
+      style="display: flex; align-items: center; justify-content: center">
+      <fieldset>
+        <legend>Tính tổng và điểm trung bình</legend>
+        <div>
+          <label for="vatly">Nhập điểm Vật lý</label>
+          <input id="vatly" type="number" min="0" max="10" required />
+          <label for="hoahoc">Nhập điểm Hóa học</label>
+          <input id="hoahoc" type="number" min="0" max="10" required />
+          <label for="sinhhoc">Nhập Sinh học</label>
+          <input id="sinhhoc" type="number" min="0" max="10" required />
+          <input type="button" onclick="result()" value="Submit" />
+        </div>
+        <p
+          id="result"
+          style="
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+          "></p>
+      </fieldset>
+      <script>
+        function result() {
+          let vatly = Number(document.getElementById("vatly").value);
+          let hoahoc = Number(document.getElementById("hoahoc").value);
+          let sinhhoc = Number(document.getElementById("sinhhoc").value);
+
+          let tong = vatly + hoahoc + sinhhoc;
+          let avg = tong / 3;
+
+          document.getElementById("result").innerHTML =
+            "Tổng điểm = " + tong + "Đ" + " Điểm trung bình = " + avg + "Đ";
+        }
+      </script>
+    </form>
+  </body>
+</html>

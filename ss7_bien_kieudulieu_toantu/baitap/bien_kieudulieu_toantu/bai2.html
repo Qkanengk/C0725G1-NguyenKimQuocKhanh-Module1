@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form
+      style="display: flex; align-items: center; justify-content: center"
+      action="./bai2.html">
+      <fieldset>
+        <legend style="text-align: center">Đổi độ C sang độ F</legend>
+        <input id="c" type="number" placeholder="Nhập độ C" />
+        <input type="button" onclick="change()" value="Đổi" />
+        <p id="result"></p>
+      </fieldset>
+      <script>
+        function change() {
+          let c = Number(document.getElementById("c").value);
+
+          let f = (9 / 5) * c + 32;
+
+          document.getElementById("result").innerHTML =
+            "Kết quả: " + f + " độ F";
+        }
+      </script>
+    </form>
+  </body>
+</html>

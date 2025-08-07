@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form
+      style="display: flex; align-items: center; justify-content: center"
+      action="./chuyen_doi_tien_te.html"
+      method="get">
+      <fieldset>
+        <legend>Currency convert</legend>
+        <div>
+          <label for="amount">Amount</label>
+          <input type="text" id="amount" />
+        </div>
+        <div>
+          <label for="fromCurrency">From Currency</label>
+          <select name="currency" id="fromCurrency">
+            <option value="VND">VND</option>
+            <option value="USD">USD</option>
+          </select>
+        </div>
+        <div>
+          <label for="toCurrency">To Currency</label>
+          <select name="currency" id="toCurrency">
+            <option value="VND">VND</option>
+            <option value="USD">USD</option>
+          </select>
+        </div>
+        <input
+          onclick="changeMoney()"
+          type="button"
+          name="convert"
+          id="convert"
+          value="Convert" />
+        <p id="result"></p>
+      </fieldset>
+      <script>
+        function changeMoney() {
+          if (
+            document.getElementById("fromCurrency").value ==
+            document.getElementById("toCurrency").value
+          ) {
+            let result = Number(document.getElementById("amount").value);
+            document.getElementById("result").innerHTML =
+              "Result: " +
+              result +
+              " " +
+              document.getElementById("toCurrency").value;
+          } else if (
+            document.getElementById("fromCurrency").value == "VND" &&
+            document.getElementById("toCurrency").value == "USD"
+          ) {
+            let result =
+              Number(document.getElementById("amount").value) / 23000;
+            document.getElementById("result").innerHTML =
+              "Result: " +
+              result +
+              " " +
+              document.getElementById("toCurrency").value;
+          } else {
+            let result =
+              Number(document.getElementById("amount").value) * 23000;
+            document.getElementById("result").innerHTML =
+              "Result: " +
+              result +
+              " " +
+              document.getElementById("toCurrency").value;
+          }
+        }
+      </script>
+    </form>
+  </body>
+</html>
