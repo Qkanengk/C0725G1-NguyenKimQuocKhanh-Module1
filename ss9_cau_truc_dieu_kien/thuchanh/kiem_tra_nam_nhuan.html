@@ -6,4 +6,26 @@
     <title>Document</title>
   </head>
   <body></body>
+  <script>
+    let year = prompt("input year");
+    let isLeapYear = false;
+
+    let divide4 = parseInt(year) % 4 == 0;
+    let divide400 = parseInt(year) % 400 == 0;
+    let divide100 = parseInt(year) % 100 == 0;
+
+    if (divide4) {
+      if (divide100) {
+        if (divide400) {
+          isLeapYear = true;
+        }
+      } else {
+        isLeapYear = true;
+      }
+    }
+
+    if (isLeapYear == true) {
+      alert(year + " is a leap year");
+    } else alert(year + " is not a leap year");
+  </script>
 </html>
