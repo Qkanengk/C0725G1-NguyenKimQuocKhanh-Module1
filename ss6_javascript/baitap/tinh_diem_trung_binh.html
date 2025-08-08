@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form
+      action=""
+      style="display: flex; justify-content: center; align-items: center">
+      <fieldset>
+        <legend>TÍNH ĐIỂM TRUNG BÌNH</legend>
+        <div>
+          <input id="math" type="number" placeholder="Nhập điểm toán" />
+          <input id="physic" type="number" placeholder="Nhập điểm toán" />
+          <input id="che" type="number" placeholder="Nhập điểm toán" />
+        </div>
+        <div>
+          <h3>Kết quả:</h3>
+          <p id="result"></p>
+        </div>
+        <button type="button" onclick="tinhTB()">Tính</button>
+        <button type="reset" onclick="reSet()">Reset</button>
+      </fieldset>
+    </form>
+
+    <script>
+      function tinhTB() {
+        let math = parseInt(document.getElementById("math").value);
+        let phy = parseInt(document.getElementById("physic").value);
+        let che = parseInt(document.getElementById("che").value);
+
+        let avg = (math + phy + che) / 3;
+
+        document.getElementById("result").innerHTML = avg;
+      }
+      function reSet() {
+        document.getElementById("result").innerHTML = " ";
+      }
+    </script>
+  </body>
+</html>
