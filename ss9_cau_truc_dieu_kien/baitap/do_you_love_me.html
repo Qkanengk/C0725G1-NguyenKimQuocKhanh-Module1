@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        width: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DO YOU LOVE ME?</h1>
+    <h2 id="yes"></h2>
+    <div style="margin-left: 60px">
+      <button onclick="yes()">Yes</button>
+      <button onmouseover="no()" id="no" style="position: absolute">No</button>
+    </div>
+  </body>
+  <script>
+    console.log(window.innerWidth);
+    function yes() {
+      document.getElementById("yes").innerHTML = ":3";
+    }
+    function no() {
+      let maxW = window.innerWidth;
+      let maxH = window.innerHeight;
+
+      document.getElementById("no").style.right = `${
+        maxW / 6 + Math.random() * (1000 - 100 + 1) + 80
+      }px`;
+
+      document.getElementById("no").style.left = `${
+        maxW / 6 + Math.random() * (1000 - 100 + 1) + 80
+      }px`;
+    }
+  </script>
+</html>

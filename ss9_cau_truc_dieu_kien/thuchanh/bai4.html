@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="a" type="text" placeholder="input a" />
+    <input id="b" type="text" placeholder="input b" />
+    <button onclick="tinhTong()">Enter</button>
+    <script>
+      function tinhTong() {
+        let a = parseInt(document.getElementById("a").value);
+        let b = parseInt(document.getElementById("b").value);
+
+        let m = a + b < 4 ? "Below" : "Over";
+        alert(m);
+      }
+    </script>
+  </body>
+</html>

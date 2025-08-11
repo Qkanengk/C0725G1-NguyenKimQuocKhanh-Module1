@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- tinh tien dien -->
+    <script>
+      let dien = Number(prompt("Nhap vao so dien tieu thu(kWh):"));
+      function cal(dien) {
+        let sum;
+        if (dien > 200) {
+          sum = 50 * 1800 + 50 * 2000 + 100 * 2500 + (dien - 200) * 3000;
+        } else if (dien > 100) {
+          sum = 50 * 1800 + 50 * 2000 + (dien - 100) * 2500;
+        } else if (dien > 50) {
+          sum = 50 * 1800 + (dien - 50) * 2000;
+        } else {
+          sum = dien * 1800;
+        }
+
+        alert(`Tien dien thang nay la: ${sum}VND`);
+      }
+      cal(dien);
+    </script>
+  </body>
+</html>

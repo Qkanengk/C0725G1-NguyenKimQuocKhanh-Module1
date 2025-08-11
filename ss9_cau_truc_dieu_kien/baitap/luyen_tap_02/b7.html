@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- ax2+bx+c=0 -->
+    <script>
+      let a = Number(prompt("Nhập a:"));
+      let b = Number(prompt("Nhập b:"));
+      let c = Number(prompt("Nhập c:"));
+
+      function calc(a, b, c) {
+        let delta = b * b - 4 * a * c;
+
+        if (delta < 0) {
+          alert("Phương trình vô nghiệm");
+        } else if (delta === 0) {
+          let x = -b / (2 * a);
+          alert(`Phương trình có nghiệm kép x1 = x2 = ${x}`);
+        } else {
+          let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+          let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+          alert(`Phương trình có 2 nghiệm phân biệt:\nx1 = ${x1}\nx2 = ${x2}`);
+        }
+      }
+
+      calc(a, b, c);
+    </script>
+  </body>
+</html>

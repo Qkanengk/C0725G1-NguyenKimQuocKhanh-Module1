@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Viết chương trình tính cước điện thoại hàng tháng cho một hộ gia đình dựa trên các thông số sau:
+
+            Phí thuê bao cố định hàng tháng: 25.000 VNĐ
+
+            Số phút gọi nội mạng:
+
+            50 phút đầu: 600 VNĐ/phút
+
+            Từ phút thứ 51 trở đi: 400 VNĐ/phút
+
+            Số phút gọi ngoại mạng:
+
+            50 phút đầu: 800 VNĐ/phút
+
+            Từ phút thứ 51 trở đi: 600 VNĐ/phút -->
+
+    <script>
+      let noimang = Number(prompt("Nhap so phut noi mang"));
+      let ngoaimang = Number(prompt("Nhap so phut ngoai mang"));
+
+      function cal() {
+        let sum;
+
+        let noi;
+        let ngoai;
+
+        if (noimang > 50) {
+          noi = 50 * 600 + (noimang - 50) * 400;
+        } else noi = noimang * 600;
+
+        if (ngoaimang > 50) {
+          ngoai = 50 * 800 + (ngoaimang - 50) * 600;
+        } else ngoai = ngoaimang * 800;
+
+        sum = 25000 + noi + ngoai;
+        alert(`Cuoc dien thoai thang nay la: ${sum} VND`);
+      }
+
+      cal();
+    </script>
+  </body>
+</html>

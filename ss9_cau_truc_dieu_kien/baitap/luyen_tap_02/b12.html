@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- tinh lai suat ngan hang -->
+    <script>
+      let P = Number(prompt("Nhap so tien gui ban dau:"));
+      let n = Number(prompt("Nhap so thang gui:"));
+      let r = Number(prompt("Nhap lai suat hang thang;"));
+
+      function calc(tiengui, thanggui, laisuat) {
+        let result;
+        result = tiengui * Math.pow(1 + laisuat / 100, thanggui);
+
+        alert(`So tien cuoi ki la: ${result}VND`);
+      }
+      calc(P, n, r);
+    </script>
+  </body>
+</html>

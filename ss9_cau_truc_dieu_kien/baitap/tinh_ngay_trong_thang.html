@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <fieldset>
+      <div>
+        <legend>TÍNH SỐ NGÀY TRONG THÁNG</legend>
+        <input type="number" name="" id="month" />
+        <button onclick="cal()">Tính số ngày</button>
+      </div>
+      <p id="result">KẾT QUẢ HIỂN THỊ TẠI ĐÂY</p>
+    </fieldset>
+  </body>
+  <script>
+    function cal() {
+      let value = document.getElementById("month").value;
+      let month = parseInt(document.getElementById("month").value);
+      let day;
+      if (value === "" || month < 1 || month > 12) {
+        document.getElementById("result").innerHTML = "VUI LÒNG NHẬP LẠI";
+        return;
+      } else {
+        switch (month) {
+          case 1:
+          case 3:
+          case 5:
+          case 7:
+          case 8:
+          case 10:
+          case 12:
+            day = 31;
+            break;
+          case 4:
+          case 6:
+          case 9:
+          case 11:
+            day = 30;
+            break;
+          case 2:
+            day = 28;
+            break;
+        }
+
+        document.getElementById("result").innerHTML =
+          "Tháng " + month + " có " + day + " ngày";
+      }
+    }
+  </script>
+</html>

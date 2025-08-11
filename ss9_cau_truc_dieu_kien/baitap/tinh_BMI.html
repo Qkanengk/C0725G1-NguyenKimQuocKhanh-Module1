@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        padding-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <fieldset>
+      <legend>TÍNH CHỈ SỐ CÂN NẶNG</legend>
+      <div>
+        <label for="height">Nhập cân nặng (kg)</label>
+        <input type="number" name="" id="height" />
+      </div>
+      <div>
+        <label for="weight">Nhập chiều cao (m)</label>
+        <input type="number" id="weight" />
+      </div>
+      <p id="bmi"></p>
+      <button onclick="check()">Kiểm tra</button>
+    </fieldset>
+  </body>
+  <script>
+    function check() {
+      let w = Number(document.getElementById("height").value);
+      let h = Number(document.getElementById("weight").value);
+
+      let bmi = Number(w / (h * h));
+
+      if (bmi < 18.5) {
+        document.getElementById("bmi").innerHTML =
+          "Chỉ số BMI là: " + bmi + " Bạn underweight";
+      } else if (bmi < 25.0) {
+        document.getElementById("bmi").innerHTML =
+          "Chỉ số BMI là: " + bmi + " Bạn normal";
+      } else if (bmi < 30.0) {
+        document.getElementById("bmi").innerHTML =
+          "Chỉ số BMI là: " + bmi + " Bạn oerweight";
+      } else {
+        document.getElementById("bmi").innerHTML =
+          "Chỉ số BMI là: " + bmi + " Bạn obese";
+      }
+    }
+  </script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = Number(prompt("Nhap a"));
+      let b = Number(prompt("Nhap b"));
+      let c = Number(prompt("Nhap c"));
+
+      function compare() {
+        let biggest;
+
+        if (a > b && a > c) {
+          biggest = a;
+        } else if (a > b && a < c) {
+          biggest = c;
+        } else if (a < b && a < c) {
+          if (b > c) {
+            biggest = b;
+          } else biggest = c;
+        }
+        alert(`so lon nhat la: ${biggest}`);
+      }
+      compare();
+    </script>
+  </body>
+</html>

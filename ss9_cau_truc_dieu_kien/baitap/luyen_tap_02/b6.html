@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- ax+b=0 -->
+
+    <script>
+      let a = Number(prompt("Nhap a:"));
+      let b = Number(prompt("Nhap b:"));
+
+      function calc(a, b) {
+        let x;
+        if (a == 0) {
+          alert("phuong trinh vo nghiem");
+        } else if (b == 0) {
+          alert("Phuong trinh vo so nghiem");
+        } else {
+          x = -b / a;
+          alert(`Phuong trinh co nghiem x = ${x}`);
+        }
+      }
+
+      calc(a, b);
+    </script>
+  </body>
+</html>

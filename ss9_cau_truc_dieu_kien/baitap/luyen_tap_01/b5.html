@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let diemkt = parseFloat(prompt("Nhap diem kiem tra (he so 1)"));
+      let diemgk = parseFloat(prompt("Nhap diem giua ki (he so 2)"));
+      let diemck = parseFloat(prompt("Nhap diem kiem cuoi ki (he so 3)"));
+
+      function cal() {
+        let dtb = (diemkt + diemgk * 2 + diemck * 3) / 6;
+
+        if (dtb >= 8) {
+          alert("Gioi");
+        } else if (dtb >= 6.5) {
+          alert("Kha");
+        } else if (dtb >= 5) {
+          alert("Trung binh");
+        } else alert("Yeu");
+      }
+
+      cal();
+    </script>
+  </body>
+</html>

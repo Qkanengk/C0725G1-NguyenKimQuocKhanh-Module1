@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- tinh dien tich hinh vuong khi biet canh a -->
+    <script>
+      let a = Number(prompt("Nhap canh goc vuong thu nhat(cm):"));
+      let b = Number(prompt("Nhap canh goc vuong thu hai(cm):"));
+
+      function calc(a, b) {
+        let result = (1 / 2) * a * b;
+        alert(`dien tich hinh tam giac vuong la: ${result}cm vuong`);
+      }
+      calc(a, b);
+    </script>
+  </body>
+</html>

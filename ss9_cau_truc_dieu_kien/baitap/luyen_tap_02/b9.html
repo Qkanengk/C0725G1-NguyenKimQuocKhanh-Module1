@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- kiem tra ba canh co phai la canh cua tam giac khong -->
+    <script>
+      let a = Number(prompt("Nhap canh a"));
+      let b = Number(prompt("Nhap canh b"));
+      let c = Number(prompt("Nhap canh c"));
+
+      function check(a, b, c) {
+        if (a == 0 || b == 0 || c == 0) {
+          alert("Ba canh khong phai canh cua tam giac");
+        } else if (a + b > c && b + c > a && a + c > b) {
+          alert("Ba canh la canh cua tam giac");
+        } else alert("Ba canh khong phai canh cua tam giac");
+      }
+
+      check(a, b, c);
+    </script>
+  </body>
+</html>

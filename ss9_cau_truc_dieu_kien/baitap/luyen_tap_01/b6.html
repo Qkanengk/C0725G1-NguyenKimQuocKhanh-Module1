@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let doanhso = Number(prompt("Nhap doanh so"));
+      //   Nếu doanh số dưới 5 triệu → hoa hồng 3%
+      //    Nếu doanh số từ 5 triệu đến dưới 10 triệu → hoa hồng 5%
+      //    Nếu doanh số từ 10 triệu đến dưới 20 triệu → hoa hồng 10%
+      //    Nếu doanh số từ 20 triệu trở lên → hoa hồng 15%
+      function cal() {
+        let result;
+        if (doanhso >= 20000000) {
+          result = doanhso * (15 / 100);
+        } else if (doanhso >= 10000000) {
+          result = doanhso * (10 / 100);
+        } else if (doanhso >= 5000000) {
+          result = doanhso * (5 / 100);
+        } else result = doanhso * (3 / 100);
+
+        alert(`Hoa hong nha duoc la: ${result}`);
+      }
+      cal();
+    </script>
+  </body>
+</html>

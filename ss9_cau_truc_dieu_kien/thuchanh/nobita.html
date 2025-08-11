@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img
+      id="nobita"
+      style="
+        max-width: 10%;
+        position: relative;
+        right: auto;
+        left: 0px;
+        top: 0px;
+        bottom: auto;
+      "
+      src="https://i.pinimg.com/736x/fc/10/9f/fc109f15659d06e03c984036dc1ec528.jpg"
+      alt="" />
+  </body>
+  <script>
+    function moveLeft() {
+      let obj = document.getElementById("nobita");
+      obj.style.left = parseInt(obj.style.left) - 5 + "px";
+    }
+    function moveRight() {
+      let obj = document.getElementById("nobita");
+      obj.style.left = parseInt(obj.style.left) + 5 + "px";
+    }
+    function moveTop() {
+      let obj = document.getElementById("nobita");
+      obj.style.top = parseInt(obj.style.top) - 5 + "px";
+    }
+    function moveBot() {
+      let obj = document.getElementById("nobita");
+      obj.style.top = parseInt(obj.style.top) + 5 + "px";
+    }
+
+    function keyPressed(evt) {
+      switch (evt.code) {
+        case "ArrowLeft":
+          moveLeft();
+          break;
+        case "ArrowRight":
+          moveRight();
+          break;
+        case "ArrowUp":
+          moveTop();
+          break;
+        case "ArrowDown":
+          moveBot();
+          break;
+      }
+    }
+    window.addEventListener("keydown", keyPressed);
+  </script>
+</html>

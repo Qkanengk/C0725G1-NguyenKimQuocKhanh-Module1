@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        padding: 5px;
+      }
+      button {
+        width: 40px;
+      }
+      .input {
+        width: 170px;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 5px;
+    ">
+    <fieldset>
+      <legend>MÁY TÍNH ĐƠN GIẢN</legend>
+      <input class="input" id="input" type="text" disabled />
+      <div>
+        <button onclick="press('1')">1</button>
+        <button onclick="press('2')">2</button>
+        <button onclick="press('3')">3</button>
+        <button onclick="press('+')">+</button>
+      </div>
+      <div>
+        <button onclick="press('4')">4</button>
+        <button onclick="press('5')">5</button>
+        <button onclick="press('6')">6</button>
+        <button onclick="press('-')">-</button>
+      </div>
+      <div>
+        <button onclick="press('7')">7</button>
+        <button onclick="press('8')">8</button>
+        <button onclick="press('9')">9</button>
+        <button onclick="press('*')">x</button>
+      </div>
+      <div>
+        <button onclick="press('AC')">AC</button>
+        <button onclick="press('0')">0</button>
+        <button onclick="cal()">=</button>
+        <button onclick="press('/')">/</button>
+      </div>
+    </fieldset>
+  </body>
+  <script>
+    function press(key) {
+      let input = document.getElementById("input");
+
+      if (key == "AC") {
+        input.value = "";
+      } else {
+        input.value += key;
+      }
+    }
+
+    function cal() {
+      let result = document.getElementById("input");
+
+      result.value = eval(input.value);
+    }
+  </script>
+</html>

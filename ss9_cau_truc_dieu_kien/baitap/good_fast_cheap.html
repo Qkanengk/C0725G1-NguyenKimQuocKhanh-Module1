@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+      }
+
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+      }
+
+      .btn1:checked + .slider {
+        background-color: #89c279;
+      }
+
+      .btn2:checked + .slider {
+        background-color: #5675bf;
+      }
+
+      .btn3:checked + .slider {
+        background-color: #be5561;
+      }
+
+      input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+      }
+
+      /* Rounded sliders */
+      .slider.round {
+        border-radius: 34px;
+      }
+
+      .slider.round:before {
+        border-radius: 50%;
+      }
+      div {
+        height: 40px;
+        width: 150px;
+        display: flex;
+
+        align-items: center;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label class="switch">
+        <input class="btn1" id="btn1" onchange="pressed1()" type="checkbox" />
+        <span class="slider round"></span>
+      </label>
+      <h2>Good</h2>
+    </div>
+    <div>
+      <label class="switch">
+        <input class="btn2" id="btn2" onchange="pressed2()" type="checkbox" />
+        <span class="slider round"></span>
+      </label>
+      <h2>Fast</h2>
+    </div>
+    <div>
+      <label class="switch">
+        <input class="btn3" id="btn3" onchange="pressed3()" type="checkbox" />
+        <span class="slider round"></span>
+      </label>
+      <h2>Cheap</h2>
+    </div>
+  </body>
+  <script>
+    function pressed1() {
+      if (
+        document.getElementById("btn1").checked &&
+        document.getElementById("btn2").checked
+      ) {
+        document.getElementById("btn3").checked = false;
+      }
+    }
+    function pressed2() {
+      if (
+        document.getElementById("btn2").checked &&
+        document.getElementById("btn3").checked
+      ) {
+        document.getElementById("btn1").checked = false;
+      }
+    }
+    function pressed3() {
+      if (document.getElementById("btn3").checked) {
+        document.getElementById("btn2").checked = false;
+      }
+    }
+  </script>
+</html>

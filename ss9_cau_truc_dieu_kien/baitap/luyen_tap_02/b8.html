@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- kiem tra co phai diem co 1 nguoi ko -->
+    <script>
+      let age = parseInt(prompt("Nhap tuoi:"));
+      function check(age) {
+        if (age > 0 && age <= 120) {
+          alert(`${age} la tuoi cua mot nguoi`);
+        } else alert(`${age} khong phai la tuoi cua mot nguoi`);
+      }
+      check(age);
+    </script>
+  </body>
+</html>

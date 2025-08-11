@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- thue thu nhap ca nhan -->
+    <script>
+      let income = Number(prompt("Nhap thu nhap cu ban(VND)"));
+
+      function calc(income) {
+        let tax;
+        if (income > 32000000) {
+          tax = income * (25 / 100);
+        } else if (income > 18000000) {
+          tax = income * (20 / 100);
+        } else if (income > 10000000) {
+          tax = income * (15 / 100);
+        } else if (income > 5000000) {
+          tax = income * (10 / 100);
+        } else {
+          tax = income * (5 / 100);
+        }
+
+        alert(`Thue thu nhap ca nhan cua ban la: ${tax}VND`);
+      }
+
+      calc(income);
+    </script>
+  </body>
+</html>
