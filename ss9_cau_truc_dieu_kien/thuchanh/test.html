@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style>
+      form {
+        width: 300px;
+        padding: 10px;
+        background-color: lightgray;
+      }
+
+      div {
+        margin-top: 20px;
+        width: 250px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      h2 {
+        margin-left: 110px;
+      }
+
+      p {
+        text-align: center;
+        font-size: 12px;
+        color: red;
+        margin-top: 0px;
+      }
+
+      button {
+        background-color: gray;
+        border: 1px solid yellow;
+        color: white;
+      }
+
+      div span {
+        color: green;
+      }
+
+      #idCross {
+        color: red;
+      }
+
+      #nameCross {
+        color: red;
+      }
+
+      #ageCross {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <h2>Đăng ký</h2>
+      <div>
+        <label for="id">ID</label>
+        <input id="id" name="id" onblur="checkValidate()" />
+        <span id="idTick"></span>
+        <span id="idCross"></span>
+      </div>
+      <p id="idError"></p>
+      <div>
+        <label for="name">name</label>
+        <input id="name" name="name" onblur="checkValidate()" />
+        <span id="nameTick"></span>
+        <span id="nameCross"></span>
+      </div>
+      <p id="nameError"></p>
+      <div>
+        <label for="age">Age</label>
+        <input id="age" name="age" onblur="checkValidate()" />
+        <span id="ageTick"></span>
+        <span id="ageCross"></span>
+      </div>
+      <p id="ageError"></p>
+      <div style="justify-content: center">
+        <button disabled type="submit" id="btn-save">Save</button>
+      </div>
+    </form>
+  </body>
+  <script>
+    function checkValidate() {
+      checkID();
+      checkAge();
+      checkName();
+      allow();
+    }
+    function checkID() {
+      if (document.getElementById("id").value === "") {
+        document.getElementById("idCross").innerHTML = "x";
+        document.getElementById("idTick").innerHTML = "";
+        document.getElementById("idError").innerHTML = "khong duoc bo trong";
+      } else {
+        document.getElementById("idError").innerHTML = "";
+        document.getElementById("idCross").innerHTML = "";
+        document.getElementById("idTick").innerHTML = "v";
+      }
+    }
+    function checkName() {
+      if (document.getElementById("name").value === "") {
+        document.getElementById("nameCross").innerHTML = "x";
+        document.getElementById("nameTick").innerHTML = "";
+        document.getElementById("nameError").innerHTML = "khong duoc bo trong";
+      } else {
+        document.getElementById("nameTick").innerHTML = "v";
+        document.getElementById("nameCross").innerHTML = "";
+        document.getElementById("nameError").innerHTML = "";
+      }
+    }
+    function checkAge() {
+      if (document.getElementById("age").value === "") {
+        document.getElementById("ageTick").innerHTML = "";
+        document.getElementById("ageCross").innerHTML = "x";
+        document.getElementById("ageError").innerHTML = "khong duoc bo trong";
+      } else {
+        document.getElementById("ageTick").innerHTML = "v";
+        document.getElementById("ageCross").innerHTML = "";
+        document.getElementById("ageError").innerHTML = "";
+      }
+    }
+
+    function allow() {
+      if (
+        document.getElementById("name").value !== "" &&
+        document.getElementById("age").value !== "" &&
+        document.getElementById("id").value !== ""
+      ) {
+        document.getElementById("btn-save").disabled = false;
+      }
+      if (
+        document.getElementById("name").value == "" ||
+        document.getElementById("age").value == "" ||
+        document.getElementById("id").value == ""
+      ) {
+        document.getElementById("btn-save").disabled = true;
+      }
+    }
+  </script>
+</html>

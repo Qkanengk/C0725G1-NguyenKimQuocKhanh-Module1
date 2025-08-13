@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      td {
+        text-align: left;
+        width: 90px;
+        padding: 6px;
+        border: 1px solid black;
+      }
+      table {
+        border: 1px solid black;
+        border-collapse: collapse;
+        table-layout: fixed; /* đảm bảo width của ô được tôn trọng */
+        width: 640px; /* 8 cột * 80px */
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let sout = "<table>";
+      for (let i = 1; i <= 10; i++) {
+        // hàng
+        sout += "<tr>";
+        for (let j = 2; j <= 9; j++) {
+          // cột
+          sout += "<td>" + `${j} x ${String(i)} = ${j * i}` + "</td>";
+        }
+        sout += "</tr>";
+      }
+      sout += "</table>";
+
+      document.write(sout);
+    </script>
+  </body>
+</html>

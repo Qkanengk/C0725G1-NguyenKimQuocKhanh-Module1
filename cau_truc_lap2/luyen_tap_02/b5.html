@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let sotien = Number(prompt("nhap so tien ban dau cho vay"));
+      let thang = Number(prompt("nhap so thang cho vay"));
+      let laisuat = Number(prompt("nhap lai suat hang thang"));
+      function calc(tien, thang, lai) {
+        let tong;
+        let temp = tien;
+
+        for (let i = 0; i < thang; i++) {
+          tong = tien + tien * (lai / 100);
+          tien = tong;
+        }
+
+        alert(`Tien lai la : ${tong - temp}VND`);
+      }
+
+      calc(sotien, thang, laisuat);
+    </script>
+  </body>
+</html>

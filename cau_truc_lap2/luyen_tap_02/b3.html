@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j <= i; j++) {
+          document.write(`*`);
+        }
+        document.write(`<br>`);
+      }
+
+      document.write("<br>");
+
+      for (let k = 5; k >= 1; k--) {
+        for (let l = 1; l <= k; l++) {
+          document.write(`*`);
+        }
+        document.write(`<br>`);
+      }
+
+      document.write("<br>");
+
+      for (let i = 1; i <= 5; i++) {
+        document.write(" ");
+        for (let s = 1; s <= 5 - i; s++) {
+          document.write("&ensp;");
+        }
+
+        for (let j = 1; j <= i; j++) {
+          document.write(`*`);
+        }
+        document.write(`<br>`);
+      }
+
+      document.write("<br>");
+
+      for (let k = 5; k >= 1; k--) {
+        for (let s = 1; s <= 5 - k; s++) {
+          document.write("&ensp;");
+        }
+
+        for (let l = 1; l <= k; l++) {
+          document.write(`*`);
+        }
+        document.write(`<br>`);
+      }
+
+      document.write("<br>");
+    </script>
+  </body>
+</html>
