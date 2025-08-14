@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JS Bin</title>
+    <style>
+      body {
+        padding-top: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <input type="text" id="txtValue" />
+    <input type="button" id="btnAdd" value="Add" onclick="add()" />
+    <input
+      type="button"
+      id="btnDisplay"
+      value="Display"
+      onclick="display_array()" />
+    <div id="result"></div>
+  </body>
+  <script>
+    let x = 0;
+    let arr = [];
+    function add() {
+      arr[x] = document.getElementById("txtValue").value;
+      alert("Element: " + arr[x] + " Added at index " + x);
+      x += 1;
+      document.getElementById("txtValue ").value = "";
+    }
+    let display = "<br>";
+    function display_array() {
+      for (let i = 0; i < arr.length; i++) {
+        display += arr[i] + "<br>";
+      }
+      document.getElementById("result").innerHTML = display;
+    }
+  </script>
+</html>
