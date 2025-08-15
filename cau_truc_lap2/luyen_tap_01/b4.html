@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <script>
+      let n;
+      do {
+        n = +prompt("Nhap n ");
+        if (n <= 0 || Number.isInteger(n) === false) {
+          alert("Nhap lai");
+        } else {
+          break;
+        }
+      } while (true);
+      check(n);
+
+      function check(n) {
+        let i = 0;
+        let j = 1;
+        let x;
+        let cnt = 0;
+        while (dem < n) {
+          x = i + j;
+          if (x % 5 === 0) {
+            cnt++;
+            document.write(
+              "So thu " +
+                cnt +
+                " trong day fibo chia het cho 5 la: " +
+                x +
+                "<br>"
+            );
+          }
+          i = j;
+          j = x;
+        }
+      }
+    </script>
+  </body>
+</html>

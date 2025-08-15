@@ -13,29 +13,35 @@
 
   <body>
     <input type="text" id="txtValue" />
-    <input type="button" id="btnAdd" value="Add" onclick="add()" />
+    <input
+      type="button"
+      id="btnAdd"
+      value="Add"
+      onclick="add_element_to_array();" />
     <input
       type="button"
       id="btnDisplay"
       value="Display"
-      onclick="display_array()" />
+      onclick="display_array();" />
     <div id="result"></div>
   </body>
+
   <script>
+    let arr = new Array();
     let x = 0;
-    let arr = [];
-    function add() {
+    function add_element_to_array() {
       arr[x] = document.getElementById("txtValue").value;
-      alert("Element: " + arr[x] + " Added at index " + x);
-      x += 1;
-      document.getElementById("txtValue ").value = "";
+
+      alert(`Da them ${arr[x]} vao index so ${x}`);
+      x++;
     }
-    let display = "<br>";
+    let tmp = "<hr>";
     function display_array() {
       for (let i = 0; i < arr.length; i++) {
-        display += arr[i] + "<br>";
+        tmp += arr[i];
+        tmp += "<br><hr>";
       }
-      document.getElementById("result").innerHTML = display;
+      document.getElementById("result").innerHTML = tmp;
     }
   </script>
 </html>

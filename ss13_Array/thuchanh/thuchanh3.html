@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let value = +prompt("Enter a number: ");
+      let numbers = [-3, 5, 1, 3, 2, 10];
+      let index;
+
+      function find(value, number) {
+        for (let i = 0; i < number.length; i++) {
+          if (value == number[i]) {
+            index = i;
+            return true;
+          }
+        }
+        return false;
+      }
+      if (find(value, numbers)) {
+        alert(`Value ${value} at  index ${index}`);
+      } else alert("not found");
+    </script>
+  </body>
+</html>
