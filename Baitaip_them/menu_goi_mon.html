@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let choice;
+      let sum = 0;
+      let list = "";
+      while (choice != 4) {
+        choice = Number(
+          prompt(`-----------------Menu-----------------
+            Hay nhap so de chon do uong
+            1.Cafe: 10k
+            2.Cacao: 15k
+            .Nuoc cam: 20k
+            4.Ket thuc
+          ----------Danh sach da chon----------
+            ${list}
+        
+            Tong tien: ${sum}k`)
+        );
+        switch (choice) {
+          case 1:
+            sum += 10;
+            list += `Cafe
+            `;
+            break;
+          case 2:
+            list += `Cacao
+            `;
+            sum += 15;
+            break;
+          case 3:
+            list += `Nuoc cam
+            `;
+            sum += 20;
+            break;
+        }
+      }
+      if (choice == 4) {
+        confirm(`-----Danh sach da chon-----
+        ${list}
+        Tong tien: ${sum}k`);
+      }
+    </script>
+  </body>
+</html>
