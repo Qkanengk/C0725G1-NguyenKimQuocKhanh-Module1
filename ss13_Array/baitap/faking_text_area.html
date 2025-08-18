@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center>
+      <h2>Type anything slowly</h2>
+      <form id="form">
+        <textarea
+          id="txtValue"
+          cols="40"
+          rows="10"
+          onkeydown="typeTextarea();"></textarea>
+      </form>
+    </center>
+  </body>
+  <script>
+    var a = [
+      "T",
+      "Ô",
+      "I",
+      " ",
+      "L",
+      "À",
+      " ",
+      "M",
+      "Ộ",
+      "T",
+      " ",
+      "Đ",
+      "Ứ",
+      "A",
+      " ",
+      "N",
+      "G",
+      "Ố",
+      "C",
+      "!",
+      "!",
+      "!",
+    ];
+    let after = "";
+    function typeTextarea() {
+      let text = document.getElementById("txtValue").value;
+      let length = text.length;
+      if (length > 0) {
+        for (let i = 0; i < length; i++) {
+          after += a[i];
+
+          if (i === 22) {
+            after = "";
+            document.getElementById("txtValue").value = "";
+          }
+        }
+      }
+      document.getElementById("txtValue").value = after;
+      after = "";
+      setTimeout(typeTextarea, 0.5); // chỉnh tốc độ
+    }
+  </script>
+</html>

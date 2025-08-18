@@ -7,7 +7,7 @@
   </head>
   <body>
     <p id="text"></p>
-    <button id="changeValue">Change value</button>
+    <button onclick="changeValue()">Change value</button>
   </body>
   <script>
     let draw = document.getElementById("text");
@@ -15,7 +15,7 @@
     let data = "";
 
     for (let i = 0; i < 5; i++) {
-      board[i] = Array(0, 0, 0, 0, 0);
+      board[i] = new Array(0, 0, 0, 0, 0);
     }
 
     for (let i = 0; i < 5; i++) {
@@ -23,8 +23,37 @@
       for (let j = 0; j < 5; j++) {
         data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
       }
+      data += "<br>";
+      draw.innerHTML = data;
     }
 
-    draw.innerHTML = data;
+    function changeValue() {
+      let x1 = prompt("Nhap diem x");
+      let y1 = prompt("Nhap diem y");
+      let x2 = prompt("Nhap diem x");
+      let y2 = prompt("Nhap diem y");
+      board[x1][y1] = "X";
+      board[x2][y2] = "O";
+      data = "";
+      for (let i = 0; i < 5; i++) {
+        data += "<br>";
+        for (let j = 0; j < 5; j++) {
+          data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+        }
+        data += "<br>";
+        draw.innerHTML = data;
+      }
+    }
+
+    function win(board) {
+      for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 5; j++) {
+          if (board[i][j].include("x")) {
+            alert("OK");
+          }
+        }
+      }
+    }
+    win(board);
   </script>
 </html>
