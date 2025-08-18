@@ -27,21 +27,18 @@
   </body>
 
   <script>
-    let arr = new Array();
     let x = 0;
+    let arr = new Array();
     function add_element_to_array() {
       arr[x] = document.getElementById("txtValue").value;
-
-      alert(`Da them ${arr[x]} vao index so ${x}`);
       x++;
     }
-    let tmp = "<hr>";
     function display_array() {
+      let e = "<br>";
       for (let i = 0; i < arr.length; i++) {
-        tmp += arr[i];
-        tmp += "<br><hr>";
+        e += arr[i] + "<br>";
       }
-      document.getElementById("result").innerHTML = tmp;
+      document.getElementById("result").innerHTML = e;
     }
   </script>
 </html>

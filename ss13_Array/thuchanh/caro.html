@@ -18,26 +18,26 @@
     for (let i = 0; i < 5; i++) {
       data += "<br>";
       for (let j = 0; j < 5; j++) {
-        data += board[i][j] + "&ensp;&ensp;";
+        data += board[i][j] + "&nbsp;&nbsp;&nbsp;";
       }
+
+      draw.innerHTML = data;
     }
-    data += "<br><br>";
-    draw.innerHTML = data;
 
     function changeValue() {
-      let x = +prompt("Nhap toa do x");
-      let y = +prompt("Nhap toa do y");
-      data = "";
-      board[x][y] = "x";
+      let x = Number(prompt("Nhao x"));
+      let y = Number(prompt("Nhap y"));
 
+      board[x][y] = "x";
+      data = "";
       for (let i = 0; i < 5; i++) {
         data += "<br>";
         for (let j = 0; j < 5; j++) {
-          data += board[i][j] + "&ensp;&ensp;";
+          data += board[i][j] + "&nbsp;&nbsp;&nbsp;";
         }
+        data += "<br><br>";
+        draw.innerHTML = data;
       }
-      data += "<br><br>";
-      draw.innerHTML = data;
     }
   </script>
 </html>
