@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Viết chương trình khởi tạo hoặc nhập vào một mảng số nguyên gồm 10 phần tử.
+      Nhập hoặc tạo một phần tử số nguyên V. Chương trình kiểm tra xem V có thuộc mảng đã cho không.
+        Nếu V thuộc mảng, 
+        xóa V khỏi mảng (dịch các phần tử bên phải V sang vị trí của V và gán 0 cho phần tử cuối cùng của mảng). -->
+    <script>
+      let arr = Array(10);
+      for (let i = 0; i < arr.length; i++) {
+        arr[i] = parseInt(prompt(`Nhap gia tri cua index ${i}`));
+      }
+      let numV = parseInt(prompt("Nhap so V"));
+
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === numV) {
+          alert("V co nam trong mang, da xoa V");
+
+          for (let j = i; j < arr.length - 1; j++) {
+            arr[j] = arr[j + 1];
+          }
+          arr[arr.length - 1] = 0;
+        }
+      }
+      alert(arr);
+    </script>
+  </body>
+</html>

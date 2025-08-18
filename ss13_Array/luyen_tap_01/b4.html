@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Viết chương trình khởi tạo hoặc nhập vào một mảng số nguyên
+      và đảo ngược các phần tử trong mảng. -->
+    <script>
+      let input = prompt("Nhap chuoi cac so nguyen");
+      let arr = input.split("").map(Number);
+      let first = 0;
+      let last = arr.length - 1;
+      let temp;
+
+      for (let i = 0; i < arr.length / 2; i++) {
+        temp = arr[first];
+        arr[first] = arr[last];
+        arr[last] = temp;
+        first++;
+        last--;
+      }
+      console.log(arr);
+    </script>
+  </body>
+</html>

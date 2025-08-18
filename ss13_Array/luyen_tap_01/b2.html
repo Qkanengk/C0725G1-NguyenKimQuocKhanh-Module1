@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Viết chương trình khởi tạo một mảng số nguyên gồm 10 phần tử khác nhau.
+      Chương trình hiển thị phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.-->
+    <script>
+      let arr = [1, 10, 20, 9, 40, 11, 3, 5, 6, 2];
+      let max = 0;
+      let index = 0;
+
+      for (let i = 0; i < arr.length; i++) {
+        if (max < arr[i]) {
+          max = arr[i];
+          index++;
+        } else max = max;
+      }
+      alert(`Gia tri lon nhat trong mang la so: ${max} nam o index ${index}`);
+    </script>
+  </body>
+</html>

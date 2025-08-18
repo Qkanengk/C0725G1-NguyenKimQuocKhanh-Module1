@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Viết chương trình khởi tạo một mảng số nguyên.
+      Hiển thị giá trị lớn nhất trong mảng đó. 
+      In ra giá trị trung bình của các phần tử trong mảng.-->
+    <script>
+      let arr = [1, 2, 3, 4, 10, 23, 43, 12, 13, 13];
+      let max = 0;
+      let sum = 0;
+      for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+        if (max < arr[i]) {
+          max = arr[i];
+        } else max = max;
+      }
+      let avg = sum / arr.length;
+
+      alert(
+        `giá trị lớn nhất trong mảng: ${max}, giá trị trung bình của các phần tử trong mảng = ${avg}`
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Từ điển</legend>
+      <input type="text" placeholder="Nhập từ bạn muốn tra" id="input" />
+      <button type="button" onclick="check()">Tim kiem</button>
+      <p id="result"></p>
+    </fieldset>
+  </body>
+  <script>
+    let tiengViet = ["xin chao", "tam biet", "may man", "biet", "tieng Anh"];
+    let tiengAnh = ["hello", "goodbye", "lucky", "know", "english"];
+    function check() {
+      let result;
+      let input = document.getElementById("input").value;
+      for (let i = 0; i < tiengAnh.length; i++) {
+        if (input === tiengAnh[i]) {
+          result = tiengViet[i];
+          break;
+        } else result = "Không tìm thấy";
+      }
+
+      document.getElementById("result").innerHTML = result;
+    }
+  </script>
+</html>

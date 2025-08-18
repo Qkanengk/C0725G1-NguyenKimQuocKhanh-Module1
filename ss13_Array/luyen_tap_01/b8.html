@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Viết chương trình khởi tạo hoặc nhập vào một mảng số nguyên gồm 10 phần tử. 
+     Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị mảng đã được sắp xếp. -->
+    <script>
+      let arr = Array(10);
+      for (let i = 0; i < arr.length; i++) {
+        arr[i] = parseInt(prompt(`Nhap gia tri cua index ${i}`));
+      }
+      alert(
+        `Mang da duoc sap xep theo thu tu giam dan:[${arr.sort(
+          (a, b) => b - a
+        )}]`
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Viết chương trình khởi tạo hoặc nhập vào một mảng số nguyên gồm 10 phần tử. 
+     Nhập hoặc tạo một phần tử số nguyên V. Chương trình tìm xem V có nằm trong mảng không.
+            Nếu V thuộc mảng, in ra: "V is in the array".
+            Nếu không, in ra: "V is not in the array". -->
+    <script>
+      let arr = Array(10);
+      for (let i = 0; i < arr.length; i++) {
+        arr[i] = parseInt(prompt(`Nhap gia tri cua index thu ${i}`));
+      }
+
+      let numV = parseInt(prompt("Nhap so nguyen V"));
+
+      if (arr.includes(numV)) {
+        alert("V is in the array");
+      } else alert("V is not in the array");
+    </script>
+  </body>
+</html>

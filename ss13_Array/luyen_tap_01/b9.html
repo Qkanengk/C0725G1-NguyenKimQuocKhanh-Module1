@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Viết chương trình khởi tạo hoặc nhập vào hai mảng số nguyên gồm 10 phần tử (gọi là mảng a và b).
+        Tạo mảng c gồm 20 phần tử.
+        Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c.
+        Hiển thị mảng c. -->
+    <script>
+      let a = Array(10);
+      let b = Array(10);
+      for (let i = 0; i < a.length; i++) {
+        a[i] = parseInt(prompt(`Nhap gia tri cua index ${i} trong mang A`));
+      }
+      for (let i = 0; i < b.length; i++) {
+        b[i] = parseInt(prompt(`Nhap gia tri cua index ${i} trong mang B`));
+      }
+      let c = a.concat(b);
+      alert(`Mang C la: [${c}]`);
+    </script>
+  </body>
+</html>

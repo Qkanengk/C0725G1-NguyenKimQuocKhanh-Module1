@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Viết chương trình khởi tạo một mảng số nguyên gồm 10 phần tử. 
+     Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10. -->
+
+    <script>
+      let arr = [10, 1, 2, 3, 4.2, 5, -1, 20, 11.2, 21];
+      let cnt = 0;
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] >= 10 && Number.isInteger(arr[i])) {
+          cnt++;
+        }
+      }
+      alert(`${cnt} so nguyen lon hon 10`);
+    </script>
+  </body>
+</html>
