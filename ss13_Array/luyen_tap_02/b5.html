@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Viết chương trình nhập vào 2 chuỗi, 
+     kiểm tra xem hai chuỗi có giống nhau không. -->
+    <script>
+      let a = prompt("Nhap vao chuoi 1");
+      let b = prompt("Nhap vao chuoi 2");
+
+      let arrA = a.split("");
+      let arrB = b.split("");
+      let count = 0;
+      if (arrA.length !== arrB.length) {
+        alert(`Hai chuoi khong giong nhau`);
+      } else {
+        let same = true;
+        for (let i = 0; i < arrA.length; i++) {
+          if (arrA[i] !== arrB[i]) {
+            same = false;
+            break;
+          }
+        }
+        if (same) {
+          alert(`Hai chuoi giong nhau`);
+        } else alert(`Hai chuoi khong giong nhau`);
+      }
+    </script>
+  </body>
+</html>

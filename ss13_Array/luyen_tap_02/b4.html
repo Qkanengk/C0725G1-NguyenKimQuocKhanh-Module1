@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Viết chương trình đếm số từ trong một chuỗi. -->
+    <script>
+      let input = prompt("Nhap chuoi cu ban:");
+      let arr = input.split("");
+      let count = 0;
+      for (let i = 0; i < arr.length; i++) {
+        if (/[a-zA-z]/.test(arr[i])) {
+          count++;
+        }
+      }
+
+      alert(`So ki tu trong chuoi la: ${count} ki tu`);
+    </script>
+  </body>
+</html>

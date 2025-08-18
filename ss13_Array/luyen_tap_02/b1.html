@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Viết chương trình khởi tạo mảng 2 chiều với một bộ phần tử có sẵn, 
+     sau đó in ra các phần tử trong mảng.-->
+    <script>
+      let a = [
+        [1, 2, 1, 24],
+        [8, 11, 9, 4],
+        [7, 0, 7, 27],
+        [7, 4, 28, 14],
+        [3, 10, 26, 7],
+      ];
+
+      for (let i = 0; i < 5; i++) {
+        document.write(`<br> row "${i}"`);
+        for (let j = 0; j < 4; j++) {
+          document.write(`<br> "${a[i][j]}"`);
+        }
+      }
+    </script>
+  </body>
+</html>

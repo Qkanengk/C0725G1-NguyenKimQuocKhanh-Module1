@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Viết chương trình in các ký tự trong một mảng theo thứ tự đảo ngược. -->
+    <script>
+      let n = parseInt(prompt("Nhap do dai cua mang"));
+      let arr = Array(n);
+
+      for (let i = 0; i < n; i++) {
+        arr[i] = prompt(`Nhap ki tu cho index ${i}`);
+      }
+
+      let first = 0;
+      let last = n - 1;
+      let temp;
+      for (let i = 0; i < n / 2; i++) {
+        temp = arr[first];
+        arr[first] = arr[last];
+        arr[last] = temp;
+        first++;
+        last--;
+      }
+      alert(`Mang da duoc dao nguoc: ${arr}`);
+    </script>
+  </body>
+</html>

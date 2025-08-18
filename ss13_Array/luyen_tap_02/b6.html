@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Viết chương trình nhập vào một mảng ký tự, tìm tất cả các ký tự '-' 
+     trong mảng và thay thế chúng bằng ký tự '_'. -->
+    <script>
+      let n = parseInt(prompt(`Nhap do dai cua mang ki tu`));
+      let arr = Array(n);
+      for (let i = 0; i < n; i++) {
+        arr[i] = prompt(`Nhap ki tu o index so ${i}`);
+      }
+      let count = 0;
+      for (let i = 0; i < n; i++) {
+        if (arr[i] === "-") {
+          arr[i] = "_";
+        }
+      }
+      alert(arr);
+    </script>
+  </body>
+</html>

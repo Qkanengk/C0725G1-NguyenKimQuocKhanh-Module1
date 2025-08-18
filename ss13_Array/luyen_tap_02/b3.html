@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Viết chương trình khai báo một mảng ký tự và kích thước của mảng.
+
+                Yêu cầu: Đếm số ký tự số (0-9) trong mảng. -->
+    <script>
+      let n = parseInt(prompt("Nhap chieu dai cua mang"));
+      let arr = Array(n);
+      let numbers = "0123456789";
+
+      for (let i = 0; i < n; i++) {
+        arr[i] = prompt(`Nhap ki tu cho index ${i}`);
+      }
+      let count = 0;
+      for (let i = 0; i < n; i++) {
+        if (numbers.includes(arr[i])) {
+          count++;
+        }
+      }
+      alert(`số ký tự số (0-9) trong mảng: ${count} số`);
+    </script>
+  </body>
+</html>
