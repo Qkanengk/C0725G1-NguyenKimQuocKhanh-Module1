@@ -6,54 +6,121 @@
     <title>Document</title>
   </head>
   <body>
-    <p id="text"></p>
-    <button onclick="changeValue()">Change value</button>
-  </body>
-  <script>
-    let draw = document.getElementById("text");
-    let board = [];
-    let data = "";
+    <p id="result"></p>
+    <script>
+      let arr = Array(6);
 
-    for (let i = 0; i < 5; i++) {
-      board[i] = new Array(0, 0, 0, 0, 0);
-    }
-
-    for (let i = 0; i < 5; i++) {
-      data += "<br>";
-      for (let j = 0; j < 5; j++) {
-        data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
-      }
-      data += "<br>";
-      draw.innerHTML = data;
-    }
-
-    function changeValue() {
-      let x1 = prompt("Nhap diem x");
-      let y1 = prompt("Nhap diem y");
-      let x2 = prompt("Nhap diem x");
-      let y2 = prompt("Nhap diem y");
-      board[x1][y1] = "X";
-      board[x2][y2] = "O";
-      data = "";
-      for (let i = 0; i < 5; i++) {
-        data += "<br>";
-        for (let j = 0; j < 5; j++) {
-          data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+      for (let i = 0; i < arr.length; i++) {
+        arr[i] = Array(6);
+        for (let j = 0; j < arr[i].length; j++) {
+          arr[i][j] = "";
         }
-        data += "<br>";
-        draw.innerHTML = data;
       }
-    }
+      let win = false;
+      let player = true;
+      function play(i, j) {
+        if (arr[i][j] === "") {
+          if (player) {
+            arr[i][j] = "X";
+            player = false;
+            display();
 
-    function win(board) {
-      for (let i = 0; i < 5; i++) {
-        for (let j = 0; j < 5; j++) {
-          if (board[i][j].include("x")) {
-            alert("OK");
+            if (checkWin()) {
+              setTimeout(() => {
+                alert("X win ");
+                reset();
+              }, 80);
+            }
+          } else {
+            arr[i][j] = "O";
+            player = true;
+            display();
+            if (checkWin()) {
+              setTimeout(() => {
+                alert("O win ");
+                reset();
+              }, 80);
+            }
+          }
+        } else alert("O nay danh roi");
+      }
+      display();
+
+      function display() {
+        let tableString = `<table border="1" style="border-collapse: collapse">`;
+        for (let i = 0; i < arr.length; i++) {
+          tableString += `<tr>`;
+          for (let j = 0; j < arr[i].length; j++) {
+            tableString += `<td onclick="play(${i},${j})" style="width: 40px;height: 40px;text-align: center">${arr[i][j]}</td>`;
+          }
+          tableString += `</tr>`;
+        }
+        tableString += `</table>`;
+        document.getElementById("result").innerHTML = tableString;
+      }
+
+      function checkWin() {
+        const size = arr.length;
+
+        //ngang
+        for (let i = 0; i < size; i++) {
+          for (let j = 0; j <= size - 3; j++) {
+            if (
+              arr[i][j] !== "" &&
+              arr[i][j] === arr[i][j + 1] &&
+              arr[i][j] === arr[i][j + 2]
+            ) {
+              return true;
+            }
+          }
+        }
+        //doc
+        for (let i = 0; i < size; i++) {
+          for (let j = 0; j <= size - 3; j++) {
+            if (
+              arr[i][j] !== "" &&
+              arr[i][j] === arr[i + 1][j] &&
+              arr[i][j] === arr[i + 2][j]
+            ) {
+              return true;
+            }
+          }
+        }
+        //cheo phai
+        for (let i = 0; i < size; i++) {
+          for (let j = 0; j <= size - 3; j++) {
+            if (
+              arr[i][j] !== "" &&
+              arr[i][j] === arr[i + 1][j + 1] &&
+              arr[i][j] === arr[i + 2][j + 2]
+            ) {
+              return true;
+            }
+          }
+        }
+        //cheo trai
+        for (let i = 0; i < size; i++) {
+          for (let j = 0; j <= size - 3; j++) {
+            if (
+              arr[i][j] !== "" &&
+              arr[i][j] === arr[i + 1][j - 1] &&
+              arr[i][j] === arr[i + 2][j - 2]
+            ) {
+              return true;
+            }
           }
         }
       }
-    }
-    win(board);
-  </script>
+
+      function reset() {
+        for (let i = 0; i < arr.length; i++) {
+          arr[i] = Array(6);
+          for (let j = 0; j < arr[i].length; j++) {
+            arr[i][j] = "";
+          }
+        }
+        display();
+      }
+    </script>
+  </body>
 </html>
