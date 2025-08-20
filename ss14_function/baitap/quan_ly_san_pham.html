@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 100%;
+        height: 40px;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        text-align: center;
+        width: 300px;
+      }
+      tr:nth-child(even) {
+        background-color: antiquewhite;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+      }
+      .input-group {
+        display: flex;
+        align-items: center;
+      }
+
+      .input {
+        min-height: 50px;
+        max-width: 150px;
+        padding: 0 1rem;
+        color: #000;
+        font-size: 15px;
+        border: 1px solid #5e4dcd;
+        border-radius: 6px 0 0 6px;
+        background-color: transparent;
+      }
+
+      .button--submit {
+        min-height: 50px;
+        padding: 0.5em 1em;
+        border: none;
+        border-radius: 0 6px 6px 0;
+        background-color: #5e4dcd;
+        color: #fff;
+        font-size: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .button--submit:hover {
+        background-color: #5e5dcd;
+      }
+
+      .input:focus,
+      .input:focus-visible {
+        border-color: #3898ec;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Add new product</h2>
+    <div class="input-group">
+      <input
+        id="newProduct"
+        type="text"
+        class="input"
+        placeholder="new product" />
+      <input
+        id="add-btn"
+        onclick="addProduct()"
+        class="button--submit"
+        value="Add"
+        type="button" />
+    </div>
+
+    <h2>Display all product</h2>
+    <div style="display: flex; justify-content: space-between; width: 400px">
+      <p style="font-weight: 800">Product name</p>
+      <p style="font-weight: 800" id="numberOfProduct"></p>
+    </div>
+
+    <div class="container">
+      <p id="display"></p>
+    </div>
+
+    <script>
+      let product = [];
+
+      function displayProduct(product) {
+        let tableString = `<table >`;
+        for (let i = 0; i < product.length; i++) {
+          tableString += `<tr>`;
+          for (let j = 0; j < 1; j++) {
+            tableString += `<td onclick="getProduct('${product[i]}');">${product[i]}</td>
+                            <td>
+                              <input onclick="editProduct('${product[i]}')"
+                                      class="button--submit"
+                                      value="Edit"
+                                      type="button" />
+                                      </td>
+                              <td>
+                                <input onclick="deleteProduct('${product[i]}')"
+                                         class="button--submit"
+                                         value="Delete"
+                                         type="button" />
+                                         </td>`;
+          }
+          tableString += `</tr>`;
+        }
+        tableString += `</table>`;
+        document.getElementById("display").innerHTML = tableString;
+      }
+
+      displayProduct(product);
+
+      function addProduct() {
+        let newProduct = document.getElementById("newProduct").value;
+        if (newProduct === "") {
+          alert("Vui long nhap ten san pham");
+        } else {
+          product.push(newProduct);
+          document.getElementById("newProduct").value = "";
+          console.log(product);
+          displayProduct(product);
+          document.getElementById("newProduct").value = "";
+          numberOfProduct();
+        }
+      }
+
+      function getProduct(value) {
+        document.getElementById("newProduct").value = value;
+      }
+
+      function editProduct(value) {
+        while (document.getElementById("newProduct").value !== "") {
+          product[product.indexOf(value)] =
+            document.getElementById("newProduct").value;
+          displayProduct(product);
+          document.getElementById("newProduct").value = "";
+          numberOfProduct();
+        }
+      }
+
+      function deleteProduct(value) {
+        product.splice(product.indexOf(value), 1);
+        displayProduct(product);
+        numberOfProduct();
+      }
+
+      function numberOfProduct() {
+        document.getElementById(
+          "numberOfProduct"
+        ).innerHTML = `${product.length} products`;
+      }
+    </script>
+  </body>
+</html>
