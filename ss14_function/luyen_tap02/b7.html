@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Đổi chỗ hai số nguyên:
+
+        Viết hàm truyền vào 2 số nguyên bất kỳ và thực hiện đổi chỗ hai số đó. -->
+    <script>
+      let a = parseInt(prompt("Nhap so a"));
+      let b = parseInt(prompt("Nhap so b"));
+
+      function change(a, b) {
+        let temp = a;
+        a = b;
+        b = temp;
+        document.write(`${a},${b}`);
+      }
+      change(a, b);
+    </script>
+  </body>
+</html>

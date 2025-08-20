@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Tính diện tích và chu vi hình tròn:
+
+        Viết hàm tính diện tích hình tròn.
+        Viết hàm tính chu vi hình tròn.
+        Gọi và kiểm tra các hàm vừa viết.  -->
+
+    <script>
+      let r = Number(prompt("Nhap r"));
+      function chuVi(r) {
+        const pi = 3.14;
+        let result = 2 * pi * r;
+        document.write(`\n Chu vi = ${result}`);
+      }
+      function dienTich(r) {
+        const pi = 3.14;
+        let result = pi * r * r;
+        document.write(`\n Dien tich = ${result}`);
+      }
+
+      chuVi(r);
+      dienTich(r);
+    </script>
+  </body>
+</html>

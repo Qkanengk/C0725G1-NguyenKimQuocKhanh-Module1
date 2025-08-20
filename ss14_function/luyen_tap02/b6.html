@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Kiểm tra số nguyên dương:
+        Viết hàm nhận vào một số, 
+        kiểm tra xem số đó có phải là số nguyên dương không.
+        Nếu là nguyên dương, trả về true; 
+        ngược lại trả về false.-->
+    <script>
+      let number = parseInt(prompt("Nhap so ban can check"));
+      function check(num) {
+        if (num > 0) {
+          return true;
+        } else return false;
+      }
+      document.write(check(number));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Tính giai thừa:
+
+    Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào.
+    Gọi và kiểm tra hàm vừa viết. -->
+    <script>
+      let num = parseInt(prompt("Nhap so bat ki"));
+
+      function calc(num) {
+        let result = 1;
+        for (let i = 1; i <= num; i++) {
+          result *= i;
+        }
+        document.write(`${num}! = ${result}`);
+      }
+      calc(num);
+    </script>
+  </body>
+</html>

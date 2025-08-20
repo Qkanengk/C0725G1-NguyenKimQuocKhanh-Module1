@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Kiểm tra ký tự trong mảng:
+
+Viết hàm nhận vào một mảng ký tự và một ký tự bất kỳ.
+Kiểm tra xem ký tự đó có nằm trong mảng hay không.
+Nếu có, trả về số lần xuất hiện; nếu không, trả về -1. -->
+    <script>
+      let input = prompt("Nhap mang ki tu");
+      let kiTu = prompt(
+        "Nhap vao mot ki tu de kiem tra co trong mang vua nhap khong"
+      );
+
+      function check(str, a) {
+        let arr = str.split("");
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] === a) {
+            count++;
+          }
+        }
+        if (count === 0) {
+          alert("-1");
+        } else alert(`ki tu xuat hien ${count} lan`);
+      }
+      check(input, kiTu);
+    </script>
+  </body>
+</html>
