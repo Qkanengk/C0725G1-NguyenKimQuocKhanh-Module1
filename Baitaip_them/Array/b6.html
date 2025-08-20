@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Viết 1 hàm truyền vào 1 tham số (với tham số là một chuỗi), (
+     checkString(str))							
+    Hàm trả về mảng các ký tự là nguyên âm có trong mảng -->
+    <script>
+      let input = prompt("Nhap chuoi");
+      let arr = input.split("");
+      let temp = [];
+      let nguyenAm = "ueoaiUEOAI";
+      function check(arr) {
+        let temp = [];
+        for (let i = 0; i < arr.length; i++) {
+          if (nguyenAm.includes(arr[i])) {
+            temp.push(arr[i]);
+          }
+        }
+        return temp;
+      }
+
+      console.log(check(arr));
+    </script>
+  </body>
+</html>

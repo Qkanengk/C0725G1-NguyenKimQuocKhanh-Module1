@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Tạo một mảng gồm bảy phần tử dạng chuỗi, chứa tên các ngôi sao:
+    Polaris, Aldebaran, Deneb, Vega, Altair, Dubhe, Regulus.
+
+    Tạo một mảng khác gồm bảy phần tử dạng chuỗi, chứa tên các chòm sao tương ứng:
+    Ursa Minor, Taurus, Cygnus, Lyra, Aquila, Ursa Major, Leo.
+
+    Tạo một hàm nhận vào một tham số dạng chuỗi. 
+    Trong hàm, duyệt qua mảng đầu tiên để tìm tên ngôi sao. 
+    Nếu tìm thấy, trả lại tên chòm sao tương ứng từ mảng thứ hai.
+
+    Trong phần <body> của trang web, 
+    sử dụng hộp thoại prompt để người dùng nhập tên ngôi sao, 
+    sau đó gọi hàm với thông tin đầu vào.
+
+    Yêu cầu:
+
+    Nếu tìm thấy ngôi sao, hiển thị tên chòm sao trên màn hình.
+    Nếu không tìm thấy, xử lý và hiển thị thông báo phù hợp. -->
+
+    <script>
+      let input = prompt("Nhap ten ngoi sao");
+
+      function find(str) {
+        let found = false;
+        let constellation = [
+          "Ursa Minor",
+          "Taurus",
+          "Cygnus",
+          "Lyra",
+          "Aquila",
+          "Ursa Major",
+          "Leo",
+        ];
+        let star = [
+          "Polaris",
+          "Aldebaran",
+          "Deneb",
+          "Vega",
+          "Altair",
+          "Dubhe",
+          "Regulus",
+        ];
+
+        if (star.includes(str)) {
+          for (let i = 0; i < star.length; i++) {
+            if (star[i] === str) {
+              document.write(
+                `ngoi sao ${star[i]} nam o chon sao ${constellation[i]}`
+              );
+            }
+          }
+        } else alert("khong co ngoi sao nay");
+      }
+      find(input);
+    </script>
+  </body>
+</html>

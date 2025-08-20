@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Khai báo  1 mảng số nguyên từ bàn phím với độ dài n. 												
+Nhập các phần tử cho  mảng với  một số nguyên lớn hơn 10 và nhỏ hơn 100.												
+Hiện thị mảng sau khi thêm mới các phần tử												
+Viết chương trình hiện thị các phần tử của mảng có hàng đơn vị lớp hơn hàng chục ví dụ: 
+[11, 12, 21 , 56, 19] => kết quả hiện thị ra 12,56,19 -->
+    <script>
+      let n = parseInt(prompt("Nhap n"));
+      let arr = Array(n);
+      for (let i = 0; i < n; i++) {
+        arr[i] = parseInt(prompt(`Nhap gia tri tai index ${i}`));
+      }
+
+      function check(arr) {
+        let temp = [];
+        for (let i = 0; i < arr.length; i++) {
+          if (Number(String(arr[i]).split("").reverse().join("")) > arr[i]) {
+            temp.push(arr[i]);
+          }
+        }
+
+        return temp;
+      }
+      console.log(check(arr));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Viết 1 hàm truyền vào 1 tham số (với tham số là một mảng 1 chiều), 
+     (checkArrray(arr))									
+    "Thực hiện kiểm tra.
+    "									
+    +Nếu từng phần tử ở vị trí 1/2 mảng  sau có giá trị bằng bình phương từng phần tử đầu 
+    thì trả về "true",									
+    "
+    + Nếu bất kỳ vị trí nào không đúng điều kiện thì trả  về ""false"""									
+    + Nếu mảng có số phần tử lẻ => false-->
+    <script>
+      let n = parseInt(prompt("Nhap n"));
+      let arr = Array(n);
+      for (let i = 0; i < arr.length; i++) {
+        arr[i] = parseInt(prompt(`Nhap gia tri tai index ${i}`));
+      }
+
+      function checkArrray(arr) {
+        let count = 0;
+        if (arr.length % 2 === 0) {
+          let first = 0;
+          let second = arr.length / 2;
+          for (let i = 0; i < arr.length / 2; i++) {
+            if (Math.pow(arr[first], 2) === arr[second]) {
+              first++;
+              second++;
+              count++;
+            } else {
+              first++;
+              second++;
+            }
+          }
+          if (count === arr.length / 2) {
+            return true;
+          }
+          return false;
+        } else return false;
+      }
+      console.log(checkArrray(arr));
+    </script>
+  </body>
+</html>

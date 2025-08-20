@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="result"></p>
+    <!-- Tạo hàm nhận vào một đối số dạng số, 
+     tăng giá trị của đối số lên 1 và trả về giá trị sau khi tăng. 
+     Gọi hàm từ trong phần <body> của trang web và hiển thị kết quả lên màn hình. -->
+    <script>
+      let input = Number(prompt("Nhap vao mot so"));
+      increase(input);
+      function increase(a) {
+        a++;
+        return a;
+      }
+      document.getElementById("result").innerHTML = increase(input);
+    </script>
+  </body>
+</html>

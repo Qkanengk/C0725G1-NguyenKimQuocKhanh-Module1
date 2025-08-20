@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Nhập 1 mảng từ bàn phím với độ dài n (với n là số chẵn)										
+            Hiện thị mảng sau khi thêm mới các phần tử										
+        "Kiểm tra mảng vừa nhập. Nếu các cặp phần ở liền kề nhau 
+    (phần tử thứ nhất <phần tử thứ 2) thì hiện thị thông báo ""OK"",
+            nếu không thoả mãn thì hiện thị ""NO"""										
+Ví dụ: [1,2,6,7,5,8] => OK ( vì cặp (1,2), (6,7),(5,8) thoả mãn vì  phần tử thứ nhất nhỏ hơn phần tử thứ 2										
+	[1,2,6,7,8,4]=> NO vì cặp (8,4) không thoả mãn)	-->
+    <script>
+      let n = parseInt(prompt("Nhap so n chi het cho 2"));
+
+      let arr = Array(n);
+      let test = true;
+      for (let i = 0; i < n; i++) {
+        arr[i] = parseInt(prompt(`Nhap gia tri tai index ${i}`));
+      }
+
+      for (let i = 0; i < n; i += 2) {
+        if (arr[i] > arr[i + 1]) {
+          test = false;
+        }
+      }
+
+      if (test) {
+        alert("OK");
+      } else alert("NO");
+    </script>
+  </body>
+</html>

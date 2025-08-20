@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Viết 1 hàm truyền vào 1 tham số 
+     (với tham số là một chuỗi), (checkString(str))									
+        "Thực hiện kiểm tra. 
+    Nếu số ký tự in Hoa bằng ký tự in thường  thì trả về true. 
+    Ngược lại trả về false -->
+    <script>
+      let input = prompt("Nhap chuoi");
+      let arr = input.split("");
+      function check(arr) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+          if (/[a-z]/.test(`'${arr[i]}'`)) {
+            count++;
+          }
+          if (/[A-Z]/.test(`'${arr[i]}'`)) {
+            count--;
+          }
+        }
+        if (count === 0) {
+          return true;
+        } else return false;
+      }
+
+      console.log(check(arr));
+    </script>
+  </body>
+</html>

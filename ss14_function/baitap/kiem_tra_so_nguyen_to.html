@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let number = parseInt(prompt("Nhap so ban can check"));
+      function check(number) {
+        let isPrime = false;
+        let count = 0;
+        if (number > 1) {
+          if (number === 2) {
+            isPrime = true;
+          } else
+            for (let i = 2; i < Math.sqrt(number); i++) {
+              if (number % i == 0) {
+                count++;
+              }
+            }
+          if (count !== 1) {
+            isPrime = true;
+          }
+        }
+
+        if (isPrime) {
+          alert(`${number} la so nguyen to`);
+        } else alert(`${number} khong phai la so nguyen to`);
+      }
+      console.log(check(number));
+    </script>
+  </body>
+</html>
