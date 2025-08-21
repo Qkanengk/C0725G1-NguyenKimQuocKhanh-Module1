@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let input = prompt("Nhap vao chuoi ban can kiem tra");
+
+      function isPalindrome(str) {
+        let arr = str.split("");
+        let first = 0;
+        let last = arr.length - 1;
+        let count = 0;
+
+        for (let i = 0; i < Math.round(arr.length / 2); i++) {
+          if (arr[first] === arr[last]) {
+            first++;
+            last--;
+            count++;
+          } else break;
+        }
+        if (count === Math.round(arr.length / 2)) {
+          return true;
+        } else return false;
+      }
+
+      console.log(isPalindrome(input));
+    </script>
+  </body>
+</html>
