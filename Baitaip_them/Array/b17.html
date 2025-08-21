@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Viết 1 hàm truyền vào 1 tham số (với tham số là một chuỗi), (checkString(str))											
+        Hàm trả về Từ viết tắt của chuỗi									
+        Nếu chuỗi chỉ có 1 từ thì trả về từ đó . 
+            Ví dụ   : "Hello"=> "Hello"									
+        Nếu chuỗi từ 2 từ trở lên thì trả về chuỗi gồm các ký tự đầu tiên của một từ. 
+            Ví dụ:" Object Oriented Programming" => OOP	 -->
+    <script>
+      let str = prompt("nhap chuoi cua ban");
+
+      function checkString(str) {
+        let arr = str.split("");
+        let key = arr[0];
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] === " ") {
+            key += arr[i + 1];
+          }
+        }
+        return key;
+      }
+      console.log(checkString(str));
+    </script>
+  </body>
+</html>

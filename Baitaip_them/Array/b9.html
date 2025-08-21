@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Nhập 1 mảng từ bàn phím với độ dài n															
+        Hiện thị mảng sau khi thêm mới các phần tử															
+        Đếm số lượng số có giá trị bằng giá trinh trung bình của mảng. 
+        Ví dụ [1,2,2,3,3,5,4,4] 
+        => số lượng số bằng với giá trị trung bình của các phần tử trong mảng là 2 
+        ( vì giá trị trung bình các phần tử trong mảng là 3=> số 3 xuất hiện 2 lần)"-->
+    <script>
+      let n = +prompt("Nhap n");
+
+      let arr = Array(n);
+      for (let i = 0; i < n; i++) {
+        arr[i] = parseInt(prompt(`Nhap gia tri cua index ${i}`));
+      }
+
+      function check(arr) {
+        let sum = 0;
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+          sum += arr[i];
+        }
+        let avg = sum / arr.length;
+
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] === avg) {
+            count++;
+          }
+        }
+        // console.log(avg);
+
+        alert(
+          `số lượng số bằng với giá trị trung bình của các phần tử trong mảng là ${count}`
+        );
+      }
+
+      check(arr);
+    </script>
+  </body>
+</html>

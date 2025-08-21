@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Nhập 1 mảng từ bàn phím với độ dài n									
+        Hiện thị mảng sau khi thêm mới các phần tử									
+        Hiện thị các số chính phương có trong mảng 
+        ( Số chính phương là các số ví dụ 1,4,9,16,25,36,49……) -->
+
+    <script>
+      let n = parseInt(prompt("Nhap chieu dai cua mangs"));
+      let arr = Array(n);
+      for (let i = 0; i < n; i++) {
+        arr[i] = parseInt(prompt(`Nhap gia tri tai index ${i}`));
+      }
+      alert(arr);
+
+      function check(arr) {
+        let newArr = [];
+        for (let i = 0; i < arr.length; i++) {
+          if (
+            Math.pow(Math.sqrt(arr[i]), 2) === arr[i] &&
+            Number.isInteger(Math.sqrt(arr[i]))
+          ) {
+            newArr.push(arr[i]);
+          }
+        }
+        alert(newArr);
+      }
+      check(arr);
+    </script>
+  </body>
+</html>

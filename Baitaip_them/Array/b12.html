@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Viết hàm truyền vào tham số là một chuỗi.. checkDate(dateString) 									
+    Kiểm tra xem chuối nhập vào dateString có phải là 
+    định dạng của ngày tháng năm hay không ( dd/mm/yyyy)									
+    Nếu đúng return true, sai return false	-->
+    <script>
+      let input = prompt("Nhap ngay thang nam (dd/mm/yyyy)");
+
+      function checkDate(dateString) {
+        let arr = dateString.split("");
+        for (let i = 0; i < arr.length; i++) {
+          if (/[0-9]/.test(arr[i]) && arr[2] === "/" && arr[5] === "/") {
+            return true;
+          }
+          return false;
+        }
+      }
+      console.log(checkDate(input));
+    </script>
+  </body>
+</html>

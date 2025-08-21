@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Viết 1 hàm truyền vào 1 tham số (với tham số là một chuỗi), 
+        (checkString(str))									
+        Hàm trả về mảng các ký tự không phải là số[0,….9] 
+        và không phải là ký tự alphabet[a…z,A,…Z]-->
+
+    <script>
+      let input = prompt("Nhap chuoi cua ban");
+
+      function check(str) {
+        let arr = str.split("");
+        let newArr = [];
+        for (let i = 0; i < arr.length; i++) {
+          if (
+            /[a-z]/.test(arr[i]) === false &&
+            /[A-Z]/.test(arr[i]) === false &&
+            /[0-9]/.test(arr[i]) === false
+          ) {
+            newArr.push(arr[i]);
+          }
+        }
+        console.log(newArr);
+      }
+      check(input);
+    </script>
+  </body>
+</html>
