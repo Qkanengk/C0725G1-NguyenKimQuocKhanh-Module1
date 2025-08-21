@@ -28,6 +28,10 @@
         align-items: center;
       }
 
+      .container {
+        margin-top: 10px;
+      }
+
       .input {
         min-height: 50px;
         max-width: 150px;
@@ -64,18 +68,42 @@
   </head>
   <body>
     <h2>Add new product</h2>
-    <div class="input-group">
-      <input
-        id="newProduct"
-        type="text"
-        class="input"
-        placeholder="new product" />
-      <input
-        id="add-btn"
-        onclick="addProduct()"
-        class="button--submit"
-        value="Add"
-        type="button" />
+    <div class="container">
+      <div class="input-group">
+        <input
+          id="newProduct"
+          type="text"
+          class="input"
+          placeholder="new product" />
+        <input
+          id="add-btn"
+          onclick="addProduct()"
+          class="button--submit"
+          value="Add"
+          type="button" />
+      </div>
+    </div>
+    <div class="container">
+      <div id="edit-group" class="input-group" style="display: none">
+        <div class="container">
+          <h2>Edit product</h2>
+        </div>
+        <div class="container">
+          <input id="edit-input" type="text" class="input" placeholder="" />
+          <input
+            id="edit-btn"
+            onclick="updateProduct()"
+            class="button--submit"
+            value="Update"
+            type="button" />
+          <input
+            id="edit-btn"
+            onclick="cancel()"
+            class="button--submit"
+            value="Cancel"
+            type="button" />
+        </div>
+      </div>
     </div>
 
     <h2>Display all product</h2>
@@ -90,15 +118,15 @@
 
     <script>
       let product = [];
-
+      displayProduct(product);
       function displayProduct(product) {
         let tableString = `<table >`;
         for (let i = 0; i < product.length; i++) {
           tableString += `<tr>`;
           for (let j = 0; j < 1; j++) {
-            tableString += `<td onclick="getProduct('${product[i]}');">${product[i]}</td>
+            tableString += `<td>${product[i]}</td>
                             <td>
-                              <input onclick="editProduct('${product[i]}')"
+                              <input onclick="editProduct(${i})"
                                       class="button--submit"
                                       value="Edit"
                                       type="button" />
@@ -122,6 +150,8 @@
         let newProduct = document.getElementById("newProduct").value;
         if (newProduct === "") {
           alert("Vui long nhap ten san pham");
+        } else if (product.includes(newProduct)) {
+          alert("San pham da ton tai");
         } else {
           product.push(newProduct);
           document.getElementById("newProduct").value = "";
@@ -132,17 +162,28 @@
         }
       }
 
-      function getProduct(value) {
-        document.getElementById("newProduct").value = value;
+      function editProduct(index) {
+        editingIndex = index; // Lưu index
+        document.getElementById("edit-group").style.display = "";
+        document.getElementById("edit-input").value = product[index];
       }
 
-      function editProduct(value) {
-        while (document.getElementById("newProduct").value !== "") {
-          product[product.indexOf(value)] =
-            document.getElementById("newProduct").value;
+      function updateProduct() {
+        const newValue = document.getElementById("edit-input").value;
+        if (product.includes(newValue) && product[editingIndex] !== newValue) {
+          alert("San pham da ton tai");
           displayProduct(product);
-          document.getElementById("newProduct").value = "";
+        }
+        if (
+          newValue !== "" &&
+          editingIndex >= 0 &&
+          product.includes(newValue) === false
+        ) {
+          product[editingIndex] = newValue; // Cập nhật theo index
+          document.getElementById("edit-group").style.display = "none";
+          displayProduct(product);
           numberOfProduct();
+          editingIndex = -1; // Reset
         }
       }
 
@@ -156,6 +197,10 @@
         document.getElementById(
           "numberOfProduct"
         ).innerHTML = `${product.length} products`;
+      }
+      function cancel() {
+        document.getElementById("edit-group").style.display = "none";
+        document.getElementById("edit-input").value = "";
       }
     </script>
   </body>
