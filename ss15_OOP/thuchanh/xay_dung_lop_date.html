@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class MyDate {
+        constructor(day, month, year) {
+          this.day = day;
+          this.month = month;
+          this.year = year;
+        }
+
+        displayDate() {
+          document.write(`${this.day}/${this.month}/${this.year}`);
+        }
+
+        getDay() {
+          return this.day;
+        }
+        getMonth() {
+          return this.month;
+        }
+        getYear() {
+          return this.year;
+        }
+
+        setDay(newDay) {
+          this.day = newDay;
+        }
+
+        setMonth(newMonth) {
+          this.month = newMonth;
+        }
+
+        setYear(newYear) {
+          this.year = newYear;
+        }
+      }
+
+      let day1 = new MyDate(30, 2, 2005);
+      console.log(day1.getDay());
+      day1.setDay(20);
+      console.log(day1.getDay());
+      day1.displayDate();
+    </script>
+  </body>
+</html>

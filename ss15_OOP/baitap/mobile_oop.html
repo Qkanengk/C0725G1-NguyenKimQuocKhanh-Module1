@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Mobile {
+        constructor(battery, typing, inbox, sent) {
+          this.battery = battery;
+          this.typing = false;
+          this.inbox = inbox;
+          this.sent = sent;
+          this.status = true;
+        }
+        decreseBattery() {
+          this.battery = this.battery - 1;
+        }
+        toggleOnOff() {
+          this.decreseBattery();
+          this.status = !this.status;
+        }
+
+        checkOnOF() {
+          this.decreseBattery();
+          if (this.status) {
+            alert("This phone is on");
+          } else alert("This phone is off");
+        }
+
+        charge() {
+          this.battery = 100;
+        }
+
+        checkBattery() {
+          alert(`${this.battery}%`);
+        }
+
+        checkSent() {
+          this.decreseBattery();
+          alert(`Sent ${this.sent} messages`);
+        }
+
+        checkInbox() {
+          this.decreseBattery();
+          alert(`Receive ${this.inbox} messages`);
+        }
+
+        typing() {
+          this.decreseBattery();
+          this.typing = true;
+          alert("Type your message");
+        }
+
+        send() {
+          this.decreseBattery();
+          if (this.typing) {
+            alert("Sent!!!");
+            this.sent += 1;
+          } else alert("Please type message first");
+        }
+
+        receive(phone) {
+          this.decreseBattery();
+          this.inbox += 1;
+        }
+      }
+
+      let iPhone = new Mobile(10, false, 10, 11);
+      let input;
+      while (input !== 10) {
+        input = parseInt(
+          prompt(
+            `
+            1.Kiểm tra trạng thái điện thoại (bật/tắt).\n
+            2.Bật và tắt điện thoại.\n
+            3.Sạc pin.\n
+            4.Kiểm tra pin\n
+            5.Soạn tin nhắn.\n
+            6.Gửi tin nhắn tới một chiếc Mobile khác.\n
+            7.Nhận tin nhắn từ một chiếc Mobile khác.\n
+            8.Xem tin nhắn trong hộp thư đến.\n
+            9.Xem tin nhắn đã gửi.\n
+            10.Thoát`
+          )
+        );
+        switch (input) {
+          case 1:
+            iPhone.checkOnOF();
+            break;
+          case 2:
+            iPhone.toggleOnOff();
+            break;
+          case 3:
+            iPhone.charge();
+            break;
+          case 4:
+            iPhone.checkBattery();
+            break;
+          case 5:
+            iPhone.typing();
+            break;
+          case 6:
+            iPhone.send();
+            break;
+          case 7:
+            iPhone.receive();
+            break;
+          case 8:
+            iPhone.checkInbox();
+            break;
+          case 9:
+            iPhone.checkSent();
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>

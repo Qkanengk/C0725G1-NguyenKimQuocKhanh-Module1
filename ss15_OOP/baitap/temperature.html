@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Temperature {
+        constructor(cel) {
+          this.cel = cel;
+        }
+        celToF() {
+          return this.cel + 9 / 5 + 32 + "F";
+        }
+        celToK() {
+          return this.cel + 273.15 + "K";
+        }
+      }
+      let temp = new Temperature(100);
+      console.log(temp.celToF);
+      console.log(temp.celToK);
+    </script>
+  </body>
+</html>
