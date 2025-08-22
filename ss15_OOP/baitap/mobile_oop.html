@@ -14,6 +14,12 @@
           this.inbox = inbox;
           this.sent = sent;
           this.status = true;
+          this.message = "";
+          this.receive = "123 ";
+          this.device = "";
+        }
+        setReceive(message) {
+          this.receive = message;
         }
         decreseBattery() {
           this.battery = this.battery - 1;
@@ -48,27 +54,32 @@
           alert(`Receive ${this.inbox} messages`);
         }
 
-        typing() {
+        typeMessage() {
           this.decreseBattery();
           this.typing = true;
           alert("Type your message");
+          this.device = prompt("Enter your friend's device");
+          this.message = prompt("Enter message:");
         }
 
         send() {
           this.decreseBattery();
           if (this.typing) {
-            alert("Sent!!!");
+            alert(`Sent!!! Your message is: ${this.message}`);
+            this.device.this.setReceive(this.message);
             this.sent += 1;
           } else alert("Please type message first");
         }
 
-        receive(phone) {
+        receiveMessage() {
+          alert(this.receive);
           this.decreseBattery();
           this.inbox += 1;
         }
       }
 
       let iPhone = new Mobile(10, false, 10, 11);
+      let nokia = new Mobile(10, false, 10, 11);
       let input;
       while (input !== 10) {
         input = parseInt(
@@ -100,13 +111,13 @@
             iPhone.checkBattery();
             break;
           case 5:
-            iPhone.typing();
+            iPhone.typeMessage();
             break;
           case 6:
             iPhone.send();
             break;
           case 7:
-            iPhone.receive();
+            iPhone.receiveMessage();
             break;
           case 8:
             iPhone.checkInbox();

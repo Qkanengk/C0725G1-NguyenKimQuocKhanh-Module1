@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Mouse {
+        constructor(name, weight, speed) {
+          this.name = name;
+          this.weight = weight;
+          this.speed = speed;
+          this.status = true;
+        }
+        speak(string) {
+          alert(`"${string}"`);
+        }
+      }
+
+      class Cat {
+        constructor(name, weight, speed) {
+          this.name = name;
+          this.weight = weight;
+          this.speed = speed;
+        }
+        speak(string) {
+          alert(`${string}`);
+        }
+
+        eatMouse(mouse) {
+          if (mouse.status) {
+            this.weight += mouse.weight;
+            mouse.status = false;
+          } else {
+            alert("This mouse is dead!");
+          }
+        }
+        catchMouse(mouse) {
+          if (this.speed >= mouse.speed) {
+            this.eatMouse(mouse);
+          } else alert("This mouse too fast");
+        }
+      }
+
+      let tom = new Cat("Tom", 20, 100);
+      let jerry = new Mouse("Jerry", 10, 110);
+      tom.catchMouse(jerry);
+      console.log(jerry.status);
+      console.log(tom.weight);
+    </script>
+  </body>
+</html>
