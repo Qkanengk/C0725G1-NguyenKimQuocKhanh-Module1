@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 100%;
+        height: 40px;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        text-align: center;
+        width: 300px;
+      }
+      tr:nth-child(even) {
+        background-color: antiquewhite;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+      }
+      .input-group {
+        display: flex;
+        align-items: center;
+      }
+
+      .container {
+        margin-top: 10px;
+      }
+
+      .input {
+        min-height: 50px;
+        max-width: 150px;
+        padding: 0 1rem;
+        color: #000;
+        font-size: 15px;
+        border: 1px solid #5e4dcd;
+        border-radius: 6px 0 0 6px;
+        background-color: transparent;
+      }
+
+      .button--submit {
+        min-height: 50px;
+        padding: 0.5em 1em;
+        border: none;
+        border-radius: 0 6px 6px 0;
+        background-color: #5e4dcd;
+        color: #fff;
+        font-size: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .button--submit:hover {
+        background-color: #5e5dcd;
+      }
+
+      .input:focus,
+      .input:focus-visible {
+        border-color: #3898ec;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Add new product</h2>
+    <div class="container">
+      <div class="input-group">
+        <input
+          id="newProduct"
+          type="text"
+          class="input"
+          placeholder="new product" />
+        <input
+          id="add-btn"
+          onclick="p.addBtn()"
+          class="button--submit"
+          value="Add"
+          type="button" />
+      </div>
+    </div>
+    <div class="container">
+      <div id="edit-group" class="input-group" style="display: none">
+        <input id="edit-input" type="text" class="input" placeholder="" />
+        <input
+          id="edit-btn"
+          onclick="p.updateBtn()"
+          class="button--submit"
+          value="Update"
+          type="button" />
+        <input
+          id="edit-btn"
+          onclick="p.cancelBtn()"
+          class="button--submit"
+          value="Cancel"
+          type="button" />
+      </div>
+    </div>
+
+    <h2>Display all product</h2>
+    <div style="display: flex; justify-content: space-between; width: 400px">
+      <p style="font-weight: 800">Product name</p>
+      <p style="font-weight: 800" id="numberOfProduct">0 products</p>
+    </div>
+
+    <div class="container">
+      <p id="display"></p>
+    </div>
+
+    <script>
+      class Product {
+        constructor(productName) {
+          this.name = productName;
+        }
+      }
+
+      class ProductManager {
+        constructor() {
+          this.productList = [];
+          this.editingIndex = -1;
+        }
+
+        countProduct() {}
+
+        isExists(productName) {
+          for (let i = 0; i < this.productList.length; i++) {
+            if (
+              this.productList[i].toLowerCase() === productName.toLowerCase()
+            ) {
+              return true;
+            }
+          }
+          return false;
+        }
+
+        addProduct(productName) {
+          if (!productName.trim()) {
+            alert("Enter product name!");
+          }
+          if (this.isExists(productName)) {
+            alert("This product is exists!");
+            return false;
+          }
+          let newProduct = new Product(productName);
+          if (newProduct.name.trim()) {
+            this.productList.push(newProduct.name);
+            this.display();
+          }
+        }
+
+        deleteProduct(productName) {
+          if (
+            this.productList.findIndex(
+              (product) => product.name === productName
+            ) !== -1
+          ) {
+            this.productList.splice(
+              this.productList.findIndex(
+                (product) => product.name === productName
+              ),
+              1
+            );
+            this.display();
+          }
+        }
+        editProduct(index) {
+          this.editingIndex = index; // Lưu index
+          document.getElementById("edit-group").style.display = "";
+          document.getElementById("edit-input").value = this.productList[index];
+        }
+
+        updateProduct(productName, index) {
+          if (index !== -1) {
+            if (!productName.trim()) {
+              alert("Enter product name!");
+            }
+            if (this.isExists(productName)) {
+              alert("This product is exists!");
+              return false;
+            }
+            if (productName.trim()) {
+              this.productList[index] = productName;
+              this.display();
+              this.editingIndex = -1;
+            }
+          }
+        }
+
+        display() {
+          let tableString = `<table >`;
+          for (let i = 0; i < this.productList.length; i++) {
+            tableString += `<tr>`;
+            for (let j = 0; j < 1; j++) {
+              tableString += `<td>${this.productList[i]}</td>
+                            <td>
+                              <input onclick="p.editBtn(${i})"
+                                      class="button--submit"
+                                      value="Edit"
+                                      type="button" />
+                                      </td>
+                              <td>
+                                <input onclick="p.deleteBtn('${this.productList[i]}')"
+                                         class="button--submit"
+                                         value="Delete"
+                                         type="button" />
+                                         </td>`;
+            }
+            tableString += `</tr>`;
+          }
+          tableString += `</table>`;
+          document.getElementById("display").innerHTML = tableString;
+        }
+        addBtn() {
+          let productName = document.getElementById("newProduct").value;
+          this.addProduct(productName);
+          this.display();
+          document.getElementById("newProduct").value = "";
+          this.numberOfProduct();
+        }
+        deleteBtn() {
+          this.deleteProduct();
+          this.display();
+          document.getElementById("edit-group").style.display = "none";
+          document.getElementById("edit-input").value = "";
+          this.numberOfProduct();
+        }
+        editBtn(index) {
+          this.editProduct(index);
+        }
+
+        updateBtn() {
+          let productName = document.getElementById("edit-input").value;
+          this.updateProduct(productName, this.editingIndex);
+          this.display;
+          document.getElementById("edit-group").style.display = "none";
+          document.getElementById("edit-input").value = "";
+          this.numberOfProduct();
+        }
+
+        cancelBtn() {
+          document.getElementById("edit-group").style.display = "none";
+          document.getElementById("edit-input").value = "";
+        }
+        numberOfProduct() {
+          document.getElementById(
+            "numberOfProduct"
+          ).innerHTML = `${this.productList.length} products`;
+        }
+      }
+
+      let p = new ProductManager();
+    </script>
+  </body>
+</html>
