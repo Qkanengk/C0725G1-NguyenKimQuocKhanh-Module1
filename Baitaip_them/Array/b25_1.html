@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Bài 25	Nhập 1 mảng 2 chiều  từ bàn phím với độ dài m*n					
+	    Hiện thị mảng sau khi thêm mới các phần tử					
+	    Tính tổng cac phần tử 2 đường chéo của mảng	-->
+
+    <script>
+      let n = parseInt(prompt("Nhap so cot"));
+      let m = parseInt(prompt("Nhap so dong"));
+      let arr = [];
+      for (let i = 0; i < n; i++) {
+        arr[i] = new Array(m);
+        for (let j = 0; j < m; j++) {
+          arr[i][j] = Number(prompt(`Nhap gia tri tai index ${i}:${j}`));
+        }
+      }
+      function calc(arr) {
+        let firstSum = 0;
+        let secondSum = 0;
+
+        for (let i = 0; i < arr.length; i++) {
+          firstSum += arr[i][i];
+          secondSum += arr[i][arr.length - 1 - i];
+        }
+        let sum = firstSum + secondSum;
+        return sum;
+      }
+      console.log(calc(arr));
+    </script>
+  </body>
+</html>
+<!-- 
+1	2	3	4
+5	1	33	3
+2	5	2	3
+2	3	5	1 -->

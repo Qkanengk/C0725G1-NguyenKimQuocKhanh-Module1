@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Viết 1 hàm truyền vào 1 tham số (với tham số là một chuỗi), (checkString(str))							
+        Hàm trả về  một chuỗi là tất cả các ký tự in Hoa có trong chuỗi							
+        Ví dụ: Hello CoDeGym => HCDG-->
+
+    <script>
+      function checkString(str) {
+        let arr = str.split("");
+        let newarr = [];
+        for (let i = 0; i < arr.length; i++) {
+          if (/[A-Z]/.test(arr[i])) {
+            newarr.push(arr[i]);
+          }
+        }
+        let result = newarr.join("");
+        alert(result);
+      }
+      checkString("Hello CoDeGym");
+    </script>
+  </body>
+</html>

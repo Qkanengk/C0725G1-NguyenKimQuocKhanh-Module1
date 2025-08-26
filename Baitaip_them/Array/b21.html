@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Viết 1 hàm truyền vào 1 tham số (với tham dạng số), (changeBinary(num))							
+        Hàm trả về chuỗi là số nhị phân của tham số truyền vào	
+        Ví dụ: changeBinary(2) => "10"-->
+    <script>
+      function changeBinary(num) {
+        let tempArr = [];
+
+        while (num >= 1) {
+          tempArr.push(num % 2);
+          num = parseInt(num / 2);
+        }
+        let result = tempArr.reverse().join("");
+        return result;
+      }
+      console.log(changeBinary(12));
+    </script>
+  </body>
+</html>

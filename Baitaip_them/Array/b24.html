@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Nhập 1 mảng số từ bàn phím với độ dài n										
+        Hiện thị mảng sau khi thêm mới các phần tử										
+        Hiện thị một mảng mới 
+        ( mảng mới là 1 mảng mà mỗi phần tử 
+        là tổng các ước của mỗi phần tử của mảng cũ										
+        Ví dụ: [2,4,7,9,1] => [3,7,8,13,1]-->
+    <script>
+      let n = Number(prompt("Nhap n"));
+      let arr = new Array(n);
+      for (let i = 0; i < n; i++) {
+        arr[i] = parseInt(prompt(`Nhap gia tri tai index ${i}`));
+      }
+      function divisor(num) {
+        let sum = 0;
+        for (let i = 1; i <= num; i++) {
+          if (num % i === 0) {
+            sum += i;
+          }
+        }
+        return sum;
+      }
+      function sumDivisors(arr) {
+        let newArr = [];
+        for (let i = 0; i < arr.length; i++) {
+          newArr.push(divisor(arr[i]));
+        }
+        alert(newArr);
+      }
+
+      sumDivisors([2, 4, 7, 9, 1]);
+      sumDivisors(arr);
+    </script>
+  </body>
+</html>

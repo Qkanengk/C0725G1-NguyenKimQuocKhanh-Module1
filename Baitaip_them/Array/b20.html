@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Nhập 1 mảng số từ bàn phím với độ dài n				
+        Hiện thị mảng sau khi thêm mới các phần tử				
+        Tính tổng các phần tử tử chẵn và ở vị trí lẻ -->
+    <script>
+      let n = parseInt(prompt("Nhap n"));
+      let arr = new Array(n);
+      for (let i = 0; i < n; i++) {
+        arr[i] = Number(prompt(`Nhap gia tri tai index ${i}`));
+      }
+      alert(arr);
+      function isEven(num) {
+        if (num % 2 === 0) {
+          return true;
+        } else return false;
+      }
+
+      function calc(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+          if (isEven(arr[i]) && isEven(i) === false) {
+            sum += arr[i];
+          }
+        }
+        alert(sum);
+      }
+      calc(arr);
+    </script>
+  </body>
+</html>

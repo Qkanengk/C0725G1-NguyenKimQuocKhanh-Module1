@@ -18,12 +18,16 @@
       function checkString(str) {
         let arr = str.split("");
         let key = arr[0];
-        for (let i = 0; i < arr.length; i++) {
-          if (arr[i] === " ") {
-            key += arr[i + 1];
+        if (arr.includes(" ")) {
+          for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === " ") {
+              key += arr[i + 1];
+            }
           }
+          return key;
+        } else {
+          return arr.join("");
         }
-        return key;
       }
       console.log(checkString(str));
     </script>

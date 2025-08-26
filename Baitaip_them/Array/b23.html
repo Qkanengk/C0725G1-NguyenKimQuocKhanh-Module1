@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Viết 1 hàm truyền vào 1 tham số (với tham  số mảng), (checkArray(array))							
+        Hàm trả về  True nếu tất cả các phần tử trong mảng là số, 
+        ngược lại trả về False							
+        Ví dụ: checkArray([111,12,34,2] => True							
+        Ví dụ: checkArray([1a,12,34,2] => False	 -->
+    <script>
+      function checkArray(arr) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+          if (typeof (arr[i] === "number" && !isNaN(arr[i]))) {
+            count++;
+          } else return false;
+        }
+        if (count === arr.length) {
+          return true;
+        } else return false;
+      }
+      console.log(checkArray(["1a", 12, 34, 2]));
+    </script>
+  </body>
+</html>
