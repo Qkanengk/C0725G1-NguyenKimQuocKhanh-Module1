@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--    Nhập 2 số nguyên dương a và b. 
+            Sau đó in ra ước chung lớn nhất và bội chung nhỏ nhất 
+            của 2 số nguyên dương a và b đó. -->
+    <script>
+      let a = prompt("Nhap a");
+      let b = prompt("Nhap b");
+      let maxU = 1;
+      let minB;
+
+      for (let i = 1; i <= a; i++) {
+        if (a % i == 0 && b % i == 0) {
+          maxU = i;
+        }
+      }
+      minB = (a * b) / maxU;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--    Nhập vào một chuỗi ký tự  thực hiện công việc sau:
+            a. In ra chuỗi đảo ngược của chuỗi đã cho
+            b. Đổi chuổi đã cho sang chữ hoa
+            c. Đổi chuỗi đã cho sang chữ thường
+            d. Đổi chuỗi đã cho sang vừa chữ hoa vừa chữ thường 
+            (các ký tự chữ hoa thì thành chữ thường và ngược lại -->
+    <script>
+      let str = prompt("Nhap chuoi");
+      function reverseStr(str) {
+        let arr = str.split("");
+        arr.reverse();
+        return arr.join("");
+      }
+      function toUpper(str) {
+        return str.toUpperCase();
+      }
+      function toLower(str) {
+        return str.toLowerCase();
+      }
+      function lowerToUper(str) {
+        let arr = [];
+        for (let i = 0; i < str.length; i++) {
+          if (/[A-Z]/.test(str[i])) {
+            arr.push(str[i].toLowerCase());
+          }
+          if (/[a-z]/.test(str[i])) {
+            arr.push(str[i].toUpperCase());
+          }
+        }
+        return arr.join("");
+      }
+      console.log(lowerToUper(str));
+      console.log(reverseStr(str));
+      console.log(toLower(str));
+      console.log(toUpper(str));
+    </script>
+  </body>
+</html>

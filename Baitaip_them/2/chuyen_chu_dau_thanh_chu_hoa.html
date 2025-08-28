@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let str = "adsad asad ads";
+      function convertStr(str) {
+        if (!str.includes(" ")) {
+          alert("OK");
+        } else {
+          let arr = str.split("");
+          let newStr = arr[0].toUpperCase();
+          for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === " ") {
+              newStr += arr[i + 1].toUpperCase();
+            }
+          }
+          console.log(newStr);
+        }
+      }
+
+      convertStr(str);
+    </script>
+  </body>
+</html>

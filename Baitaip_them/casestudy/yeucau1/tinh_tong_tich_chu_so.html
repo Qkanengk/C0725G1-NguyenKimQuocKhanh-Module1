@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--    Tính tổng và tích các chữ số của một số nguyên dương m cho trước
+            (Ví dụ : m=234=> S=2+3+4=9, P=2*3*4=24 -->
+    <script>
+      let n = prompt("Nhap m");
+      let s = 0;
+      let p = 1;
+      for (let i = 0; i < n.length; i++) {
+        let chuSo = parseInt(n[i]);
+        s += chuSo;
+        p *= chuSo;
+      }
+      console.log(s, p);
+    </script>
+  </body>
+</html>

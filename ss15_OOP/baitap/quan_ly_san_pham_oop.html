@@ -235,7 +235,7 @@
         updateBtn() {
           let productName = document.getElementById("edit-input").value;
           this.updateProduct(productName, this.editingIndex);
-          this.display;
+          this.display();
           document.getElementById("edit-group").style.display = "none";
           document.getElementById("edit-input").value = "";
           this.numberOfProduct();

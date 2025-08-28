@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 100%;
+        height: 40px;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        text-align: center;
+        width: 300px;
+      }
+      tr:nth-child(even) {
+        background-color: antiquewhite;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+      }
+      .input-group {
+        display: flex;
+        align-items: center;
+      }
+
+      .container {
+        margin-top: 10px;
+      }
+
+      .input {
+        min-height: 50px;
+        max-width: 150px;
+        padding: 0 1rem;
+        color: #000;
+        font-size: 15px;
+        border: 1px solid #5e4dcd;
+        border-radius: 6px 0 0 6px;
+        background-color: transparent;
+      }
+
+      .button--submit {
+        min-height: 50px;
+        padding: 0.5em 1em;
+        border: none;
+        border-radius: 0 6px 6px 0;
+        background-color: #5e4dcd;
+        color: #fff;
+        font-size: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .button--submit:hover {
+        background-color: #5e5dcd;
+      }
+
+      .input:focus,
+      .input:focus-visible {
+        border-color: #3898ec;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>Nhap so dien thoai</h2>
+      <div class="container">
+        <div class="input-group">
+          <input
+            id="sodienthoai"
+            type="text"
+            class="input"
+            placeholder="so dien thoai" />
+          <input
+            id="add-btn"
+            onclick="p.addHandle()"
+            class="button--submit"
+            value="Add"
+            type="button" />
+        </div>
+      </div>
+      <h2>Nhap ten danh ba</h2>
+      <div class="container">
+        <div class="input-group">
+          <input
+            id="tendanhba"
+            type="text"
+            class="input"
+            placeholder="ten danh ba" />
+        </div>
+      </div>
+      <h2>Nhap dia chi</h2>
+      <div class="container">
+        <div class="input-group">
+          <input id="diachi" type="text" class="input" placeholder="dia chi" />
+        </div>
+      </div>
+
+      <div class="container">
+        <div id="edit-group" class="input-group" style="display: none">
+          <input id="edit-input" type="text" class="input" placeholder="" />
+          <input
+            id="edit-btn"
+            onclick="p.updateBtn()"
+            class="button--submit"
+            value="Update"
+            type="button" />
+        </div>
+      </div>
+    </div>
+
+    <h2>Danh sach danh ba</h2>
+    <div style="display: flex; justify-content: space-between; width: 400px">
+      <p style="font-weight: 800">So dien thoai</p>
+    </div>
+
+    <div class="container">
+      <p id="display"></p>
+    </div>
+
+    <script>
+      class DanhBa {
+        constructor(soDienThoai, ten, diaChi) {
+          this.phoneNumber = soDienThoai;
+          this.name = ten;
+          this.address = diaChi;
+        }
+      }
+      class QuanLyDanhBa {
+        constructor() {
+          this.danhBaList = [];
+          this.index = -1;
+        }
+        isExists(soDienThoai) {
+          for (let i = 0; i < this.danhBaList.length; i++) {
+            if (this.danhBaList[i].phoneNumber == soDienThoai) {
+              return true;
+            }
+          }
+          return false;
+        }
+        addDanhBa(soDienThoai, ten, diaChi) {
+          if (!soDienThoai.trim()) {
+            alert("Nhap so dien thoai!");
+          }
+          if (!ten.trim()) {
+            alert("Nhap ten danh ba!");
+          }
+          if (!diaChi.trim()) {
+            alert("Nhap dia chi!");
+          }
+          if (this.isExists(soDienThoai)) {
+            alert("So dien thoai da ton tai!");
+            return false;
+          } else {
+            let newDanhBa = new DanhBa(soDienThoai, ten, diaChi);
+            this.danhBaList.push(newDanhBa);
+          }
+        }
+        deleteDanhBa(soDienThoai) {
+          const index = this.danhBaList.findIndex(
+            (danhba) => danhba.soDienThoai === soDienThoai
+          );
+          if (index !== -1) {
+            this.danhBaList.splice(index, 1);
+          }
+        }
+        display() {
+          let tableString = `<table >`;
+          for (let i = 0; i < this.danhBaList.length; i++) {
+            tableString += `<tr>`;
+
+            tableString += `<td>${this.danhBaList[i].phoneNumber}</td>
+                              <td>${this.danhBaList[i].name}</td>
+                              <td>${this.danhBaList[i].address}</td>
+                            <td>
+                                <input onclick="p.deleteHandle('${this.danhBaList[i]}')"
+                                         class="button--submit"
+                                         value="Delete"
+                                         type="button" />
+                                         </td>`;
+            tableString += `</tr>`;
+          }
+          tableString += `</table>`;
+          document.getElementById("display").innerHTML = tableString;
+        }
+        addHandle() {
+          let soDienThoai = document.getElementById("sodienthoai").value;
+          let ten = document.getElementById("tendanhba").value;
+          let diaChi = document.getElementById("diachi").value;
+          this.addDanhBa(soDienThoai, ten, diaChi);
+          console.log(this.danhBaList);
+          this.display();
+        }
+        deleteHandle() {
+          this.deleteDanhBa();
+          this.display();
+          document.getElementById("sodienthoai").value = "";
+          document.getElementById("tendanhba").value = "";
+          document.getElementById("diachi").value = "";
+        }
+      }
+      let p = new QuanLyDanhBa();
+    </script>
+  </body>
+</html>

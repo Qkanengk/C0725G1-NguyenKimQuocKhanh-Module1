@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let n;
+
+      do {
+        n = parseInt(prompt("Nhap n <=15"));
+      } while (n % 3 !== 0 || n > 15 || n <= 0 || isNaN(n));
+      let arr = new Array(n);
+      for (let i = 0; i < n; i++) {
+        arr[i] = parseInt(prompt(`Nhap gia tri tai index ${i}`));
+      }
+      function isTriangle(a, b, c) {
+        if (a > 0 && b > 0 && c > 0) {
+          if (a + b > c && a + c > b && b + c > a) {
+            return true;
+          }
+        }
+      }
+      function isRightTriangle(a, b, c) {
+        if (isTriangle(a, b, c)) {
+          if (
+            Math.pow(a, 2) == Math.pow(b, 2) + Math.pow(c, 2) ||
+            Math.pow(a, 2) + Math.pow(b, 2) == Math.pow(c, 2) ||
+            Math.pow(a, 2) + Math.pow(c, 2) == Math.pow(b, 2)
+          ) {
+            return true;
+          }
+        }
+      }
+
+      function check(arr) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i += 3) {
+          if (isRightTriangle(arr[i], arr[i + 1], arr[i + 2])) {
+            count += 3;
+          }
+        }
+        if (count === arr.length) {
+          alert("OK");
+        } else alert("NO");
+      }
+      check(arr);
+    </script>
+  </body>
+</html>

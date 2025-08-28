@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--    Nhập một chuổi ký tự tuỳ ý, sau đó thực hiện công việc sau:
+            a. In mỗi từ trên mỗi dòng
+            b. Đếm số từ có trong chuổi đã cho.
+            b. Đưa ra bảng tần số xuất hiện của các từ. -->
+    <script>
+      let str = prompt("Nhap chuoi");
+      function count(str) {
+        let count = 0;
+        for (let i = 0; i < str.length; i++) {
+          count++;
+        }
+        return count;
+      }
+      function print(str) {
+        for (let i = 0; i < str.length; i++) {
+          document.write(`${str[i]}\n`);
+        }
+      }
+      function freq(str) {
+        let count = 0;
+        for (let i = 0; i < str.length; i++) {
+          if (str[i] === str[i + 1]) {
+            count++;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

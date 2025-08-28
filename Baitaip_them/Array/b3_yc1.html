@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--
+        +Nhập vào một chuỗi dạng số					
+        +Kiểm tra n phải là 1 số có 4 chữ số?					
+	        + Nếu không thoả mãn là 4 chữ số thì hiển thị thông báo "cần nhập số có 4 chữ sô"				
+	        + Nếu  thoả mãn là 4 chữ số tiếp tục thực hiện công việc:				
+	        Tìm ra một số có 3 chữ số từ n ( bằng cách xoá đi một chữ số bất kỳ của n) để có được 1 số là lớn nhất	 -->
+    <script>
+      let n;
+
+      do {
+        n = prompt("Nhap so n");
+      } while (n < 1000);
+      let max = 0;
+
+      1;
+      for (let i = 0; i < n.length; i++) {
+        let newNum = parseInt(n.slice(0, i) + n.slice(i + 1));
+        if (max < newNum) {
+          max = newNum;
+        }
+      }
+      console.log(max);
+    </script>
+  </body>
+</html>
