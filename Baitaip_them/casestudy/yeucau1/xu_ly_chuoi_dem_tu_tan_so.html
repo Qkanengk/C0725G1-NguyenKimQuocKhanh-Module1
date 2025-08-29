@@ -24,14 +24,29 @@
           document.write(`${str[i]}\n`);
         }
       }
-      function req(str) {
-        let count = 0;
-        for (let i = 0; i < str.length; i++) {
-          if (str[i] === str[i + 1]) {
-            count++;
+      function wordFrequency(text) {
+        // B1: Chuyển về chữ thường và loại bỏ dấu câu
+        text = text.toLowerCase().replace(/[.,!?]/g, "");
+
+        // B2: Tách thành mảng từ
+        let words = text.split("");
+
+        // B3: Đếm tần số bằng for truyền thống
+        let frequency = {};
+        for (let i = 0; i < words.length; i++) {
+          let word = words[i];
+          if (word) {
+            if (frequency[word] === undefined) {
+              frequency[word] = 1;
+            } else {
+              frequency[word]++;
+            }
           }
         }
+
+        return frequency;
       }
+      console.log(wordFrequency(str));
     </script>
   </body>
 </html>

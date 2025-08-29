@@ -9,10 +9,63 @@
     <!--    Viết chương trình thực hiện các công việc như sau :
             a. Nhập một mảng a gồm n phần tử kiểu nguyên int
             b. Tính tổng số dương lẻ mảng a
-            c. Tính tổng các số nguyên tố ở vị trí chắn. -->
+            c. Tính tổng các số nguyên tố ở vị trí chắn.
+            d. Nhập phần tử k, tìm xem k có xuất hiện trong mảng a không. Nếu có chỉ ra phần tử ở 
+            vị trí đầu tiên
+            e. Sắp sếp mảng a theo thứ tự tăng dần..
+            e. Chèn phần tử p vào mảng a sao cho mảng a vẫn đảm bảo tăng dần và xuất lại mảng a-->
     <script>
       let n = +promp("Nhap n");
       let arr = Array(n);
+      let k = +prompt("Nhap k");
+
+      function sapXep(arr) {
+        return arr.sort((a, b) => a - b);
+      }
+      function chen(arr) {
+        let p = +prompt("Nhap p");
+        arr.push(p);
+        sapXep(arr);
+      }
+
+      function checkK(arr, k) {
+        if (arr.indexOf(k) === 0) {
+          alert("OK");
+        }
+      }
+      function sumInt(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] > 0 && arr[i] % 2 == 1) {
+            sum += arr[i];
+          }
+        }
+      }
+      function sumPrime(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+          if (isPrime(arr[i]) && i % 2 == 0) {
+            sum += arr[i];
+          }
+        }
+      }
+      function isPrime(num) {
+        if (num > 1) {
+          let count = 0;
+          if (num === 2) {
+            return true;
+          } else if (num > 2) {
+            for (let i = 0; i < Math.sqrt(num); i++) {
+              if (num % i == 0) {
+                count++;
+              }
+            }
+            if (count == 1) {
+              return true;
+            } else return false;
+          }
+        } else return false;
+      }
     </script>
   </body>
 </html>

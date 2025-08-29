@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let str = prompt("Nhap chuoi");
+
+      function chuanHoa(str) {
+        str = str.trim();
+        let arr = str.split(/\s+/);
+        let longest = arr[0];
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i].lenght > longest.length) {
+            longest = arr[i];
+          }
+          let word = arr[i];
+
+          arr[i] = word.slice(0, 1).toUpperCase() + word.slice(1).toLowerCase();
+        }
+        console.log(longest);
+        console.log(arr.join(" "));
+      }
+      chuanHoa(str);
+    </script>
+  </body>
+</html>

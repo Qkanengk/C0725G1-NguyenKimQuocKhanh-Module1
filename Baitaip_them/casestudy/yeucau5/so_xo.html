@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <input type="text" size="5px" id="so1" />
+      <input type="text" size="5px" id="so2" />
+      <input type="text" size="5px" id="so3" />
+      <input type="text" size="5px" id="so4" />
+      <input type="text" size="5px" id="so5" />
+      <input type="text" size="5px" id="so6" />
+    </div>
+    <div class="container">
+      <input type="text" size="5px" id="win1" />
+      <input type="text" size="5px" id="win2" />
+      <input type="text" size="5px" id="win3" />
+      <input type="text" size="5px" id="win4" />
+      <input type="text" size="5px" id="win5" />
+      <input type="text" size="5px" id="win6" />
+    </div>
+    <div class="container">
+      <button onclick="v.muaVe()">Mua ve</button>
+      <button onclick="v.win()">Xem ket qua</button>
+    </div>
+    <script>
+      class VeSo {
+        constructor(so1, so2, so3, so4, so5, so6) {
+          this.so1 = so1;
+          this.so2 = so2;
+          this.so3 = so3;
+          this.so4 = so4;
+          this.so5 = so5;
+          this.so6 = so6;
+        }
+      }
+      class QuanLyVe {
+        constructor() {
+          this.listVeSo = [];
+        }
+        themVe(so1, so2, so3, so4, so5, so6) {
+          if (this.listVeSo.length <= 3) {
+            let newVeSo = new VeSo(so1, so2, so3, so4, so5, so6);
+            this.listVeSo.push(newVeSo);
+          } else alert("Da dat so ve toi da");
+        }
+
+        randomSo() {
+          let so1 = parseInt(Math.random() * 99);
+          let so2 = parseInt(Math.random() * 99);
+          let so3 = parseInt(Math.random() * 99);
+          let so4 = parseInt(Math.random() * 99);
+          let so5 = parseInt(Math.random() * 99);
+          let so6 = parseInt(Math.random() * 99);
+          this.themVe(so1, so2, so3, so4, so5, so6);
+          this.display(so1, so2, so3, so4, so5, so6);
+        }
+        nhapSo() {
+          let so1 = Number(prompt("Nhap so thu nhat"));
+          let so2 = Number(prompt("Nhap so thu hai"));
+          let so3 = Number(prompt("Nhap so thu ba"));
+          let so4 = Number(prompt("Nhap so thu tu"));
+          let so5 = Number(prompt("Nhap so thu nam"));
+          let so6 = Number(prompt("Nhap so thu sau"));
+          this.themVe(so1, so2, so3, so4, so5, so6);
+          this.display(so1, so2, so3, so4, so5, so6);
+        }
+        display(so1, so2, so3, so4, so5, so6) {
+          document.getElementById("so1").value = so1
+            .toString()
+            .padStart(2, "0");
+          document.getElementById("so2").value = so2
+            .toString()
+            .padStart(2, "0");
+          document.getElementById("so3").value = so3
+            .toString()
+            .padStart(2, "0");
+          document.getElementById("so4").value = so4
+            .toString()
+            .padStart(2, "0");
+          document.getElementById("so5").value = so5
+            .toString()
+            .padStart(2, "0");
+          document.getElementById("so6").value = so6
+            .toString()
+            .padStart(2, "0");
+        }
+        displayWin(so1, so2, so3, so4, so5, so6) {
+          document.getElementById("win1").value = so1
+            .toString()
+            .padStart(2, "0");
+          document.getElementById("win2").value = so2
+            .toString()
+            .padStart(2, "0");
+          document.getElementById("win3").value = so3
+            .toString()
+            .padStart(2, "0");
+          document.getElementById("win4").value = so4
+            .toString()
+            .padStart(2, "0");
+          document.getElementById("win5").value = so5
+            .toString()
+            .padStart(2, "0");
+          document.getElementById("win6").value = so6
+            .toString()
+            .padStart(2, "0");
+        }
+        win() {
+          let ketqua = new VeSo(10, 20, 30, 40, 50, 60);
+          this.displayWin(
+            ketqua.so1,
+            ketqua.so2,
+            ketqua.so3,
+            ketqua.so4,
+            ketqua.so5,
+            ketqua.so6
+          );
+          for (let i = 0; i < this.listVeSo.length; i++) {
+            if (
+              this.listVeSo[i].so1 == ketqua.so1 &&
+              this.listVeSo[i].so2 == ketqua.so2 &&
+              this.listVeSo[i].so3 == ketqua.so3 &&
+              this.listVeSo[i].so4 == ketqua.so4 &&
+              this.listVeSo[i].so5 == ketqua.so5 &&
+              this.listVeSo[i].so6 == ketqua.so6
+            ) {
+              alert(`Ve ${i + 1}:\n Giai dac biet`);
+            } else if (
+              this.listVeSo[i].so1 != ketqua.so1 &&
+              this.listVeSo[i].so2 == ketqua.so2 &&
+              this.listVeSo[i].so3 == ketqua.so3 &&
+              this.listVeSo[i].so4 == ketqua.so4 &&
+              this.listVeSo[i].so5 == ketqua.so5 &&
+              this.listVeSo[i].so6 == ketqua.so6
+            ) {
+              alert(`Ve ${i + 1}:\n  Giai nhi`);
+            } else if (
+              this.listVeSo[i].so4 == ketqua.so4 &&
+              this.listVeSo[i].so5 == ketqua.so5 &&
+              this.listVeSo[i].so6 == ketqua.so6
+            ) {
+              alert(`Ve ${i + 1}:\n Giai khuyen khich`);
+            } else alert(`Ve ${i + 1}:\n Chuc ban may man lan sau`);
+          }
+        }
+
+        muaVe() {
+          let choice = prompt(
+            `Ban co hai lua chon:\n1.Tu chon so\n2.Random so`
+          );
+          switch (choice) {
+            case "1":
+              this.nhapSo();
+              console.log(this.listVeSo);
+              break;
+            case "2":
+              this.randomSo();
+              console.log(this.listVeSo);
+              break;
+          }
+        }
+      }
+      let v = new QuanLyVe();
+    </script>
+  </body>
+</html>

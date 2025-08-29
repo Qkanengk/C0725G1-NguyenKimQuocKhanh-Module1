@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let input = prompt("Nhap");
+      function numberToString(str) {
+        let arr = [];
+        for (let i = 0; i < str.length; i++) {
+          switch (str[i]) {
+            case "1":
+              arr.push("MOT");
+              break;
+            case "2":
+              arr.push("HAI");
+              break;
+            case "3":
+              arr.push("BA");
+              break;
+            case "4":
+              arr.push("BON");
+              break;
+            case "5":
+              arr.push("NAM");
+              break;
+            case "6":
+              arr.push("SAU");
+              break;
+            case "7":
+              arr.push("BAY");
+              break;
+            case "8":
+              arr.push("TAM");
+              break;
+            case "9":
+              arr.push("CHIN");
+              break;
+            case "0":
+              arr.push("KHONG");
+              break;
+          }
+        }
+        return arr.join(" ");
+      }
+      console.log(numberToString(input));
+    </script>
+  </body>
+</html>

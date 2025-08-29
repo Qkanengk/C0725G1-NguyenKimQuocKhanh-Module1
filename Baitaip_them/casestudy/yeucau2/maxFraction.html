@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      numerators = [5, 2, 5];
+      denominators = [7, 1, 9];
+
+      function maxFraction(numerators, denominators) {
+        let result = [];
+        for (let i = 0; i < numerators.length; i++) {
+          result.push(numerators[i] / denominators[i]);
+        }
+        let maxValue = Math.max(...result);
+        for (let i = 0; i < numerators.length; i++) {
+          if (numerators[i] / denominators[i] === maxValue) {
+            return i;
+          }
+        }
+      }
+      console.log(maxFraction(numerators, denominators));
+    </script>
+  </body>
+</html>

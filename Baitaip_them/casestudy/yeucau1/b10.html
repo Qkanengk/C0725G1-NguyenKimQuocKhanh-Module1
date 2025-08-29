@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--    Viết chương trình thực hiện công việc sau:
+            a. Nhập ma trận a (m dòng, n cột) gồm các phần tử kiểu int
+            b. Tính tích các số là bội số của 3 nằm trên dòng đầu tiên của ma trận a.
+            c. Tạo ra mảng một chiều X[i] với X[i] là các giá trị lớn nhất trên dòng i của ma trận a
+            d. Xoá đi phần tử đầu tiên của mảng X[i], xuất lại mảng X[i] -->
+    <script>
+      let n = Number(prompt("Nhap cot"));
+      let m = Number(prompt("Nhap dong"));
+      let a = Array(m);
+      let tich = 0;
+      for (let i = 0; i < m; i++) {
+        a[i] = Array(n);
+        for (let j = 0; j < n; j++) {
+          a[i][j] = Number(prompt(`Nhap gia tri tai index ${i},${j}`));
+        }
+        for (let i = 0; i < 1; i++) {
+          for (let j = 0; j < n; j++) {
+            if (a[i][j] % 3 == 0) {
+              tich *= a[i][j];
+            }
+          }
+        }
+        let x = [];
+        let max = 0;
+        for (let i = 0; i < m; i++) {
+          for (let j = 0; j < n; j++) {
+            if (max < a[i][j]) {
+              max = a[i][j];
+            }
+          }
+          x.push(max);
+        }
+      }
+      x.shift();
+    </script>
+  </body>
+</html>
