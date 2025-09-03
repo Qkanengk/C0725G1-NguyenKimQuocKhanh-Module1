@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Kiểm tra chuỗi rỗng
+      function isEmpty(str) {
+        return str == null || str.toString().trim().length === 0;
+      }
+
+      // Kiểm tra độ dài
+      function hasLength(str, min, max) {
+        if (str == null) return false;
+        const length = str.toString().length;
+        return length >= min && length <= max;
+      }
+
+      // Kiểm tra chỉ chứa chữ cái
+      function isAlpha(str) {
+        return /^[a-zA-ZÀ-ỹ\s]+$/.test(str);
+      }
+
+      // Kiểm tra chỉ chứa số
+      function isNumeric(str) {
+        return /^[0-9]+$/.test(str);
+      }
+
+      // Kiểm tra chữ cái và số
+      function isAlphaNumeric(str) {
+        return /^[a-zA-Z0-9]+$/.test(str);
+      }
+    </script>
+  </body>
+</html>
