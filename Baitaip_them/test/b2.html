@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function checkString(str) {
+        let isUp = 0;
+        let isLow = 0;
+        str.trim();
+        if (!(str === "")) {
+          for (let i = 0; i < str.length; i++) {
+            if (/[A-Z]/.test(str[i])) {
+              isUp++;
+            } else isLow++;
+          }
+        }
+        let result = [];
+        result.push(isUp, isLow);
+        return result;
+      }
+      let str = "HellOCodeym";
+      alert(checkString(str));
+    </script>
+  </body>
+</html>

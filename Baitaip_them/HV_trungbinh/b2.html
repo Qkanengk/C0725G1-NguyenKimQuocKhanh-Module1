@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Viêt 1 hàm truyền vào một tham số là một mảng .										
+        Kiểm tra mảng.
+         Nếu các phần tử phía trước của mỗi phần tử đều là ước của nó thì hiện thị OK, 
+         không phải thì trả về NO										
+        Ví dụ: [1,2,6,12,48] =>OK
+        ( vì 1 là ước của 2  và  1,2 là ước của 6  và  1,2,6 là ước của 12 và 1,2,6,12 là ước của 48)										
+        Ví dụ: [1,2,6,13,48] =>NO 
+        ( vì 6 không phải là ước 13)										 -->
+    <script>
+      let arr = [12, 1, 2, 6, 13, 48];
+
+      function checkArr(arr) {
+        if (arr !== arr.sort((a, b) => a - b)) {
+          return "NO";
+        } else {
+          let count = 0;
+          for (let i = 0; i < arr.length; i++) {
+            if (arr[i + 1] % arr[i] === 0) {
+              count++;
+              console.log(count);
+            }
+          }
+          if (count === arr.length - 1) {
+            return "OK";
+          } else return "NO";
+        }
+      }
+      console.log(checkArr(arr));
+    </script>
+  </body>
+</html>

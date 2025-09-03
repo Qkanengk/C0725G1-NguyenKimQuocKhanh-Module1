@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function checkString(str) {
+        const vowels = ["a", "e", "i", "o", "u"];
+        const result = [];
+
+        str = str.toLowerCase(); // Chuẩn hóa chữ thường
+
+        for (let i = 0; i < str.length; i++) {
+          let char = str[i];
+          if (vowels.includes(char) && !result.includes(char)) {
+            result.push(char);
+          }
+        }
+
+        return result;
+      }
+    </script>
+  </body>
+</html>

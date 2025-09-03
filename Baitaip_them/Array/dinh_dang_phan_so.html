@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function find(x) {
+        // Bước 1: Kiểm tra định dạng phân số
+        if (!/^\d+\/\d+$/.test(x)) {
+          return "không phải là phân số";
+        }
+
+        // Bước 2: Tách tử số và mẫu số
+        let parts = x.split("/");
+        let numerator = parseInt(parts[0]);
+        let denominator = parseInt(parts[1]);
+
+        // Nếu mẫu số = 0 thì không hợp lệ
+        if (denominator === 0) {
+          return "không phải là phân số (mẫu số = 0)";
+        }
+
+        // Bước 3: Tìm GCD (Ước chung lớn nhất)
+        function gcd(a, b) {
+          while (b !== 0) {
+            let temp = b;
+            b = a % b;
+            a = temp;
+          }
+          return a;
+        }
+
+        let g = gcd(numerator, denominator);
+
+        // Bước 4: Rút gọn
+        numerator /= g;
+        denominator /= g;
+
+        return `${numerator}/${denominator}`;
+      }
+
+      // Test
+      console.log(find("8/12")); // 2/3
+      console.log(find("15/5")); // 3/1
+      console.log(find("abc/12")); // không phải là phân số
+      console.log(find("8/0"));
+    </script>
+  </body>
+</html>

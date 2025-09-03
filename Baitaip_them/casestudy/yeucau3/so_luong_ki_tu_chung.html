@@ -9,7 +9,23 @@
     <script>
       let s1 = "aabcc";
       let s2 = "adcaa";
-      function commonCharacterCount(s1, s2) {}
+      function commonCharacters(s1, s2) {
+        let count = 0;
+        let arr2 = s2.split(""); // Chuyển thành mảng để xóa dễ hơn
+
+        for (let char of s1) {
+          let index = arr2.indexOf(char);
+          if (index !== -1) {
+            count++;
+            arr2.splice(index, 1); // Xóa ký tự đã dùng
+          }
+        }
+
+        return count;
+      }
+
+      // Test
+      console.log(commonCharacters("aabcc", "adcaa")); // 3
     </script>
   </body>
 </html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [9, 8, 7, 6, 5, 4, 3, 2, 1];
+
+      function findFibo(arr) {
+        let result = [];
+        let n = Math.max(...arr);
+        for (let i = 0; i < arr.length; i++) {
+          if (isFibo(arr[i], n)) {
+            result.push(arr[i]);
+          }
+        }
+        result.sort((a, b) => a - b);
+        return result;
+      }
+
+      function isFibo(num, n) {
+        let sum = 0;
+        let first = 0;
+        let second = 1;
+        for (let i = 0; i < n; i++) {
+          sum = first + second;
+          first = second;
+          second = sum;
+          if (num === sum) {
+            return true;
+          }
+        }
+      }
+
+      console.log(findFibo(arr));
+    </script>
+  </body>
+</html>

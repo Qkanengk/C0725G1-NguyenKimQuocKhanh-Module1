@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--Nhập 1 mảng số từ bàn phím với độ dài n (n <=20)				
+        Hiện thị mảng sau khi thêm mới các phần tử				
+        Kiểm tra mảng vừa nhập. 				
+        Nếu mảng tăng dần đều thì hiện thị OK, không phải thì trả về NO-->
+    <script>
+      let n = Number(prompt("Nhap n"));
+      let arr = new Array(n);
+      for (let i = 0; i < n; i++) {
+        arr[i] = Number(prompt(`Nhap gia tri tai index ${i}`));
+      }
+      console.log(arr);
+
+      function check(arr) {
+        let count = 0;
+        let check = arr[1] - arr[0];
+        for (let i = 0; i < arr.length; i++) {
+          if (check === arr[i + 1] - arr[i]) {
+            count++;
+          }
+        }
+        if (count === arr.length - 1) {
+          return "OK";
+        } else return "NO";
+      }
+      console.log(check(arr));
+    </script>
+  </body>
+</html>

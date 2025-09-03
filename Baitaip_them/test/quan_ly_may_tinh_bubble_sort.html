@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 100%;
+        height: 40px;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        text-align: center;
+        width: 300px;
+        border: 1px solid #000;
+      }
+      tr:nth-child(even) {
+        background-color: antiquewhite;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+      }
+      .input-group {
+        display: flex;
+        align-items: center;
+      }
+
+      .container {
+        margin-top: 10px;
+      }
+
+      .input {
+        min-height: 50px;
+        max-width: 150px;
+        padding: 0 1rem;
+        color: #000;
+        font-size: 15px;
+        border: 1px solid #5e4dcd;
+        border-radius: 6px 0 0 6px;
+        background-color: transparent;
+      }
+
+      .button--submit {
+        min-height: 50px;
+        padding: 0.5em 1em;
+        border: none;
+        border-radius: 0 6px 6px 0;
+        background-color: #5e4dcd;
+        color: #fff;
+        font-size: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .button--submit:hover {
+        background-color: #5e5dcd;
+      }
+
+      .input:focus,
+      .input:focus-visible {
+        border-color: #3898ec;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>Nhap ma may</h2>
+      <div class="container">
+        <div class="input-group">
+          <input id="maMay" type="text" class="input" placeholder="ma may" />
+          <input
+            id="add-btn"
+            onclick="p.xuLyThem()"
+            class="button--submit"
+            value="Add"
+            type="button" />
+        </div>
+      </div>
+      <h2>Nhap ten may</h2>
+      <div class="container">
+        <div class="input-group">
+          <input id="tenMay" type="text" class="input" placeholder="ten may" />
+        </div>
+      </div>
+      <h2>Nhap hang</h2>
+      <div class="container">
+        <div class="input-group">
+          <input id="hang" type="text" class="input" placeholder="hang" />
+        </div>
+      </div>
+      <h2>Nhap gia</h2>
+      <div class="container">
+        <div class="input-group">
+          <input id="gia" type="text" class="input" placeholder="gia" />
+        </div>
+      </div>
+
+      <div class="container">
+        <div id="edit-group" class="input-group" style="display: none">
+          <input id="edit-input" type="text" class="input" placeholder="" />
+          <input
+            id="edit-btn"
+            onclick="p.updateBtn()"
+            class="button--submit"
+            value="Update"
+            type="button" />
+        </div>
+      </div>
+    </div>
+
+    <h2>Danh sach may</h2>
+    <div style="display: flex; justify-content: space-between; width: 400px">
+      <p style="font-weight: 800"></p>
+    </div>
+
+    <div class="container">
+      <p id="display"></p>
+    </div>
+    <script>
+      class MayTinh {
+        constructor(maMay, tenMay, hang, gia) {
+          this.maMay = maMay;
+          this.tenMay = tenMay;
+          this.hang = hang;
+          this.gia = gia;
+        }
+        getMa() {
+          return this.maMay;
+        }
+        getTenMay() {
+          return this.tenMay;
+        }
+        getHang() {
+          return this.hang;
+        }
+        getGia() {
+          return this.gia;
+        }
+        setMa(maMay) {
+          this.maMay = maMay;
+        }
+        setTenMay(tenMay) {
+          this.tenMay = tenMay;
+        }
+        setHang(hang) {
+          this.hang = hang;
+        }
+        setGia(gia) {
+          this.gia = gia;
+        }
+        toString() {
+          alert(
+            `Ma may:${this.maMay}\nTen may:${this.tenMay}\nHang:${this.hang}\nGia:${this.gia}`
+          );
+        }
+      }
+      class QuanLyMayTinh {
+        constructor() {
+          this.listMayTinh = [];
+        }
+        isExists(maMay) {
+          for (let i = 0; i < this.listMayTinh.length; i++) {
+            if (
+              this.listMayTinh[i].getMa().toLowerCase() === maMay.toLowerCase()
+            ) {
+              return true;
+            }
+          }
+          return false;
+        }
+        hienThi() {
+          let tableString = `<table> <th>Ma may: </th>
+                            <th>Ten may: </th>
+                            <th>Hang: </th>
+                            <th>Gia: </th></tr>`;
+          for (let i = 0; i < this.listMayTinh.length; i++) {
+            tableString += `<tr>`;
+
+            tableString += `<td>${this.listMayTinh[i].getMa()}</td>
+                            <td>${this.listMayTinh[i].getTenMay()}</td>
+                            <td>${this.listMayTinh[i].getHang()}</td>
+                            <td>${this.listMayTinh[i].getGia()}</td>
+                            `;
+            tableString += `</tr>`;
+          }
+          tableString += `</table>`;
+          document.getElementById("display").innerHTML = tableString;
+        }
+        sapXep() {
+          for (let i = 0; i < this.listMayTinh.length; i++) {
+            for (let j = i + 1; j < this.listMayTinh.length; j++) {
+              if (this.listMayTinh[i].getGia() > this.listMayTinh[j].getGia()) {
+                let temp = this.listMayTinh[i];
+                this.listMayTinh[i] = this.listMayTinh[j];
+                this.listMayTinh[j] = temp;
+              }
+            }
+          }
+        }
+
+        themMay(maMay, tenMay, hang, gia) {
+          if (!maMay.trim()) {
+            alert("Nhap ma may!");
+          }
+          if (!tenMay.trim()) {
+            alert("Nhap ten may!");
+          }
+          if (!hang.trim()) {
+            alert("Nhap hang!");
+          }
+          if (!gia.trim()) {
+            alert("Nhap gia!");
+          }
+          if (this.isExists(maMay)) {
+            alert("Ma may nay da ton tai!");
+            return false;
+          } else {
+            let newMayTinh = new MayTinh(maMay, tenMay, hang, gia);
+            this.listMayTinh.push(newMayTinh);
+          }
+        }
+        xuLyThem() {
+          let maMay = document.getElementById("maMay").value;
+          let tenMay = document.getElementById("tenMay").value;
+          let hang = document.getElementById("hang").value;
+          let gia = document.getElementById("gia").value;
+          this.themMay(maMay, tenMay, hang, gia);
+          console.log(this.listMayTinh);
+          this.sapXep();
+          this.hienThi();
+        }
+      }
+      let p = new QuanLyMayTinh();
+    </script>
+  </body>
+</html>
