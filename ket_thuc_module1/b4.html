@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 100%;
+        height: 40px;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        text-align: center;
+        width: 300px;
+        border: 1px solid #000;
+      }
+      tr:nth-child(even) {
+        background-color: antiquewhite;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+      }
+      .input-group {
+        display: flex;
+        align-items: center;
+      }
+
+      .container {
+        margin-top: 10px;
+      }
+
+      .input {
+        min-height: 50px;
+        max-width: 150px;
+        padding: 0 1rem;
+        color: #000;
+        font-size: 15px;
+        border: 1px solid #5e4dcd;
+        border-radius: 6px 0 0 6px;
+        background-color: transparent;
+      }
+
+      .button--submit {
+        min-height: 50px;
+        padding: 0.5em 1em;
+        border: none;
+        border-radius: 0 6px 6px 0;
+        background-color: #5e4dcd;
+        color: #fff;
+        font-size: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .button--submit:hover {
+        background-color: #5e5dcd;
+      }
+
+      .input:focus,
+      .input:focus-visible {
+        border-color: #3898ec;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>Nhập mã điện thoại</h2>
+      <div class="container">
+        <div class="input-group">
+          <input
+            id="maDienThoai"
+            type="text"
+            class="input"
+            placeholder="Mã điện thoại" />
+          <input
+            id="add-btn"
+            onclick="p.xuLyThem()"
+            class="button--submit"
+            value="Thêm"
+            type="button" />
+        </div>
+      </div>
+      <h2>Nhập tên điện thoại</h2>
+      <div class="container">
+        <div class="input-group">
+          <input
+            id="tenDienThoai"
+            type="text"
+            class="input"
+            placeholder="Tên điện thoại" />
+        </div>
+      </div>
+      <h2>Nhập hãng sản xuất</h2>
+      <div class="container">
+        <div class="input-group">
+          <input
+            id="hangSanXuat"
+            type="text"
+            class="input"
+            placeholder="Hãng sản xuất" />
+        </div>
+      </div>
+      <h2>Nhập giá</h2>
+      <div class="container">
+        <div class="input-group">
+          <input id="gia" type="number" class="input" placeholder="Giá" />
+        </div>
+      </div>
+    </div>
+
+    <h2>Danh sách máy</h2>
+    <div style="display: flex; justify-content: space-between; width: 400px">
+      <p style="font-weight: 800"></p>
+    </div>
+
+    <div class="container">
+      <p id="hienThiDanhSach"></p>
+    </div>
+    <script>
+      class DienThoai {
+        constructor(maDienThoai, tenDienThoai, hangSanXuat, gia) {
+          this.maDienThoai = maDienThoai;
+          this.tenDienThoai = tenDienThoai;
+          this.hangSanXuat = hangSanXuat;
+          this.gia = gia;
+        }
+        getMaDienThoai() {
+          return this.maDienThoai;
+        }
+        getTenDienThoai() {
+          return this.tenDienThoai;
+        }
+        getHangSanXuat() {
+          return this.hangSanXuat;
+        }
+        getGia() {
+          return this.gia;
+        }
+        setMaDienThoai(maDienThoai) {
+          this.maDienThoai = maDienThoai;
+        }
+        setTenDienThoai(tenDienThoai) {
+          this.tenDienThoai = tenDienThoai;
+        }
+        setHangSanXuat(hangSanXuat) {
+          this.hangSanXuat = hangSanXuat;
+        }
+        setGia(gia) {
+          this.gia = gia;
+        }
+        toString() {
+          alert(
+            `Mã điện thoai:${this.maDienThoai}\nTên điện thoại:${this.tenDienThoai}\nHãng sản xuất:${this.hangSanXuat}\nGiá:${this.gia}`
+          );
+        }
+      }
+      class QuanLyDienThoai {
+        constructor() {
+          this.listDienThoai = [];
+        }
+        isExists(maDienThoai) {
+          for (let i = 0; i < this.listDienThoai.length; i++) {
+            if (
+              this.listDienThoai[i].getMaDienThoai().toLowerCase() ===
+              maDienThoai.toLowerCase()
+            ) {
+              return true;
+            }
+          }
+          return false;
+        }
+        hienThi() {
+          let bangDanhSach = `<table> <th>Mã điện thoại: </th>
+                            <th>Tên máy: </th>
+                            <th>Hãng sản xuất: </th>
+                            <th>Giá: </th></tr>`;
+          for (let i = 0; i < this.listDienThoai.length; i++) {
+            bangDanhSach += `<tr>`;
+
+            bangDanhSach += `<td>${this.listDienThoai[i].getMaDienThoai()}</td>
+                            <td>${this.listDienThoai[i].getTenDienThoai()}</td>
+                            <td>${this.listDienThoai[i].getHangSanXuat()}</td>
+                            <td>${this.listDienThoai[i].getGia()}</td>
+                            `;
+            bangDanhSach += `</tr>`;
+          }
+          bangDanhSach += `</table>`;
+          document.getElementById("hienThiDanhSach").innerHTML = bangDanhSach;
+        }
+        sapXep() {
+          for (let i = 0; i < this.listDienThoai.length; i++) {
+            for (let j = i + 1; j < this.listDienThoai.length; j++) {
+              if (
+                this.listDienThoai[i].getTenDienThoai() >
+                this.listDienThoai[j].getTenDienThoai()
+              ) {
+                let temp = this.listDienThoai[i];
+                this.listDienThoai[i] = this.listDienThoai[j];
+                this.listDienThoai[j] = temp;
+              }
+            }
+          }
+        }
+
+        themMay(maDienThoai, tenDienThoai, hangSanXuat, gia) {
+          if (!maDienThoai.trim()) {
+            alert("Nhập mã điện thoại!");
+          }
+          if (!tenDienThoai.trim()) {
+            alert("Nhập tên điện thoại!");
+          }
+          if (!hangSanXuat.trim()) {
+            alert("Nhập hãng!");
+          }
+          if (!gia.trim()) {
+            alert("Nhập giá!");
+          }
+          if (this.isExists(maDienThoai)) {
+            alert("Mã máy này đã tồn tại!");
+            return false;
+          } else {
+            let newDienThoai = new DienThoai(
+              maDienThoai,
+              tenDienThoai,
+              hangSanXuat,
+              gia
+            );
+            this.listDienThoai.push(newDienThoai);
+            this.sapXep();
+            this.hienThi();
+          }
+        }
+        xuLyThem() {
+          let maDienThoai = document.getElementById("maDienThoai").value;
+          let tenDienThoai = document.getElementById("tenDienThoai").value;
+          let hangSanXuat = document.getElementById("hangSanXuat").value;
+          let gia = document.getElementById("gia").value;
+          this.themMay(maDienThoai, tenDienThoai, hangSanXuat, gia);
+        }
+      }
+      let p = new QuanLyDienThoai();
+    </script>
+  </body>
+</html>

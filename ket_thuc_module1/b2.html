@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function checkString(str) {
+        let isUp = 0;
+        let arr = str.split("");
+        for (let i = 0; i < arr.length; i++) {
+          if (/[A-Z]/.test(arr[i])) {
+            isUp++;
+          }
+        }
+        if (isUp == 0) {
+          return "The Strings is not contain upper char";
+        } else return isUp;
+      }
+      console.log(checkString("asasdsadasAA"));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function isPrime(num) {
+        if (num > 1) {
+          let count = 0;
+          if (num === 2) {
+            return true;
+          } else if (num > 2) {
+            for (let i = 1; i <= num; i++) {
+              if (num % i === 0) {
+                count++;
+              }
+            }
+            if (count === 2) {
+              return true;
+            }
+          }
+        }
+      }
+      function checkArr(arr) {
+        let newArr = [];
+        for (let i = 0; i < arr.length; i++) {
+          if (isPrime(arr[i])) {
+            newArr.push(arr[i]);
+          }
+        }
+        let result = newArr.sort((a, b) => a - b);
+        return result;
+      }
+
+      console.log(checkArr([1, 5, 6, 23, 8, 47, 10, 3, 7, 11]));
+    </script>
+  </body>
+</html>

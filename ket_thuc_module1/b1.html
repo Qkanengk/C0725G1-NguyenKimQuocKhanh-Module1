@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let n;
+      let sum1 = 0;
+      let sum2 = 0;
+      do {
+        n = Number(prompt("Nhap n"));
+      } while (n > 20 || n <= 0 || !Number.isInteger(n));
+
+      let arr = Array(n);
+
+      for (let i = 0; i < n; i++) {
+        arr[i] = Number(prompt(`Nhap gia tri tai index ${i}`));
+      }
+      document.write(arr);
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+          sum1 += arr[i];
+        } else sum2 += arr[i];
+      }
+      let result = sum1 - sum2;
+      document.write("Ket qua = " + result);
+    </script>
+  </body>
+</html>
