@@ -1,0 +1,14 @@
+type: hyperskill
+title: Java Problems
+language: English
+summary: All problems in Java programming language that can't be opened together with
+  currently selected Hyperskill project.
+programming_language: Java
+programming_language_version: 11
+content:
+  - Topics
+additional_files:
+  - name: build.gradle
+  - name: settings.gradle
+mode: Study
+yaml_version: 4
