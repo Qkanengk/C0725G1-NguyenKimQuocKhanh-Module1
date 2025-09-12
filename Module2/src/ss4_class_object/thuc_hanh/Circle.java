@@ -1,4 +1,4 @@
-package class_object.thuc_hanh;
+package ss4_class_object.thuc_hanh;
 
 class Circle {
     double radius = 1;

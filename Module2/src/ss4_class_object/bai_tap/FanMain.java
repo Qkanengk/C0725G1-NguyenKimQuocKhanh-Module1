@@ -1,4 +1,4 @@
-package class_object.bai_tap;
+package ss4_class_object.bai_tap;
 
 class Fan {
     private final byte slow = 1;
