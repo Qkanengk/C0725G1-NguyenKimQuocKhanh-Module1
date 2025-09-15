@@ -1,0 +1,15 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: A variable has a name (identifier)
+  - text: A variable's name can be changed at runtime
+  - text: A variable can store a value
+  - text: A variable has a type
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/2082#comment
+status: Solved
+record: -1
+local_check: false
