@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-While_and_do-while_loops-The_largest_element_of_a_sequence" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/While and do-while loops/The largest element of a sequence" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Java Problems" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/While and do-while loops/The largest element of a sequence">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/While and do-while loops/The largest element of a sequence/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/While and do-while loops/The largest element of a sequence/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/While and do-while loops/The largest element of a sequence/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

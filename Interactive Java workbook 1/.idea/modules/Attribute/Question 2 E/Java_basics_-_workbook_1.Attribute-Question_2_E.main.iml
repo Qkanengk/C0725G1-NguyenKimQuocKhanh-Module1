@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Attribute-Question_2_E:main" external.linked.project.path="$MODULE_DIR$/../../../../Attribute/Question 2 E" external.root.project.path="$MODULE_DIR$/../../../.." external.system.id="GRADLE" external.system.module.group="Java_basics_-_workbook_1" external.system.module.type="sourceSet" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../../../../Attribute/Question 2 E/out/production/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../Attribute/Question 2 E/src">
+      <sourceFolder url="file://$MODULE_DIR$/../../../../Attribute/Question 2 E/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="Java_basics_-_workbook_1.util.main" />
+  </component>
+</module>

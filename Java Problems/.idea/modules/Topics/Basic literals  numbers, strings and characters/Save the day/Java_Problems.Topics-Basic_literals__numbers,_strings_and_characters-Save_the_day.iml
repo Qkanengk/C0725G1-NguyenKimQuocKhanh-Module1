@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-Basic_literals__numbers,_strings_and_characters-Save_the_day" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/Basic literals  numbers, strings and characters/Save the day" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Java Problems" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/Basic literals  numbers, strings and characters/Save the day">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Basic literals  numbers, strings and characters/Save the day/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Basic literals  numbers, strings and characters/Save the day/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Basic literals  numbers, strings and characters/Save the day/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

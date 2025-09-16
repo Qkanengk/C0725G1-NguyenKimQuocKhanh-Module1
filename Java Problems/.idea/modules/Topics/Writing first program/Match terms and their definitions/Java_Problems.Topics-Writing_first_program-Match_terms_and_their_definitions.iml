@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-Writing_first_program-Match_terms_and_their_definitions" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/Writing first program/Match terms and their definitions" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Java Problems" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/Writing first program/Match terms and their definitions">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Writing first program/Match terms and their definitions/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Writing first program/Match terms and their definitions/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Writing first program/Match terms and their definitions/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

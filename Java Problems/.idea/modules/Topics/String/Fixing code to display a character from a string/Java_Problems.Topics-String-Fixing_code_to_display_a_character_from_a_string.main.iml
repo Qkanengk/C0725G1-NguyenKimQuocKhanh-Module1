@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-String-Fixing_code_to_display_a_character_from_a_string:main" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/String/Fixing code to display a character from a string" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Java Problems" external.system.module.type="sourceSet" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../../../../../Topics/String/Fixing code to display a character from a string/out/production/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/String/Fixing code to display a character from a string/src">
+      <sourceFolder url="file://$MODULE_DIR$/../../../../../Topics/String/Fixing code to display a character from a string/src" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="jbr-21" jdkType="JavaSDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

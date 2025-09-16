@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-Errors_in_programs-Fix_compile-time_errors" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/Errors in programs/Fix compile-time errors" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Java Problems" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/Errors in programs/Fix compile-time errors">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Errors in programs/Fix compile-time errors/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Errors in programs/Fix compile-time errors/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Errors in programs/Fix compile-time errors/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

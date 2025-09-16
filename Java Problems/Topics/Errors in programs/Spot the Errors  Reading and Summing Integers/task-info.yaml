@@ -1,0 +1,16 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: There is no error in the code
+  - text: Using input.next() instead of input.nextInt() for reading num1
+  - text: Misusing the + operator when printing the sum
+  - text: Missing double quotes around the string in System.out.println
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/29954#comment
+status: Solved
+record: -1
+custom_name: "Spot the Errors: Reading and Summing Integers"
+local_check: false

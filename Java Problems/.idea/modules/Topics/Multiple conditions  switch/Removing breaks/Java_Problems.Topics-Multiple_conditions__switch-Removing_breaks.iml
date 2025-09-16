@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-Multiple_conditions__switch-Removing_breaks" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/Multiple conditions  switch/Removing breaks" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Java Problems" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/Multiple conditions  switch/Removing breaks">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Multiple conditions  switch/Removing breaks/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Multiple conditions  switch/Removing breaks/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Multiple conditions  switch/Removing breaks/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

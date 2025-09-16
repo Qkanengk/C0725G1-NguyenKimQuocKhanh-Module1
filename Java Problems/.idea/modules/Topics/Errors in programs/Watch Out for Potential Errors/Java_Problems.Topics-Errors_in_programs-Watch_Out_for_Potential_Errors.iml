@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-Errors_in_programs-Watch_Out_for_Potential_Errors" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/Errors in programs/Watch Out for Potential Errors" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Java Problems" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/Errors in programs/Watch Out for Potential Errors">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Errors in programs/Watch Out for Potential Errors/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Errors in programs/Watch Out for Potential Errors/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Errors in programs/Watch Out for Potential Errors/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

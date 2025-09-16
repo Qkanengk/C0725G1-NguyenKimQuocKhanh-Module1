@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-Iterating_over_arrays-Two_numbers_never_occur_next_to_each_other" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/Iterating over arrays/Two numbers never occur next to each other" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Java Problems" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/Iterating over arrays/Two numbers never occur next to each other">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Iterating over arrays/Two numbers never occur next to each other/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Iterating over arrays/Two numbers never occur next to each other/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Iterating over arrays/Two numbers never occur next to each other/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

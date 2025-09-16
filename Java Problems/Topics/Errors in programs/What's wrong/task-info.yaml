@@ -1,0 +1,13 @@
+type: code
+custom_name: What's wrong?
+files:
+  - name: src/Main.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/3752#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: "Mon, 15 Sep 2025 07:38:44 UTC"
+record: -1
+submission_language: java17

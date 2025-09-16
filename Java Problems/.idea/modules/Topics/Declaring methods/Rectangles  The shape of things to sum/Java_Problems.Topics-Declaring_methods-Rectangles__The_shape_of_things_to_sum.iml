@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-Declaring_methods-Rectangles__The_shape_of_things_to_sum" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/Declaring methods/Rectangles  The shape of things to sum" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Java Problems" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/Declaring methods/Rectangles  The shape of things to sum">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Declaring methods/Rectangles  The shape of things to sum/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Declaring methods/Rectangles  The shape of things to sum/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../../Topics/Declaring methods/Rectangles  The shape of things to sum/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

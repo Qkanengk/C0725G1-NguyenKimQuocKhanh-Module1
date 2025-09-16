@@ -1,0 +1,16 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: An incorrect behavior of a program is a compile-time error.
+  - text: Run-time errors may occur when the java compiler translates a program.
+  - text: Debugging can help to find run-time errors.
+  - text: "If your program compiles successfully, there are no guarantees that it does\
+    \ not have compile-time errors."
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/3753#comment
+status: Solved
+record: -1
+local_check: false
