@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Class-What_is_a_class" external.linked.project.path="$MODULE_DIR$/../../../../Class/What is a class" external.root.project.path="$MODULE_DIR$/../../../.." external.system.id="GRADLE" external.system.module.group="Java_basics_-_workbook_1" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../Class/What is a class">
+      <excludeFolder url="file://$MODULE_DIR$/../../../../Class/What is a class/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../Class/What is a class/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../../Class/What is a class/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
