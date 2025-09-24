@@ -14,7 +14,14 @@ public class MotorCycleRepository implements IMotorCycleRepository{
 
     @Override
     public void add(MotorCycle motorCycle) {
-        motorCycleList.add(motorCycle);
+
+        List<String> stringList = new ArrayList<>();
+        stringList.add(motorCycle.getInfo());
+        try {
+            ReadAndWriteFile.writeListStringToCSV(MOTORCYCLE_LIST, stringList, true);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
