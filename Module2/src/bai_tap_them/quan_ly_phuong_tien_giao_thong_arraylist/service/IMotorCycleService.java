@@ -9,11 +9,10 @@ public interface IMotorCycleService {
 
     public void delete(String licensePlate);
 
-    public void edit(String licensePlate,MotorCycle motorCycle );
+    public void edit(String licensePlate, MotorCycle motorCycle);
 
     public MotorCycle find(String licensePlate);
 
     public List<MotorCycle> getList();
 
-    public void showList();
 }

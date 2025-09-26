@@ -31,11 +31,8 @@ public class TruckService implements ITruckService {
 
     @Override
     public List<Truck> getList() {
-        return List.of();
+        return truckRepository.getList();
     }
 
-    @Override
-    public void showList() {
-        truckRepository.showList();
-    }
+
 }

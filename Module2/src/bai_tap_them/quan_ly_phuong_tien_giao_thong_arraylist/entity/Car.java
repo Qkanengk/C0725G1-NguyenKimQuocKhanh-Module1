@@ -26,6 +26,10 @@ public class Car extends Vehicle {
         this.typeOfCar = typeOfCar;
     }
 
+    public String getInfo() {
+        return getLicensePlate() + "," + getManufacturerName() + "," + getManufactureYear() + "," + getOwner() + "," + getNumberOfSits() + "," + getTypeOfCar();
+    }
+
     @Override
     public String toString() {
         return "   ======================" +

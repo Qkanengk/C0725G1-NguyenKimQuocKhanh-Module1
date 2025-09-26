@@ -15,6 +15,9 @@ public class MotorCycle extends Vehicle {
     public void setEnginePower(double enginePower) {
         this.enginePower = enginePower;
     }
+    public String getInfo() {
+        return getLicensePlate() + "," + getManufacturerName() + "," + getManufactureYear() + "," + getOwner() + "," + getEnginePower();
+    }
 
     @Override
     public String toString() {

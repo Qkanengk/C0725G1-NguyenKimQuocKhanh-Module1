@@ -16,5 +16,5 @@ public interface ITruckRepository {
 
     public List<Truck> getList();
 
-    public void showList();
+
 }

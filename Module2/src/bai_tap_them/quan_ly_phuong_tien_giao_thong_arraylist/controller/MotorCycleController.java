@@ -32,6 +32,6 @@ public class MotorCycleController {
 
     static void showListMenu() {
         System.out.println("=====DANH SÁCH XE MÔ TÔ=====");
-        motorCycleManager.showList();
+        MotorCycleView.showList(motorCycleManager.getList());
     }
 }

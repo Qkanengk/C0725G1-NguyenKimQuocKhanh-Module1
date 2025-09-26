@@ -24,13 +24,14 @@ public class CarController {
         carManager.edit(CarView.getLicensePlate(), CarView.inputData());
         System.out.println("=====CHỈNH SỬA THÀNH CÔNG=====");
     }
-    static void findMenu(){
+
+    static void findMenu() {
         System.out.println("=====TÌM XE Ô TÔ======");
         System.out.println(carManager.find(CarView.getLicensePlate()).toString());
     }
 
     static void showListMenu() {
         System.out.println("=====DANH SÁCH XE Ô TÔ=====");
-        carManager.showList();
+        CarView.showList(carManager.getList());
     }
 }

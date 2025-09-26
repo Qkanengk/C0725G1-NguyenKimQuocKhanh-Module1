@@ -3,6 +3,7 @@ package bai_tap_them.quan_ly_phuong_tien_giao_thong_arraylist.view;
 import bai_tap_them.quan_ly_phuong_tien_giao_thong_arraylist.entity.Car;
 import bai_tap_them.quan_ly_phuong_tien_giao_thong_arraylist.entity.Truck;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class TruckView {
@@ -27,5 +28,13 @@ public class TruckView {
         System.out.println("Nhập biển kiểm soát");
         String licensePlate = scanner.nextLine();
         return licensePlate;
+    }
+
+    public static void showList(List<Truck> truckList){
+        if(truckList.size()==0){
+            System.out.println("=====Danh sách rỗng=====");
+        }else for (Truck truck: truckList){
+            System.out.println(truck);
+        }
     }
 }

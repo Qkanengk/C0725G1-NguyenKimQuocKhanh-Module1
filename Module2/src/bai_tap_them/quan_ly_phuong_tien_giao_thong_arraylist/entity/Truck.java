@@ -15,6 +15,9 @@ public class Truck extends Vehicle{
     public void setLoadCapacity(double loadCapacity) {
         this.loadCapacity = loadCapacity;
     }
+    public String getInfo() {
+        return getLicensePlate() + "," + getManufacturerName() + "," + getManufactureYear() + "," + getOwner() + "," + getLoadCapacity();
+    }
 
     @Override
     public String toString() {

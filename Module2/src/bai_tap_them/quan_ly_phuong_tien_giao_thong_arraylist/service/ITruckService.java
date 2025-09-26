@@ -15,5 +15,5 @@ public interface ITruckService {
 
     public List<Truck> getList();
 
-    public void showList();
+
 }

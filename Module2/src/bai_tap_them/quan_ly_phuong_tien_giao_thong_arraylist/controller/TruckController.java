@@ -24,13 +24,14 @@ public class TruckController {
         truckManager.edit(TruckView.getLicensePlate(), TruckView.inputData());
         System.out.println("=====CHỈNH SỬA THÀNH CÔNG=====");
     }
-    static void findMenu(){
+
+    static void findMenu() {
         System.out.println("=====TÌM XE TẢI======");
         System.out.println(truckManager.find(TruckView.getLicensePlate()).toString());
     }
 
     static void showListMenu() {
         System.out.println("=====DANH SÁCH XE TẢI=====");
-        truckManager.showList();
+        TruckView.showList(truckManager.getList());
     }
 }

@@ -45,6 +45,8 @@ public abstract class Vehicle {
         this.owner = owner;
     }
 
+    public abstract String getInfo();
+
     @Override
     public abstract String toString() ;
 }

@@ -2,6 +2,7 @@ package bai_tap_them.quan_ly_phuong_tien_giao_thong_arraylist.view;
 
 import bai_tap_them.quan_ly_phuong_tien_giao_thong_arraylist.entity.Car;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class CarView {
@@ -27,5 +28,13 @@ public class CarView {
         System.out.println("Nhập biển kiểm soát");
         String licensePlate = scanner.nextLine();
         return licensePlate;
+    }
+
+    public static void showList(List<Car> carList){
+        if(carList.size()==0){
+            System.out.println("=====Danh sách rỗng=====");
+        }else for (Car car: carList){
+            System.out.println(car);
+        }
     }
 }

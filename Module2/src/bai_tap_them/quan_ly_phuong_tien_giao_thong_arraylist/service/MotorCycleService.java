@@ -31,11 +31,8 @@ public class MotorCycleService implements IMotorCycleService {
 
     @Override
     public List<MotorCycle> getList() {
-        return List.of();
+        return motorCycleRepository.getList();
     }
 
-    @Override
-    public void showList() {
-        motorCycleRepository.showList();
-    }
+
 }

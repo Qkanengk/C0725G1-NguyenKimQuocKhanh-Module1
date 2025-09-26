@@ -33,10 +33,4 @@ public class CarService implements ICarService {
     public List<Car> getList() {
         return carRepository.getList();
     }
-
-    @Override
-    public void showList() {
-        carRepository.showList();
-    }
-
 }
