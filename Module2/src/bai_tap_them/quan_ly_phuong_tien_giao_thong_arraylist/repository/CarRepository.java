@@ -10,17 +10,24 @@ import java.util.List;
 
 public class CarRepository implements ICarRepository {
     private static final File CAR_LIST = new File("/Users/nguyenkimquockhanh/Desktop/CodeGym/Module2/src/bai_tap_them/quan_ly_phuong_tien_giao_thong_arraylist/data/CAR_LIST.csv");
-
+    private static final File CAR_LIST_BINARY = new File("/Users/nguyenkimquockhanh/Desktop/CodeGym/Module2/src/bai_tap_them/quan_ly_phuong_tien_giao_thong_arraylist/data/CAR_LIST.dat");
 
     @Override
     public void add(Car car) {
-        List<String> stringList = new ArrayList<>();
-        stringList.add(car.getInfo());
+        List<Car> carList = getList();
+        carList.add(car);
         try {
-            ReadAndWriteFile.writeListStringToCSV(CAR_LIST, stringList, true);
+            ReadAndWriteFile.writeDataToBinaryFile(CAR_LIST_BINARY,carList);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
+//        List<String> stringList = new ArrayList<>();
+//        stringList.add(car.getInfo());
+//        try {
+//            ReadAndWriteFile.writeListStringToCSV(CAR_LIST, stringList, true);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 
     @Override
@@ -74,16 +81,23 @@ public class CarRepository implements ICarRepository {
     @Override
     public List<Car> getList() {
         List<Car> carList = new ArrayList<>();
-        List<String> stringList = new ArrayList<>();
+//        List<String> stringList = new ArrayList<>();
+//        try {
+//            stringList = ReadAndWriteFile.readFileCSVToList(CAR_LIST);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        for (String line : stringList) {
+//            String[] arr = line.split(",");
+//            carList.add(new Car(arr[0], arr[1], Integer.parseInt(arr[2]), arr[3], Integer.parseInt(arr[4]), arr[5]));
+//        }
+
         try {
-            stringList = ReadAndWriteFile.readFileCSVToList(CAR_LIST);
-        } catch (IOException e) {
-            e.printStackTrace();
+            carList = ReadAndWriteFile.readBinaryFile(CAR_LIST_BINARY);
+        } catch (Exception e) {
+
         }
-        for (String line : stringList) {
-            String[] arr = line.split(",");
-            carList.add(new Car(arr[0], arr[1], Integer.parseInt(arr[2]), arr[3], Integer.parseInt(arr[4]), arr[5]));
-        }
+
         return carList;
     }
 

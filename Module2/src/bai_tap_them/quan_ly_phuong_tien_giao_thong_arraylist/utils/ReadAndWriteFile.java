@@ -1,6 +1,11 @@
 package bai_tap_them.quan_ly_phuong_tien_giao_thong_arraylist.utils;
 
+import bai_tap_them.quan_ly_phuong_tien_giao_thong_arraylist.entity.Vehicle;
+
+import javax.lang.model.element.Element;
 import java.io.*;
+import java.lang.annotation.ElementType;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,5 +28,21 @@ public class ReadAndWriteFile {
             }
         }
         return stringList;
+    }
+
+    public static <T> void writeDataToBinaryFile(File filePath, List<T> list) throws IOException {
+        try (FileOutputStream fileOutputStream = new FileOutputStream(filePath);
+             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
+            objectOutputStream.writeObject(list);
+        }
+    }
+
+    public static <T> List<T> readBinaryFile(File filePath) throws Exception{
+        List<T> list = new ArrayList<T>();
+        try (FileInputStream fileInputStream = new FileInputStream(filePath);
+             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
+            list = (List<T>) objectInputStream.readObject();
+        }
+        return list;
     }
 }

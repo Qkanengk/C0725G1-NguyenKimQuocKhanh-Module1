@@ -1,6 +1,8 @@
 package bai_tap_them.quan_ly_phuong_tien_giao_thong_arraylist.entity;
 
-public abstract class Vehicle {
+import java.io.Serializable;
+
+public abstract class Vehicle implements Serializable {
     private String licensePlate;
     private String manufacturerName;
     private int manufactureYear;
