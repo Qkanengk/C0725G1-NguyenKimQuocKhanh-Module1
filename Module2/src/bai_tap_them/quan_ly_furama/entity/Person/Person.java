@@ -1,30 +1,32 @@
 package bai_tap_them.quan_ly_furama.entity.Person;
 
-public abstract class Person {
-    private String code;
-    private String name;
-    private String dateOfBirth;
-    private String sex;
-    private String idNumber;
-    private String phoneNumber;
-    private String email;
+import java.time.LocalDate;
 
-    public Person(String code, String name, String dateOfBirth, String sex, String idNumber, String phoneNumber, String email) {
-        this.code = code;
+public abstract class Person {
+    String id;
+    String name;
+    LocalDate dateOfBirth;
+    String gender;
+    String identityNumber;
+    String phoneNumber;
+    String email;
+
+    public Person(String id, String name, LocalDate dateOfBirth, String gender, String identityNumber, String phoneNumber, String email) {
+        this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
-        this.sex = sex;
-        this.idNumber = idNumber;
+        this.gender = gender;
+        this.identityNumber = identityNumber;
         this.phoneNumber = phoneNumber;
         this.email = email;
     }
 
-    public String getCode() {
-        return code;
+    public String getId() {
+        return id;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -35,28 +37,28 @@ public abstract class Person {
         this.name = name;
     }
 
-    public String getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public String getSex() {
-        return sex;
+    public String getGender() {
+        return gender;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
-    public String getIdNumber() {
-        return idNumber;
+    public String getIdentityNumber() {
+        return identityNumber;
     }
 
-    public void setIdNumber(String idNumber) {
-        this.idNumber = idNumber;
+    public void setIdentityNumber(String identityNumber) {
+        this.identityNumber = identityNumber;
     }
 
     public String getPhoneNumber() {
@@ -74,6 +76,7 @@ public abstract class Person {
     public void setEmail(String email) {
         this.email = email;
     }
+
 
     public abstract String toString();
 }

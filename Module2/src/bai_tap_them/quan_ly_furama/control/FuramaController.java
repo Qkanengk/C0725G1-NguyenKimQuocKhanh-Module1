@@ -14,7 +14,17 @@ public class FuramaController {
                     "4. Booking Management\n" +
                     "5. Promotion Management\n" +
                     "6. Exit");
-            choice = Integer.parseInt(scanner.nextLine());
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+                if (choice>6){
+                    System.out.println("INPUT AGAIN");
+                    continue;
+                }
+            } catch (Exception e) {
+                System.out.println("INPUT AGAIN");
+                continue;
+            }
+
             switch (choice) {
                 case 1:
                     EmployeeController.displayMenu();

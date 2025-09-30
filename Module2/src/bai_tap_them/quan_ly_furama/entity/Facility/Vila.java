@@ -3,13 +3,13 @@ package bai_tap_them.quan_ly_furama.entity.Facility;
 public class Vila extends Facility {
     private String roomStandard;
     private double poolArea;
-    private int floors;
+    private int numberOfFloors;
 
-    public Vila(String serviceCode, String serviceName, double usableArea, double rentalCost, int maxPeople, RentalType rentalType, String roomStandard, double poolArea, int floors) {
+    public Vila(String serviceCode, String serviceName, double usableArea, double rentalCost, int maxPeople, String rentalType, String roomStandard, double poolArea, int numberOfFloors) {
         super(serviceCode, serviceName, usableArea, rentalCost, maxPeople, rentalType);
         this.roomStandard = roomStandard;
         this.poolArea = poolArea;
-        this.floors = floors;
+        this.numberOfFloors = numberOfFloors;
     }
 
     public String getRoomStandard() {
@@ -28,11 +28,20 @@ public class Vila extends Facility {
         this.poolArea = poolArea;
     }
 
-    public int getFloors() {
-        return floors;
+    public int getNumberOfFloors() {
+        return numberOfFloors;
     }
 
-    public void setFloors(int floors) {
-        this.floors = floors;
+    public void setNumberOfFloors(int numberOfFloors) {
+        this.numberOfFloors = numberOfFloors;
+    }
+
+    @Override
+    public String toString() {
+        return "Vila{" +
+                "roomStandard='" + roomStandard + '\'' +
+                ", poolArea=" + poolArea +
+                ", numberOfFloors=" + numberOfFloors +
+                '}';
     }
 }

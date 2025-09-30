@@ -1,18 +1,25 @@
 package bai_tap_them.quan_ly_furama.entity.Facility;
 
 public class Room extends Facility{
-    private String freeService;
+    private String freeServiceIncluded;
 
-    public Room(String serviceCode, String serviceName, double usableArea, double rentalCost, int maxPeople, RentalType rentalType, String freeService) {
+    public Room(String serviceCode, String serviceName, double usableArea, double rentalCost, int maxPeople, String rentalType, String freeServiceIncluded) {
         super(serviceCode, serviceName, usableArea, rentalCost, maxPeople, rentalType);
-        this.freeService = freeService;
+        this.freeServiceIncluded = freeServiceIncluded;
     }
 
-    public String getFreeService() {
-        return freeService;
+    public String getFreeServiceIncluded() {
+        return freeServiceIncluded;
     }
 
-    public void setFreeService(String freeService) {
-        this.freeService = freeService;
+    public void setFreeServiceIncluded(String freeServiceIncluded) {
+        this.freeServiceIncluded = freeServiceIncluded;
+    }
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "freeServiceIncluded='" + freeServiceIncluded + '\'' +
+                '}';
     }
 }

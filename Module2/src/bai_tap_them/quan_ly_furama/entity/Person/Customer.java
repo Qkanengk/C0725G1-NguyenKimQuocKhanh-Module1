@@ -1,22 +1,15 @@
 package bai_tap_them.quan_ly_furama.entity.Person;
 
-public class Customer extends Person {
+import java.time.LocalDate;
 
-    private String customerAddress;
+public class Customer extends Person{
     private String customerType;
+    private String address;
 
-    public Customer(String code, String name, String dateOfBirth, String sex, String idNumber, String phoneNumber, String email, String customerAddress, String customerType) {
-        super(code, name, dateOfBirth, sex, idNumber, phoneNumber, email);
-        this.customerAddress = customerAddress;
+    public Customer(String id, String name, LocalDate dateOfBirth, String gender, String identityNumber, String phoneNumber, String email, String customerType, String address) {
+        super(id, name, dateOfBirth, gender, identityNumber, phoneNumber, email);
         this.customerType = customerType;
-    }
-
-    public String getCustomerAddress() {
-        return customerAddress;
-    }
-
-    public void setCustomerAddress(String customerAddress) {
-        this.customerAddress = customerAddress;
+        this.address = address;
     }
 
     public String getCustomerType() {
@@ -27,17 +20,24 @@ public class Customer extends Person {
         this.customerType = customerType;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    public String getInfo(){
+        return id + "," + name + "," + dateOfBirth + "," + gender + "," +
+                identityNumber + "," + phoneNumber + "," + email + "," +
+                customerType + "," + address;
+    }
+
     @Override
     public String toString() {
         return "Customer{" +
-                "CustomerCode: " + super.getCode() +
-                "CustomerName: " + super.getName() +
-                "CustomerDateOfBirth: " + super.getDateOfBirth() +
-                "CustomerSex: " + super.getSex() +
-                "CustomerIdNumber: " + super.getIdNumber() +
-                "CustomerEmail: " + super.getEmail() +
-                "customerAddress: " + customerAddress +
-                ", customerType: " + customerType +
+                "customerType='" + customerType + '\'' +
+                ", address='" + address + '\'' +
                 '}';
     }
 }

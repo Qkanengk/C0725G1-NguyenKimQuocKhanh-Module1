@@ -1,13 +1,13 @@
 package bai_tap_them.quan_ly_furama.entity.Facility;
 
-public class House extends Facility{
+public class House extends Facility {
     private String roomStandard;
-    private int floors;
+    private int numberOfFloors;
 
-    public House(String serviceCode, String serviceName, double usableArea, double rentalCost, int maxPeople, RentalType rentalType, String roomStandard, int floors) {
+    public House(String serviceCode, String serviceName, double usableArea, double rentalCost, int maxPeople, String rentalType, String roomStandard, int numberOfFloors) {
         super(serviceCode, serviceName, usableArea, rentalCost, maxPeople, rentalType);
         this.roomStandard = roomStandard;
-        this.floors = floors;
+        this.numberOfFloors = numberOfFloors;
     }
 
     public String getRoomStandard() {
@@ -18,11 +18,19 @@ public class House extends Facility{
         this.roomStandard = roomStandard;
     }
 
-    public int getFloors() {
-        return floors;
+    public int getNumberOfFloors() {
+        return numberOfFloors;
     }
 
-    public void setFloors(int floors) {
-        this.floors = floors;
+    public void setNumberOfFloors(int numberOfFloors) {
+        this.numberOfFloors = numberOfFloors;
+    }
+
+    @Override
+    public String toString() {
+        return "House{" +
+                "roomStandard='" + roomStandard + '\'' +
+                ", numberOfFloors=" + numberOfFloors +
+                '}';
     }
 }

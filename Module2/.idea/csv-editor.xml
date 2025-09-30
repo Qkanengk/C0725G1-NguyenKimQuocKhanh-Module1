@@ -10,6 +10,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/src/bai_tap_them/quan_ly_furama/data/CUSTOMER_DATA.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/bai_tap_them/quan_ly_furama/data/EMPLOYEE_DATA.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/src/bai_tap_them/quan_ly_phuong_tien_giao_thong_arraylist/data/CAR_LIST.csv">
           <value>
             <Attribute>
@@ -32,6 +46,13 @@
           </value>
         </entry>
         <entry key="/src/ss16_IO/bai_tap/copy_file_text/demo.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="diff.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
