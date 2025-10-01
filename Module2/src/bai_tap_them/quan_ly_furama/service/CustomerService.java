@@ -15,13 +15,13 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public void add(Object o) {
-        customerRepository.add(o);
+    public boolean add(Customer customer) {
+        return customerRepository.add(customer);
     }
 
     @Override
-    public void update(String id, Object o) {
-        customerRepository.update(id, o);
+    public void update(String id, Customer customer) {
+        customerRepository.update(id, customer);
     }
 
     @Override
@@ -30,7 +30,7 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public Object findById(String id) {
+    public Customer findById(String id) {
         return null;
     }
 }

@@ -2,7 +2,7 @@ package bai_tap_them.quan_ly_furama.utils.validate;
 
 public class EmployeeValidate {
     public static boolean validateId(String id){
-        return id.matches("^[NV]*-[0-9]{4}$");
+        return id.matches("^NV-[0-9]{4}$");
     }
     public static  boolean validateName(String name){
         return name.matches("^[A-Z][a-z]*(\\s[A-Z][a-z]*)+$");

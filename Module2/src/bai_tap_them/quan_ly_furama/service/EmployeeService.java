@@ -15,13 +15,13 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
-    public void add(Object o) {
-        employeeRepository.add(o);
+    public boolean add(Employee employee) {
+       return employeeRepository.add(employee);
     }
 
     @Override
-    public void update(String id, Object o) {
-        employeeRepository.update(id, o);
+    public void update(String id, Employee employee) {
+        employeeRepository.update(id, employee);
     }
 
     @Override
@@ -30,7 +30,7 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
-    public Object findById(String id) {
+    public Employee findById(String id) {
         return null;
     }
 }

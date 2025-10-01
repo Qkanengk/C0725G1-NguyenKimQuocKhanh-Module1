@@ -32,31 +32,37 @@ public class EmployeeRepository implements IEmployeeRepository {
     }
 
     @Override
-    public void add(Object o) {
+    public boolean add(Employee employee) {
         List<Employee> employeeList = findAll();
-        employeeList.add((Employee) o);
-        List<String> stringList = new ArrayList<>();
-        stringList.add(((Employee) o).getInfo());
-        try {
-            ReadAndWriteData.writeDataToCSV(filepath, stringList, true);
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (employeeList.contains(employee)) {
+            return false;
+        } else {
+            employeeList.add(employee);
+            List<String> stringList = new ArrayList<>();
+            stringList.add((employee).getInfo());
+            try {
+                ReadAndWriteData.writeDataToCSV(filepath, stringList, true);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return true;
         }
-
     }
 
+
+
     @Override
-    public void update(String id, Object o) {
+    public void update(String id, Employee employee) {
         List<Employee> employeeList = findAll();
         List<String> stringList = new ArrayList<>();
         for (int i = 0; i < employeeList.size(); i++) {
             if (employeeList.get(i).getId().equals(id)) {
-                employeeList.set(i, (Employee) o);
+                employeeList.set(i, employee);
                 break;
             }
         }
-        for (Employee employee : employeeList) {
-            stringList.add(employee.getInfo());
+        for (Employee employee1 : employeeList) {
+            stringList.add(employee1.getInfo());
         }
         try {
             ReadAndWriteData.writeDataToCSV(filepath, stringList, false);
@@ -82,7 +88,7 @@ public class EmployeeRepository implements IEmployeeRepository {
     }
 
     @Override
-    public Object findById(String id) {
+    public Employee findById(String id) {
         return null;
     }
 }

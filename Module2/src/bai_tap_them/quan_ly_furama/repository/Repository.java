@@ -5,7 +5,7 @@ import java.util.List;
 public interface Repository <T> {
 
     List<T> findAll();
-    void add(T t);
+    boolean add(T t);
 
     void update(String id, T t);
     void delete(String id);

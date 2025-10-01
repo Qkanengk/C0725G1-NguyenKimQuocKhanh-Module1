@@ -5,8 +5,8 @@ public class Vila extends Facility {
     private double poolArea;
     private int numberOfFloors;
 
-    public Vila(String serviceCode, String serviceName, double usableArea, double rentalCost, int maxPeople, String rentalType, String roomStandard, double poolArea, int numberOfFloors) {
-        super(serviceCode, serviceName, usableArea, rentalCost, maxPeople, rentalType);
+    public Vila(String serviceId, String serviceName, double usableArea, double rentalCost, int maxPeople, String rentalType, String roomStandard, double poolArea, int numberOfFloors) {
+        super(serviceId, serviceName, usableArea, rentalCost, maxPeople, rentalType);
         this.roomStandard = roomStandard;
         this.poolArea = poolArea;
         this.numberOfFloors = numberOfFloors;
@@ -42,6 +42,12 @@ public class Vila extends Facility {
                 "roomStandard='" + roomStandard + '\'' +
                 ", poolArea=" + poolArea +
                 ", numberOfFloors=" + numberOfFloors +
+                ", serviceId='" + serviceId + '\'' +
+                ", serviceName='" + serviceName + '\'' +
+                ", usableArea=" + usableArea +
+                ", rentalCost=" + rentalCost +
+                ", maxPeople=" + maxPeople +
+                ", rentalType='" + rentalType + '\'' +
                 '}';
     }
 }

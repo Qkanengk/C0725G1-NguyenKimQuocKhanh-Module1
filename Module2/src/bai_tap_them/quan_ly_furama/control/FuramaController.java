@@ -33,6 +33,7 @@ public class FuramaController {
                     CustomerController.displayMenu();
                     break;
                 case 3:
+                    FacilityController.displayMenu();
                     break;
                 case 4:
                     break;

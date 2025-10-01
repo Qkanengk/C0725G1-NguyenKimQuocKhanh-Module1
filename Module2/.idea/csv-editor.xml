@@ -24,6 +24,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/src/bai_tap_them/quan_ly_furama/data/FACILITY_DATA.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/src/bai_tap_them/quan_ly_phuong_tien_giao_thong_arraylist/data/CAR_LIST.csv">
           <value>
             <Attribute>

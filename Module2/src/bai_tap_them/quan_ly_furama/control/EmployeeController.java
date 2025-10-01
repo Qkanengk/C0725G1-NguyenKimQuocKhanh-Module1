@@ -4,8 +4,6 @@ import bai_tap_them.quan_ly_furama.entity.Person.Employee;
 import bai_tap_them.quan_ly_furama.service.EmployeeService;
 import bai_tap_them.quan_ly_furama.service.IEmployeeService;
 import bai_tap_them.quan_ly_furama.view.EmployeeView;
-
-import java.time.LocalDate;
 import java.util.Scanner;
 
 public class EmployeeController {

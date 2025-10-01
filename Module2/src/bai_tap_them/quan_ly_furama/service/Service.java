@@ -4,11 +4,9 @@ import java.util.List;
 
 public interface Service<T> {
     List<T> findAll();
-
-    void add(T t);
+    boolean add(T t);
 
     void update(String id, T t);
-
     void delete(String id);
 
     T findById(String id);
