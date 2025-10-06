@@ -36,6 +36,7 @@ public class FuramaController {
                     FacilityController.displayMenu();
                     break;
                 case 4:
+                    BookingController.displayMainMenu();
                     break;
                 case 5:
                     break;

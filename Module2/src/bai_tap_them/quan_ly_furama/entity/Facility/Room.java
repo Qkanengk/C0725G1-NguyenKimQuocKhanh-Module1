@@ -18,14 +18,12 @@ public class Room extends Facility{
 
     @Override
     public String toString() {
-        return "Room{" +
-                "freeServiceIncluded='" + freeServiceIncluded + '\'' +
-                ", serviceId='" + serviceId + '\'' +
-                ", serviceName='" + serviceName + '\'' +
-                ", usableArea=" + usableArea +
-                ", rentalCost=" + rentalCost +
-                ", maxPeople=" + maxPeople +
-                ", rentalType='" + rentalType + '\'' +
-                '}';
+        return String.format(
+                "%s" +
+                        " %-15s : %s\n" +
+                        "-----------------------------\n",
+                super.toString(),
+                "Free Service", freeServiceIncluded
+        );
     }
 }

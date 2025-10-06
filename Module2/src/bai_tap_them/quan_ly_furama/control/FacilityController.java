@@ -8,7 +8,7 @@ import bai_tap_them.quan_ly_furama.view.FacilityView;
 import java.util.Scanner;
 
 public class FacilityController {
-    private static IFacilityService facilityService = new FacilityService();
+    protected static IFacilityService facilityService = new FacilityService();
 
     static void displayMenu() {
         Scanner scanner = new Scanner(System.in);

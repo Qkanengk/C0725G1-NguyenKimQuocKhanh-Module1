@@ -9,5 +9,5 @@ public interface IFacilityRepository extends Repository<Facility> {
 
     List<Facility> getMaintenanceList();
 
-    void incrementUsage(String code);
+     void incrementUsage(String code);
 }

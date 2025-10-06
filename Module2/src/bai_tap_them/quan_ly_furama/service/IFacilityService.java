@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface IFacilityService extends Service<Facility> {
     List<Facility> getMaintenanceList();
+
+    public  void incrementUsage(String id);
 }

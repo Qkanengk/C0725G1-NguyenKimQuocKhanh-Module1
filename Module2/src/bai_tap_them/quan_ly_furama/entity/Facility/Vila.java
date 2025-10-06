@@ -38,16 +38,16 @@ public class Vila extends Facility {
 
     @Override
     public String toString() {
-        return "Vila{" +
-                "roomStandard='" + roomStandard + '\'' +
-                ", poolArea=" + poolArea +
-                ", numberOfFloors=" + numberOfFloors +
-                ", serviceId='" + serviceId + '\'' +
-                ", serviceName='" + serviceName + '\'' +
-                ", usableArea=" + usableArea +
-                ", rentalCost=" + rentalCost +
-                ", maxPeople=" + maxPeople +
-                ", rentalType='" + rentalType + '\'' +
-                '}';
+        return String.format(
+                "%s" +
+                        " %-15s : %s\n" +
+                        " %-15s : %.2f m²\n" +
+                        " %-15s : %d\n" +
+                        "-----------------------------\n",
+                super.toString(),
+                "Room Standard", roomStandard,
+                "Pool Area", poolArea,
+                "Floors", numberOfFloors
+        );
     }
 }

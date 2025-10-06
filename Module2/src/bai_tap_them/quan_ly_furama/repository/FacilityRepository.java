@@ -9,15 +9,23 @@ import java.util.List;
 import java.util.Map;
 
 public class FacilityRepository implements IFacilityRepository {
-    private static Map<Facility, Integer> facilityMap = new LinkedHashMap<>();
+    protected static Map<Facility, Integer> facilityMap = new LinkedHashMap<>();
+
     static {
-        facilityMap.put(new Vila("SVVL-0001","BeachVilla",120.5,2000.0,8,"Day","Deluxe",50.0,2),0);
-        facilityMap.put(new Vila("SVVL-0002","BeachVilla",120.5,2000.0,8,"Day","Deluxe",50.0,2),7);
+        facilityMap.put(new Vila("SVVL-0001", "BeachVilla", 120.5, 2000.0, 8, "Day", "Deluxe", 50.0, 2), 0);
+        facilityMap.put(new Vila("SVVL-0002", "BeachVilla", 120.5, 2000.0, 8, "Day", "Deluxe", 50.0, 2), 4);
     }
 
     @Override
     public List<Facility> findAll() {
-        return new ArrayList<>(facilityMap.keySet());
+        Map<Facility, Integer> tempFacilityMap = new LinkedHashMap<>();
+        tempFacilityMap.putAll(facilityMap);
+        for (Map.Entry<Facility, Integer> entry : tempFacilityMap.entrySet()) {
+            if (entry.getValue() >= 5) {
+                tempFacilityMap.remove(entry.getKey());
+            }
+        }
+        return new ArrayList<>(tempFacilityMap.keySet());
     }
 
     @Override
@@ -44,7 +52,8 @@ public class FacilityRepository implements IFacilityRepository {
             if (entry.getKey().getServiceId().equals(id)) {
                 return entry.getKey();
             }
-        } return null;
+        }
+        return null;
     }
 
     @Override
@@ -61,8 +70,8 @@ public class FacilityRepository implements IFacilityRepository {
     @Override
     public void incrementUsage(String id) {
         Facility facility = findById(id);
-        if(facility!=null){
-            facilityMap.put(facility,facilityMap.get(facility)+1);
+        if (facility != null) {
+            facilityMap.put(facility, facilityMap.get(facility) + 1);
         }
     }
 }

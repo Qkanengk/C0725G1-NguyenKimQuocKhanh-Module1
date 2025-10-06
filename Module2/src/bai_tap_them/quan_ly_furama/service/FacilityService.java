@@ -7,7 +7,7 @@ import bai_tap_them.quan_ly_furama.repository.IFacilityRepository;
 import java.util.List;
 
 public class FacilityService implements IFacilityService {
-    private static IFacilityRepository facilityRepository = new FacilityRepository();
+    public static IFacilityRepository facilityRepository = new FacilityRepository();
 
     @Override
     public List<Facility> findAll() {
@@ -37,5 +37,10 @@ public class FacilityService implements IFacilityService {
     @Override
     public List<Facility> getMaintenanceList() {
         return facilityRepository.getMaintenanceList();
+    }
+
+    @Override
+    public void incrementUsage(String id) {
+        facilityRepository.incrementUsage(id);
     }
 }

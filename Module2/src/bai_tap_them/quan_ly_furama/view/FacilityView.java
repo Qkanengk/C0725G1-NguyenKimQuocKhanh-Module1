@@ -4,7 +4,6 @@ import bai_tap_them.quan_ly_furama.entity.Facility.Facility;
 import bai_tap_them.quan_ly_furama.entity.Facility.House;
 import bai_tap_them.quan_ly_furama.entity.Facility.Room;
 import bai_tap_them.quan_ly_furama.entity.Facility.Vila;
-import bai_tap_them.quan_ly_furama.utils.validate.CustomerValidate;
 import bai_tap_them.quan_ly_furama.utils.validate.FacilityValidate;
 
 import java.util.Scanner;
@@ -14,10 +13,8 @@ public class FacilityView {
 
     public static String serviceId() {
         String serviceId;
-
         System.out.println("Input service's ID");
         serviceId = scanner.nextLine();
-
         return serviceId;
     }
 

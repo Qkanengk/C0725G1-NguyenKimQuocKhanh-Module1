@@ -1,7 +1,6 @@
 package bai_tap_them.quan_ly_furama.view;
 
 import bai_tap_them.quan_ly_furama.entity.Person.Customer;
-import bai_tap_them.quan_ly_furama.entity.Person.Employee;
 import bai_tap_them.quan_ly_furama.utils.validate.CustomerValidate;
 
 import java.time.LocalDate;
@@ -89,16 +88,6 @@ public class CustomerView {
     }
 
     public static Customer getCustomer() {
-        String id = id();
-        String name = name();
-        LocalDate dateOfBirth = dateOfBirth();
-        String gender = gender();
-        String identityNumber = identityNumber();
-        String phoneNumber = phoneNumber();
-        String email = email();
-        String customerType = customerType();
-        String address = address();
-        Customer customer = new Customer(id, name, dateOfBirth, gender, identityNumber, phoneNumber, email, customerType, address);
-        return customer;
+        return new Customer(id(),name(),dateOfBirth(),gender(),identityNumber(),phoneNumber(),email(),customerType(),address());
     }
 }

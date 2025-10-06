@@ -1,25 +1,32 @@
 package bai_tap_them.quan_ly_furama.entity;
 
-public class Contract {
-    private String contractNumber;
-    private String bookingCode;
+public class Contract implements Comparable<Contract> {
+    private String contractId;
+    private String bookingId;
     private double depositAmount;
     private double paymentAmount;
 
-    public String getContractNumber() {
-        return contractNumber;
+    public Contract(String contractId, String bookingId, double depositAmount, double paymentAmount) {
+        this.contractId = contractId;
+        this.bookingId = bookingId;
+        this.depositAmount = depositAmount;
+        this.paymentAmount = paymentAmount;
     }
 
-    public void setContractNumber(String contractNumber) {
-        this.contractNumber = contractNumber;
+    public String getContractId() {
+        return contractId;
     }
 
-    public String getBookingCode() {
-        return bookingCode;
+    public void setContractId(String contractId) {
+        this.contractId = contractId;
     }
 
-    public void setBookingCode(String bookingCode) {
-        this.bookingCode = bookingCode;
+    public String getBookingId() {
+        return bookingId;
+    }
+
+    public void setBookingId(String bookingId) {
+        this.bookingId = bookingId;
     }
 
     public double getDepositAmount() {
@@ -36,5 +43,28 @@ public class Contract {
 
     public void setPaymentAmount(double paymentAmount) {
         this.paymentAmount = paymentAmount;
+    }
+
+    @Override
+    public int compareTo(Contract o) {
+        return this.getContractId().compareTo(o.getContractId());
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "-----------------------------\n" +
+                        " Contract Information\n" +
+                        "-----------------------------\n" +
+                        " %-15s : %s\n" +
+                        " %-15s : %s\n" +
+                        " %-15s : %.2f VND\n" +
+                        " %-15s : %.2f VND\n" +
+                        "-----------------------------",
+                "Contract ID", contractId,
+                "Booking ID", bookingId,
+                "Deposit", depositAmount,
+                "Payment", paymentAmount
+        );
     }
 }

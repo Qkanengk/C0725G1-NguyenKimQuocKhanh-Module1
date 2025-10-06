@@ -30,13 +30,11 @@ public class EmployeeView {
 
     public static LocalDate dateOfBirth() {
         String dateOfBirth;
-        LocalDate dob;
+
         do {
             System.out.println("Input employee's birthday (yyyy-MM-dd)");
             dateOfBirth = scanner.nextLine();
-
         } while (!EmployeeValidate.validateDateOfBirth(dateOfBirth) || LocalDate.parse(dateOfBirth).plusYears(18).isAfter(LocalDate.now()));
-
         return LocalDate.parse(dateOfBirth);
     }
 
@@ -67,7 +65,6 @@ public class EmployeeView {
 
     public static String email() {
         String email;
-
         do {
             System.out.println("Input employee's email");
             email = scanner.nextLine();
@@ -104,18 +101,8 @@ public class EmployeeView {
     }
 
     public static Employee getEmployee() {
-        String id = id();
-        String name = name();
-        LocalDate dateOfBirth = dateOfBirth();
-        String gender = gender();
-        String identityNumber = identityNumber();
-        String phoneNumber = phoneNumber();
-        String email = email();
-        String qualification = qualification();
-        String position = position();
-        Double salary = salary();
-        Employee employee = new Employee(id, name, dateOfBirth, gender, identityNumber, phoneNumber, email, qualification, position, salary);
-        return employee;
+
+        return new Employee(id(), name(), dateOfBirth(), gender(), identityNumber(), phoneNumber(), email(), qualification(), position(), salary());
 
 
     }

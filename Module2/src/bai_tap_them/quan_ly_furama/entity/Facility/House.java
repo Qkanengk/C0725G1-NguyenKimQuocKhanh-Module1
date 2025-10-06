@@ -28,15 +28,14 @@ public class House extends Facility {
 
     @Override
     public String toString() {
-        return "House{" +
-                "roomStandard='" + roomStandard + '\'' +
-                ", numberOfFloors=" + numberOfFloors +
-                ", serviceId='" + serviceId + '\'' +
-                ", serviceName='" + serviceName + '\'' +
-                ", usableArea=" + usableArea +
-                ", rentalCost=" + rentalCost +
-                ", maxPeople=" + maxPeople +
-                ", rentalType='" + rentalType + '\'' +
-                '}';
+        return String.format(
+                "%s" +   // Gọi từ Facility
+                        " %-15s : %s\n" +
+                        " %-15s : %d\n" +
+                        "-----------------------------",
+                super.toString(),
+                "Room Standard", roomStandard,
+                "Floors", numberOfFloors
+        );
     }
 }

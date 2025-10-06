@@ -64,6 +64,7 @@ public abstract class Facility {
     public void setRentalType(String rentalType) {
         this.rentalType = rentalType;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true; // cùng tham chiếu
@@ -77,5 +78,25 @@ public abstract class Facility {
         return serviceId != null ? serviceId.hashCode() : 0;
     }
 
-    public abstract String toString();
+    @Override
+    public String toString() {
+        return String.format(
+                "-----------------------------\n" +
+                        " Facility Information\n" +
+                        "-----------------------------\n" +
+                        " %-15s : %s\n" +
+                        " %-15s : %s\n" +
+                        " %-15s : %.2f m²\n" +
+                        " %-15s : %.2f VND\n" +
+                        " %-15s : %d\n" +
+                        " %-15s : %s\n" +
+                        "-----------------------------\n",
+                "Service ID", serviceId,
+                "Service Name", serviceName,
+                "Usable Area", usableArea,
+                "Rental Cost", rentalCost,
+                "Max People", maxPeople,
+                "Rental Type", rentalType
+        );
+    }
 }
