@@ -3,18 +3,19 @@ package bai_tap_them.quan_ly_furama.repository;
 
 import bai_tap_them.quan_ly_furama.entity.Booking;
 import bai_tap_them.quan_ly_furama.entity.Contract;
-import bai_tap_them.quan_ly_furama.utils.BookingComparator;
+import bai_tap_them.quan_ly_furama.service.BookingService;
+import bai_tap_them.quan_ly_furama.utils.ContractComparator;
 
 
 import java.util.*;
 
 public class ContractRepository implements IContractRepository {
 
-    private static Queue<Booking> bookingQueue = new PriorityQueue<>(new BookingComparator());
+    private static Queue<Booking> bookingQueue = new PriorityQueue<>(new ContractComparator());
     private static TreeSet<Contract> contractTreeSet = new TreeSet<>();
 
     static {
-        bookingQueue.addAll(BookingRepository.bookingTreeSet);
+        bookingQueue.addAll(BookingService.bookingRepository.findAll());
         contractTreeSet.add(new Contract("CT112", "1212", 2000, 2000));
     }
 
@@ -29,7 +30,6 @@ public class ContractRepository implements IContractRepository {
             return false;
         } else {
             if (bookingQueue.peek().getBookingId().equals(contract.getBookingId())) {
-                BookingRepository.bookingTreeSet.removeIf(booking -> booking.getBookingId().equals(contract.getBookingId()));
                 bookingQueue.poll();
                 contractTreeSet.add(contract);
                 return true;

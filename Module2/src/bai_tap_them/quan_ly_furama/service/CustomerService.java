@@ -7,7 +7,7 @@ import bai_tap_them.quan_ly_furama.repository.ICustomerRepository;
 import java.util.List;
 
 public class CustomerService implements ICustomerService {
-    private static ICustomerRepository customerRepository = new CustomerRepository();
+    public static ICustomerRepository customerRepository = new CustomerRepository();
 
     @Override
     public List<Customer> findAll() {

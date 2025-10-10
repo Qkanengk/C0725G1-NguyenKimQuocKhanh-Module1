@@ -40,7 +40,7 @@ public class BookingController {
                     System.out.println("=========================");
                     if (bookingService.add(BookingView.getBooking())){
                         System.out.println("Done");
-                    } else System.out.println("BookingId was exist or ServiceId is not exist ");
+                    } else System.out.println("BookingId was exist or ServiceId is not exist or Customer is not exist");
                     break;
                 case 2:
                     System.out.println(bookingService.findAll());

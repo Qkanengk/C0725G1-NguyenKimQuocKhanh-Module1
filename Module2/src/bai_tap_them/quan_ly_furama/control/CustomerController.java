@@ -22,7 +22,7 @@ public class CustomerController {
             try {
                 choice = Integer.parseInt(scanner.nextLine());
                 if (choice > 4) {
-                    System.out.println("INPUT AGAIN");
+                    System.out.println("ENTER AGAIN");
                 }
 
             } catch (NumberFormatException e) {

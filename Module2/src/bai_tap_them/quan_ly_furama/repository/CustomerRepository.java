@@ -2,6 +2,7 @@ package bai_tap_them.quan_ly_furama.repository;
 
 import bai_tap_them.quan_ly_furama.entity.Person.Customer;
 import bai_tap_them.quan_ly_furama.utils.ReadAndWriteData;
+
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -73,6 +74,12 @@ public class CustomerRepository implements ICustomerRepository {
 
     @Override
     public Customer findById(String id) {
+        List<Customer> customerList = findAll();
+        for (Customer customer : customerList) {
+            if (customer.getId().equals(id)) {
+                return customer;
+            }
+        }
         return null;
     }
 }

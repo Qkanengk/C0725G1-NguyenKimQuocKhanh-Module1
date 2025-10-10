@@ -15,7 +15,7 @@ public class ContractView {
         do {
             System.out.println("Enter booking's ID");
             bookingId = scanner.nextLine();
-        } while (BookingValidate.validateBookingId(bookingId));
+        } while (!BookingValidate.validateBookingId(bookingId));
         return bookingId;
     }
 
@@ -24,7 +24,7 @@ public class ContractView {
         do {
             System.out.println("Enter contract's ID");
             contractId = scanner.nextLine();
-        } while (ContractValidate.validateContractId(contractId));
+        } while (!ContractValidate.validateContractId(contractId));
         return contractId;
     }
 
@@ -51,12 +51,10 @@ public class ContractView {
                 continue;
             }
         } while (paymentAmount <= 0);
-        return Double.parseDouble(scanner.nextLine());
+        return paymentAmount;
     }
 
     public static Contract getContract() {
         return new Contract(contractId(), bookingId(), depositAmount(), paymentAmount());
     }
-
-
 }
