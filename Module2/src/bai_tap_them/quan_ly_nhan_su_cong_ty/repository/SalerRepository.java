@@ -74,6 +74,9 @@ public class SalerRepository implements ISalerRepository {
                 found.add(saler);
             }
         }
+        if (found.isEmpty()) {
+            return null;
+        }
         return found;
     }
 }

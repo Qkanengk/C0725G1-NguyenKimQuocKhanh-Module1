@@ -10,6 +10,27 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/src/REGEX.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/bai_tap_them/quan_ly_do_dien_tu/data/computer.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/bai_tap_them/quan_ly_do_dien_tu/data/phone.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/src/bai_tap_them/quan_ly_furama/data/CUSTOMER_DATA.csv">
           <value>
             <Attribute>
@@ -25,6 +46,34 @@
           </value>
         </entry>
         <entry key="/src/bai_tap_them/quan_ly_furama/data/FACILITY_DATA.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/bai_tap_them/quan_ly_hoa_don_tien_dien/data/customerType.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/bai_tap_them/quan_ly_hoa_don_tien_dien/data/foreignCustomer.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/bai_tap_them/quan_ly_hoa_don_tien_dien/data/invoice.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/bai_tap_them/quan_ly_hoa_don_tien_dien/data/localCustomer.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

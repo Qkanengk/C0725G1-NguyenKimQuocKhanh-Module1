@@ -74,6 +74,9 @@ public class OfficerRepository implements IOfficerRepository {
                 found.add(saler);
             }
         }
+        if (found.isEmpty()) {
+            return null;
+        }
         return found;
     }
 }

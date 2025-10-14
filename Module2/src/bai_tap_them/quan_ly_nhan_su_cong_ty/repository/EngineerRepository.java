@@ -74,6 +74,9 @@ public class EngineerRepository implements IEngineerRepository{
                 found.add(saler);
             }
         }
+        if (found.isEmpty()) {
+            return null;
+        }
         return found;
     }
 }
