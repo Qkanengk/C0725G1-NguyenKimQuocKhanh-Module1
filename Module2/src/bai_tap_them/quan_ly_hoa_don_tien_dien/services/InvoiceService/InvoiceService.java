@@ -1,6 +1,5 @@
 package bai_tap_them.quan_ly_hoa_don_tien_dien.services.InvoiceService;
 
-import bai_tap_them.quan_ly_hoa_don_tien_dien.entity.Customer.Customer;
 import bai_tap_them.quan_ly_hoa_don_tien_dien.entity.Invoice.Invoice;
 import bai_tap_them.quan_ly_hoa_don_tien_dien.repository.CustomerRepository.IForeignCustomerRepository;
 import bai_tap_them.quan_ly_hoa_don_tien_dien.repository.CustomerRepository.ILocalCustomerRepository;
@@ -9,7 +8,6 @@ import bai_tap_them.quan_ly_hoa_don_tien_dien.repository.Invoice.InvoiceReposito
 import bai_tap_them.quan_ly_hoa_don_tien_dien.services.CustomerService.ForeignCustomerService;
 import bai_tap_them.quan_ly_hoa_don_tien_dien.services.CustomerService.LocalCustomerService;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class InvoiceService implements IInvoiceService {
@@ -17,26 +15,33 @@ public class InvoiceService implements IInvoiceService {
     private static ILocalCustomerRepository localCustomerService = LocalCustomerService.getLocalCustomerRepository();
     private static IForeignCustomerRepository foreignCustomerService = ForeignCustomerService.getForeignCustomerRepository();
 
+    private String generateNextId() {
+        List<Invoice> invoiceList = findAll();
+
+        if (invoiceList == null || invoiceList.isEmpty()) {
+            return "MH-00001";  // ID đầu tiên
+        }
+        try {
+            Invoice lastInvoice = invoiceList.get(invoiceList.size() - 1);
+            String lastId = lastInvoice.getId();  // Ví dụ: MH-00099
+
+            // Tách phần số
+            String numberPart = lastId.substring(3);  // "00099"
+            int nextNumber = Integer.parseInt(numberPart) + 1;// 100
+            // Format lại với 5 chữ số
+            // MH-00100
+            return String.format("MH-%05d", nextNumber);
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
+
     @Override
     public boolean add(Invoice invoice) {
-        List<Customer> customerList = new ArrayList<>(localCustomerService.findAll());
-        customerList.addAll(foreignCustomerService.findAll());
-        if (customerList.isEmpty()) {
-            return false;
-        }
-        for (Customer customer : customerList) {
-            if (customer.getId().equals(invoice.getCustomerId())) {
-                List<Invoice> invoiceList = findAll();
-                if (invoiceList.isEmpty()) {
-                    invoice.setId(String.valueOf(1));
-                } else {
-                    Invoice lastInvoice = invoiceList.get(invoiceList.size() - 1);
-                    invoice.setId(String.valueOf(Integer.parseInt(lastInvoice.getId()) + 1));
-                }
-                break;
-            }
-            return false;
-        }
+        invoice.setId(generateNextId());
         return invoiceRepository.add(invoice);
     }
 
